@@ -1,6 +1,8 @@
+
+<!-- CF_BIL_6-->
 <Configuration status="info">
     <properties>
-        <property name="layout">%d[%t] %5level %logger - %m%n</property>
+        <property name="layout">%d[%t] %highlight %5level %logger - %m%n</property>
     </properties>
 
     <Appenders>
@@ -24,7 +26,7 @@
             <AppenderRef ref="LogFile"/>
         </Root>
 
-        <Logger name="SpecialLogger" level="info" additivity="false">
+        <Logger name="BookingLogger" level="info" additivity="false">
             <AppenderRef ref="SpecialFile"/>
         </Logger>
     </Loggers>
