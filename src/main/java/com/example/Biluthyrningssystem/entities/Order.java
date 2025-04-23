@@ -1,8 +1,6 @@
 package com.example.Biluthyrningssystem.entities;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import java.sql.Date;
 
@@ -17,7 +15,10 @@ public class Order {
     private float totalPrice;
 
     @Column(length = 10)
-    private Date dateCarHiredFrom;
+    private Date hireStartDate;
+
+    @Column(length = 10)
+    private Date hireEndDate;
 
     @Column(length = 3)
     private int numOfDaysHired;
@@ -32,14 +33,19 @@ public class Order {
 //    @OnDelete(action = OnDeleteAction.NO_ACTION)
 //    private Car car;
 
+    @Column(nullable = true)
+    private boolean orderCancelled;
+
     public Order() {
     }
 
-    public Order(long id, float totalPrice, Date dateCarHiredFrom, int numOfDaysHired) {
+    public Order(long id, float totalPrice, Date hireStartDate, Date hireEndDate, int numOfDaysHired, boolean orderCancelled) {
         this.id = id;
         this.totalPrice = totalPrice;
-        this.dateCarHiredFrom = dateCarHiredFrom;
+        this.hireStartDate = hireStartDate;
+        this.hireEndDate = hireEndDate;
         this.numOfDaysHired = numOfDaysHired;
+        this.orderCancelled = orderCancelled;
     }
 
     public long getId() {
@@ -58,12 +64,20 @@ public class Order {
         this.totalPrice = totalPrice;
     }
 
-    public Date getDateCarHiredFrom() {
-        return dateCarHiredFrom;
+    public Date getHireStartDate() {
+        return hireStartDate;
     }
 
-    public void setDateCarHiredFrom(Date dateCarHiredFrom) {
-        this.dateCarHiredFrom = dateCarHiredFrom;
+    public void setHireStartDate(Date hireStartDate) {
+        this.hireStartDate = hireStartDate;
+    }
+
+    public Date getHireEndDate() {
+        return hireEndDate;
+    }
+
+    public void setHireEndDate(Date hireEndDate) {
+        this.hireEndDate = hireEndDate;
     }
 
     public int getNumOfDaysHired() {
@@ -72,5 +86,13 @@ public class Order {
 
     public void setNumOfDaysHired(int numOfDaysHired) {
         this.numOfDaysHired = numOfDaysHired;
+    }
+
+    public boolean isOrderCancelled() {
+        return orderCancelled;
+    }
+
+    public void setOrderCancelled(boolean orderCancelled) {
+        this.orderCancelled = orderCancelled;
     }
 }
