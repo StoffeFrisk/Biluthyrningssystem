@@ -44,13 +44,14 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Order> getActiveOrders() {
-        return orderRepository.findOrdersByOrderCancelledContains(false);
+        return List.of();
     }
 
     @Override
     public List<Order> getAllOrders() {
-        return orderRepository.findAll();
+        return List.of();
     }
+
 
     @Override
     public void deleteOrder(Order order) {

@@ -1,6 +1,8 @@
 package com.example.Biluthyrningssystem.entities;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.sql.Date;
 
@@ -23,15 +25,15 @@ public class Order {
     @Column(length = 3)
     private int numOfDaysHired;
 
-//    @OneToOne(cascade = CascadeType.PERSIST)
-//    @JoinColumn(name = "customer_id", nullable = false)
-//    @OnDelete(action = OnDeleteAction.NO_ACTION)
-//    private Customer customer;
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "customer_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.NO_ACTION)
+    private Customer customer;
 
-//    @OneToMany(cascade = CascadeType.PERSIST)
-//    @JoinColumn(name = "car_id", nullable = false)
-//    @OnDelete(action = OnDeleteAction.NO_ACTION)
-//    private Car car;
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "car_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.NO_ACTION)
+    private Car car;
 
     @Column(nullable = true)
     private boolean orderCancelled;
