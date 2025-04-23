@@ -3,6 +3,9 @@ package com.example.Biluthyrningssystem.entities;
 import jakarta.persistence.*;
 import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Customer {
     @Id
@@ -24,6 +27,9 @@ public class Customer {
 
     @Column(length = 20, nullable = false)
     private String phone;
+
+    @OneToMany(mappedBy = "customer")
+    private List<Order> orders = new ArrayList<>();
 
     public Customer() {}
 
@@ -82,6 +88,14 @@ public class Customer {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 
     @Override

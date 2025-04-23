@@ -1,3 +1,5 @@
+//Lynsey Fox
+
 INSERT INTO customer (personnummer, first_name, last_name, address_id, email, phone) VALUES
 ('19850101-1234','Anna','Svensson',,,),
 ('19900215-5678','Erik','Johansson',,,),
