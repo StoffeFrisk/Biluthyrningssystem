@@ -1,12 +1,4 @@
-//Lynsey Fox
-
-INSERT INTO customer (personnummer, first_name, last_name, address_id, email, phone) VALUES
-('19850101-1234','Anna','Svensson',,,),
-('19900215-5678','Erik','Johansson',,,),
-('19751230-9101','Maria','Lindberg',,,),
-('19881122-3456','Johan','Karlsson',,,),
-(' 19950505-7890','Elin','Andersson',,,);
-
+/*Lynsey Fox*/
 INSERT INTO address (street, postal_code, city) VALUES
 ('Jönköpingsvägen', '55129', 'Huskvarna'),
 ('Älgstigen', '55339', 'Jönköping'),
@@ -14,3 +6,15 @@ INSERT INTO address (street, postal_code, city) VALUES
 ('456 Oak Avenue', '67890', 'Shelbyville'),
 ('789 Pine Road', '54321', 'Ogdenville');
 
+INSERT INTO customer (personnummer, first_name, last_name, address_id, email, phone) VALUES
+('19850101-1234','Anna','Svensson',1,'null','0800 00 1066'),
+('19900215-5678','Erik','Johansson',1,'null','0800 00 1066'),
+('19751230-9101','Maria','Lindberg',1,'null','0800 00 1066'),
+('19881122-3456','Johan','Karlsson',1,'null','0800 00 1066'),
+('19950505-7890','Elin','Andersson',1,'null','0800 00 1066');
+
+/*Ben Portsmouth*/
+INSERT INTO orders(personnummer,car_id,hire_start_date,hire_end_date,num_of_days_hired,total_price,order_cancelled) VALUES
+('19850101-1234',null, '2025-04-20','2025-04-25', 5, 700.00, false),
+('19751230-9101',null, '2022-04-20','2022-04-30', 10, 7000.00, true),
+('19950505-7890',null, '2025-06-10','2025-06-11', 1, 85.00, false);

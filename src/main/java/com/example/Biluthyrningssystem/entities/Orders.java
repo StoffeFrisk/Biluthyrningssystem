@@ -14,12 +14,12 @@ public class Orders {
     private long id;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "personnummer", nullable = true)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
     private Customer customer;
 
     @OneToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "car_id", nullable = false)
+    @JoinColumn(name = "car_id", nullable = true)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
     private Car car;
 
