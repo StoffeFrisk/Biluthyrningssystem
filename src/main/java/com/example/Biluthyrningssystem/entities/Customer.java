@@ -1,7 +1,6 @@
 package com.example.Biluthyrningssystem.entities;
 
 import jakarta.persistence.*;
-import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +28,7 @@ public class Customer {
     private String phone;
 
     @OneToMany(mappedBy = "customer")
-    private List<Order> orders = new ArrayList<>();
+    private List<Orders> orders = new ArrayList<>();
 
     public Customer() {}
 
@@ -90,11 +89,11 @@ public class Customer {
         this.phone = phone;
     }
 
-    public List<Order> getOrders() {
+    public List<Orders> getOrders() {
         return orders;
     }
 
-    public void setOrders(List<Order> orders) {
+    public void setOrders(List<Orders> orders) {
         this.orders = orders;
     }
 
