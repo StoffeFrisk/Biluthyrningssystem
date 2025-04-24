@@ -1,4 +1,5 @@
 /*Lynsey Fox*/
+
 INSERT INTO address (street, postal_code, city) VALUES
 ('Jönköpingsvägen', '55129', 'Huskvarna'),
 ('Älgstigen', '55339', 'Jönköping'),
@@ -8,10 +9,10 @@ INSERT INTO address (street, postal_code, city) VALUES
 
 INSERT INTO customer (personnummer, first_name, last_name, address_id, email, phone) VALUES
 ('19850101-1234','Anna','Svensson',1,'null','0800 00 1066'),
-('19900215-5678','Erik','Johansson',1,'null','0800 00 1066'),
-('19751230-9101','Maria','Lindberg',1,'null','0800 00 1066'),
-('19881122-3456','Johan','Karlsson',1,'null','0800 00 1066'),
-('19950505-7890','Elin','Andersson',1,'null','0800 00 1066');
+('19900215-5678','Erik','Johansson',2,'null','0800 00 1066'),
+('19751230-9101','Maria','Lindberg',3,'null','0800 00 1066'),
+('19881122-3456','Johan','Karlsson',4,'null','0800 00 1066'),
+('19950505-7890','Elin','Andersson',5,'null','0800 00 1066');
 
 /*Ben Portsmouth*/
 INSERT INTO orders(personnummer,car_id,hire_start_date,hire_end_date,num_of_days_hired,total_price,order_cancelled) VALUES
