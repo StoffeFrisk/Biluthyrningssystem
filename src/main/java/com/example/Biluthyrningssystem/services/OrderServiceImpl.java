@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.List;
 
 //BP
@@ -61,12 +60,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Long> deleteOrdersBeforeDate(Date date) {
-        List<Order> ordersToDelete = orderRepository.findOrdersByDateCarHiredFromBefore(date);
-        List<Long> orderNumbersToDelete = new ArrayList<>();
-        for (Order order: ordersToDelete){
-            orderNumbersToDelete.add(order.getId());
-            deleteOrder(order);
-        }
-        return orderNumbersToDelete;
+        return List.of();
     }
+
+
 }
