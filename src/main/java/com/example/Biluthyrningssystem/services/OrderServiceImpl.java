@@ -1,6 +1,6 @@
 package com.example.Biluthyrningssystem.services;
 
-import com.example.Biluthyrningssystem.entities.Order;
+import com.example.Biluthyrningssystem.entities.Orders;
 import com.example.Biluthyrningssystem.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,40 +20,40 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Order addOrder(Order order) {
+    public Orders addOrder(Orders order) {
         //Add exception checks
         return orderRepository.save(order);
     }
 
     @Override
-    public Order cancelOrder(Order order) {
+    public Orders cancelOrder(Orders order) {
         //Add exception checks
         return orderRepository.save(order);
     }
 
     @Override
-    public List<Order> getAllCustomerOrders() {
+    public List<Orders> getAllCustomerOrders() {
         return List.of();
     }
 
     @Override
-    public List<Order> getActiveCustomerOrders() {
+    public List<Orders> getActiveCustomerOrders() {
         return List.of();
     }
 
     @Override
-    public List<Order> getActiveOrders() {
+    public List<Orders> getActiveOrders() {
         return List.of();
     }
 
     @Override
-    public List<Order> getAllOrders() {
+    public List<Orders> getAllOrders() {
         return List.of();
     }
 
 
     @Override
-    public void deleteOrder(Order order) {
+    public void deleteOrder(Orders order) {
         //Add exception checks
         orderRepository.delete(order);
     }
