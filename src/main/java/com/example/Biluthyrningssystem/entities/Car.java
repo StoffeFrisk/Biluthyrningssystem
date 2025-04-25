@@ -1,3 +1,5 @@
+//Christoffer Frisk
+
 package com.example.Biluthyrningssystem.entities;
 
 import jakarta.persistence.*;
