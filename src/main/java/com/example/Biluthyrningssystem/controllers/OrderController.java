@@ -1,6 +1,6 @@
 package com.example.Biluthyrningssystem.controllers;
 
-import com.example.Biluthyrningssystem.entities.Order;
+import com.example.Biluthyrningssystem.entities.Orders;
 import com.example.Biluthyrningssystem.services.OrderServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,46 +25,46 @@ public class OrderController {
     //Customer Endpoints
     @PostMapping("/addorder")
     @ResponseBody
-    public ResponseEntity<Order> addOrder(@RequestBody Order order){
+    public ResponseEntity<Orders> addOrder(@RequestBody Orders order){
         return new ResponseEntity<>(orderService.addOrder(order), HttpStatus.CREATED);
     }
 
     @PutMapping("/cancelorder")
     @ResponseBody
-    public ResponseEntity<String> cancelOrder(@RequestBody Order order){
+    public ResponseEntity<String> cancelOrder(@RequestBody Orders order){
         orderService.cancelOrder(order);
-        return new ResponseEntity<>(("Order number : " + order.getId() + " | Order cancelled."),HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(("Orders number : " + order.getId() + " | Orders cancelled."),HttpStatus.ACCEPTED);
     }
 
     @GetMapping("/activeorders")
     @ResponseBody
-    public ResponseEntity<List<Order>> getActiveCustomerOrders(){
+    public ResponseEntity<List<Orders>> getActiveCustomerOrders(){
         return new ResponseEntity<>(orderService.getActiveCustomerOrders(),HttpStatus.OK);
     }
 
     @GetMapping("/orders")
     @ResponseBody
-    public ResponseEntity<List<Order>> getAllCustomerOrders(){
+    public ResponseEntity<List<Orders>> getAllCustomerOrders(){
         return new ResponseEntity<>(orderService.getAllCustomerOrders(), HttpStatus.OK);
     }
 
     //Admin Endpoints
     @GetMapping("/admin/activeorders")
     @ResponseBody
-    public ResponseEntity<List<Order>> getAllActiveOrders(){
+    public ResponseEntity<List<Orders>> getAllActiveOrders(){
         return new ResponseEntity<>(orderService.getActiveOrders(),HttpStatus.OK);
     }
 
     @GetMapping("/admin/orders")
     @ResponseBody
-    public ResponseEntity<List<Order>> getAllOrders(){
+    public ResponseEntity<List<Orders>> getAllOrders(){
         return new ResponseEntity<>(orderService.getAllOrders(),HttpStatus.OK);
     }
 
     @DeleteMapping("/admin/removeorder")
-    public ResponseEntity<String> deleteOrder(@RequestBody Order order){
+    public ResponseEntity<String> deleteOrder(@RequestBody Orders order){
         orderService.deleteOrder(order);
-        return new ResponseEntity<>(("Order Number : " + order.getId() + " | Order removed"),HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(("Orders Number : " + order.getId() + " | Orders removed"),HttpStatus.ACCEPTED);
     }
 
     @DeleteMapping("/admin/removeorders-beforedate/{date}")

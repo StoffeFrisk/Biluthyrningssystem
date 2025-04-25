@@ -1,6 +1,6 @@
 package com.example.Biluthyrningssystem.services;
 
-import com.example.Biluthyrningssystem.entities.Order;
+import com.example.Biluthyrningssystem.entities.Orders;
 
 import java.sql.Date;
 import java.util.List;
@@ -8,13 +8,13 @@ import java.util.List;
 //BP
 public interface OrderService {
 //Customer
-    Order addOrder(Order order);
-    Order cancelOrder(Order order);
-    List<Order> getAllCustomerOrders();
-    List<Order> getActiveCustomerOrders();
+    Orders addOrder(Orders order);
+    Orders cancelOrder(Orders order);
+    List<Orders> getAllCustomerOrders();
+    List<Orders> getActiveCustomerOrders();
 //Admin
-    List<Order> getActiveOrders();
-    List<Order> getAllOrders();
-    void deleteOrder(Order order);
+    List<Orders> getActiveOrders();
+    List<Orders> getAllOrders();
+    void deleteOrder(Orders order);
     List<Long> deleteOrdersBeforeDate(Date date);
 }
