@@ -1,5 +1,4 @@
-/*Lynsey Fox*/
-
+-- Lynsey Fox
 INSERT INTO address (street, postal_code, city) VALUES
 ('Jönköpingsvägen', '55129', 'Huskvarna'),
 ('Älgstigen', '55339', 'Jönköping'),
@@ -14,7 +13,7 @@ INSERT INTO customer (personnummer, first_name, last_name, address_id, email, ph
 ('19881122-3456','Johan','Karlsson',4,'null','0800 00 1066'),
 ('19950505-7890','Elin','Andersson',5,'null','0800 00 1066');
 
-/*Ben Portsmouth*/
+--Ben Portsmouth
 INSERT INTO orders(personnummer,car_id,hire_start_date,hire_end_date,num_of_days_hired,total_price,order_cancelled) VALUES
 ('19850101-1234',null, '2025-04-20','2025-04-25', 5, 700.00, false),
 ('19751230-9101',null, '2022-04-20','2022-04-30', 10, 7000.00, true),
