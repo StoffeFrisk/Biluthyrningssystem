@@ -13,7 +13,7 @@ INSERT INTO customer (personnummer, first_name, last_name, address_id, email, ph
 ('19881122-3456','Johan','Karlsson',4,'null','0800 00 1066'),
 ('19950505-7890','Elin','Andersson',5,'null','0800 00 1066');
 
-<!-- Christoffer Frisk-->
+-- Christoffer Frisk
 INSERT INTO car (brand, model, registration_number, price_per_day, booked, in_service) VALUES
 ('Volvo', 'V70', 'ABC123', 499.0, FALSE, FALSE),
 ('Saab', '9-3', 'DEF456', 399.0, TRUE, FALSE),
