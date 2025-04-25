@@ -1,5 +1,6 @@
 package com.example.Biluthyrningssystem.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -16,6 +17,7 @@ public class Orders {
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "personnummer", nullable = true)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
+    @JsonIgnoreProperties("orders")
     private Customer customer;
 
     @OneToOne(cascade = CascadeType.PERSIST)

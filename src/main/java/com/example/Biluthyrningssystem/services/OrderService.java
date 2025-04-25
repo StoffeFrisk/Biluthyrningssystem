@@ -11,10 +11,10 @@ public interface OrderService {
     Orders addOrder(Orders order);
     Orders cancelOrder(Orders order);
     List<Orders> getAllCustomerOrders();
-    List<Orders> getActiveCustomerOrders();
+    List<Orders> getActiveCustomerOrders(String username);
 //Admin
     List<Orders> getActiveOrders();
     List<Orders> getAllOrders();
-    void deleteOrder(Orders order);
+    void deleteOrderById(Long Id);
     List<Long> deleteOrdersBeforeDate(Date date);
 }

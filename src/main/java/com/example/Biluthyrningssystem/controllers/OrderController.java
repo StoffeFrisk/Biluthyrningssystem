@@ -5,6 +5,8 @@ import com.example.Biluthyrningssystem.services.OrderServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,8 +40,9 @@ public class OrderController {
 
     @GetMapping("/activeorders")
     @ResponseBody
-    public ResponseEntity<List<Orders>> getActiveCustomerOrders(){
-        return new ResponseEntity<>(orderService.getActiveCustomerOrders(),HttpStatus.OK);
+    public ResponseEntity<List<Orders>> getActiveCustomerOrders(@AuthenticationPrincipal UserDetails userDetails){
+        System.out.println(userDetails.getUsername());
+        return new ResponseEntity<>(orderService.getActiveCustomerOrders(userDetails.getUsername()),HttpStatus.OK);
     }
 
     @GetMapping("/orders")
@@ -63,13 +66,13 @@ public class OrderController {
 
     @DeleteMapping("/admin/removeorder")
     public ResponseEntity<String> deleteOrder(@RequestBody Orders order){
-        orderService.deleteOrder(order);
-        return new ResponseEntity<>(("Orders Number : " + order.getId() + " | Orders removed"),HttpStatus.ACCEPTED);
+        orderService.deleteOrderById(order.getId());
+        return new ResponseEntity<>(("Orders Number : " + order.getId() + " | Order removed"),HttpStatus.ACCEPTED);
     }
 
     @DeleteMapping("/admin/removeorders-beforedate/{date}")
     public ResponseEntity<String> deleteOrdersBeforeDate(@PathVariable("date")Date date){
         List<Long> deletedOrders = orderService.deleteOrdersBeforeDate(date);
-        return new ResponseEntity<>(("Orders from before "+date+" : "+deletedOrders+ " | Orders Deleted"),HttpStatus.OK);
+        return new ResponseEntity<>(("Order IDs from before "+date+" : "+deletedOrders+ " | Orders Removed"),HttpStatus.OK);
     }
 }

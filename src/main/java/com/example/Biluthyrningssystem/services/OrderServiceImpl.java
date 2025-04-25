@@ -1,12 +1,15 @@
 package com.example.Biluthyrningssystem.services;
 
 import com.example.Biluthyrningssystem.entities.Orders;
+import com.example.Biluthyrningssystem.exceptions.ResourceNotFoundException;
 import com.example.Biluthyrningssystem.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 //BP
 @Service
@@ -37,30 +40,47 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Orders> getActiveCustomerOrders() {
+    public List<Orders> getActiveCustomerOrders(String username) {
         return List.of();
     }
 
     @Override
     public List<Orders> getActiveOrders() {
-        return List.of();
+        List<Orders> activeOrders = new ArrayList<>();
+        for (Orders order : getAllOrders()){
+            if (!order.isOrderCancelled()){
+                activeOrders.add(order);
+            }
+        }
+        return activeOrders;
     }
 
     @Override
     public List<Orders> getAllOrders() {
-        return List.of();
+        return orderRepository.findAll();
     }
 
 
     @Override
-    public void deleteOrder(Orders order) {
-        //Add exception checks
-        orderRepository.delete(order);
+    public void deleteOrderById(Long Id) {
+        Optional<Orders> tempOrder = orderRepository.findById(Id);
+        if (tempOrder.isPresent()){
+            orderRepository.deleteById(Id);
+        } else {
+            throw new ResourceNotFoundException("Order", "ID", Id);
+        }
     }
 
     @Override
     public List<Long> deleteOrdersBeforeDate(Date date) {
-        return List.of();
+        List<Long> ordersIDsToDelete = new ArrayList<>();
+        for (Orders order : getAllOrders()){
+            if (order.getHireStartDate().before(date)){
+                ordersIDsToDelete.add(order.getId());
+                deleteOrderById(order.getId());
+            }
+        }
+        return ordersIDsToDelete;
     }
 
 
