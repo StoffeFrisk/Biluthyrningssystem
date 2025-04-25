@@ -20,9 +20,10 @@ public class Orders {
     @JsonIgnoreProperties("orders")
     private Customer customer;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "car_id", nullable = true)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
+    //@JsonIgnoreProperties
     private Car car;
 
 

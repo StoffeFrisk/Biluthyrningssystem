@@ -14,7 +14,12 @@ INSERT INTO customer (personnummer, first_name, last_name, address_id, email, ph
 ('19950505-7890','Elin','Andersson',5,'null','0800 00 1066');
 
 --Ben Portsmouth
-INSERT INTO orders(personnummer,car_id,hire_start_date,hire_end_date,num_of_days_hired,total_price,order_cancelled) VALUES
-('19850101-1234',null, '2025-04-20','2025-04-25', 5, 700.00, false),
-('19751230-9101',null, '2022-04-20','2022-04-30', 10, 7000.00, true),
-('19950505-7890',null, '2025-06-10','2025-06-11', 1, 85.00, false);
+
+INSERT INTO car(brand, model, registration_number, price_per_day, booked, in_service) VALUES
+('Volvo', 'XC90','FBI 123', 90.00, false, false);
+
+
+INSERT INTO orders(personnummer,car_id,hire_start_date,hire_end_date,total_price,order_cancelled) VALUES
+('19850101-1234',1, '2025-04-20','2025-04-25', 700.00, false),
+('19751230-9101',1, '2022-04-20','2022-04-30', 7000.00, true),
+('19950505-7890',1, '2025-06-10','2025-06-11', 85.00, false);

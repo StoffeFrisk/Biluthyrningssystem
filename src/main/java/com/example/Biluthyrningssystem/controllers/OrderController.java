@@ -27,28 +27,27 @@ public class OrderController {
     //Customer Endpoints
     @PostMapping("/addorder")
     @ResponseBody
-    public ResponseEntity<Orders> addOrder(@RequestBody Orders order){
-        return new ResponseEntity<>(orderService.addOrder(order), HttpStatus.CREATED);
+    public ResponseEntity<Orders> addOrder(@RequestBody Orders order, @AuthenticationPrincipal UserDetails userDetails){
+        return new ResponseEntity<>(orderService.addOrder(order, userDetails.getUsername()), HttpStatus.CREATED);
     }
 
     @PutMapping("/cancelorder")
     @ResponseBody
-    public ResponseEntity<String> cancelOrder(@RequestBody Orders order){
-        orderService.cancelOrder(order);
-        return new ResponseEntity<>(("Orders number : " + order.getId() + " | Orders cancelled."),HttpStatus.ACCEPTED);
+    public ResponseEntity<String> cancelOrder(@RequestBody Orders order, @AuthenticationPrincipal UserDetails userDetails){
+        orderService.cancelOrder(order, userDetails.getUsername());
+        return new ResponseEntity<>(("Order number : " + order.getId() + " | Order cancelled."),HttpStatus.ACCEPTED);
     }
 
     @GetMapping("/activeorders")
     @ResponseBody
     public ResponseEntity<List<Orders>> getActiveCustomerOrders(@AuthenticationPrincipal UserDetails userDetails){
-        System.out.println(userDetails.getUsername());
         return new ResponseEntity<>(orderService.getActiveCustomerOrders(userDetails.getUsername()),HttpStatus.OK);
     }
 
     @GetMapping("/orders")
     @ResponseBody
-    public ResponseEntity<List<Orders>> getAllCustomerOrders(){
-        return new ResponseEntity<>(orderService.getAllCustomerOrders(), HttpStatus.OK);
+    public ResponseEntity<List<Orders>> getAllCustomerOrders(@AuthenticationPrincipal UserDetails userDetails){
+        return new ResponseEntity<>(orderService.getAllCustomerOrders(userDetails.getUsername()), HttpStatus.OK);
     }
 
     //Admin Endpoints
@@ -67,7 +66,7 @@ public class OrderController {
     @DeleteMapping("/admin/removeorder")
     public ResponseEntity<String> deleteOrder(@RequestBody Orders order){
         orderService.deleteOrderById(order.getId());
-        return new ResponseEntity<>(("Orders Number : " + order.getId() + " | Order removed"),HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(("Order Number : " + order.getId() + " | Order removed"),HttpStatus.ACCEPTED);
     }
 
     @DeleteMapping("/admin/removeorders-beforedate/{date}")
