@@ -1,7 +1,6 @@
 package com.example.Biluthyrningssystem.entities;
 
 import jakarta.persistence.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class Customer {
     @Column(length = 20, nullable = false)
     private String phone;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer",  fetch = FetchType.LAZY)
     private List<Orders> orders = new ArrayList<>();
 
     public Customer() {}
