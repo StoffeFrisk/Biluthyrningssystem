@@ -4,12 +4,11 @@ import com.example.Biluthyrningssystem.entities.Customer;
 import com.example.Biluthyrningssystem.services.CustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/api/v1")
 public class CustomerController {       //Lynsey Fox
 
@@ -25,9 +24,9 @@ public class CustomerController {       //Lynsey Fox
         return ResponseEntity.ok(customerService.getAllCustomers());
     }
 
-    @GetMapping("/admin/customer/{id}")
-    public ResponseEntity<Customer> getCustomerById(@PathVariable String id) {
-        return ResponseEntity.ok(customerService.getCustomerById(id));
+    @GetMapping("/admin/customer/{personnummer}")
+    public ResponseEntity<Customer> getCustomerByPersonnummer(@PathVariable String personnummer) {
+        return ResponseEntity.ok(customerService.getCustomerByPersonnummer(personnummer));
     }
 
     @PutMapping("/updateinfo")

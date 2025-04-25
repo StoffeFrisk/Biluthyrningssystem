@@ -1,4 +1,4 @@
-<!-- CF_BIL_6-->
+<!-- Christoffer Frisk-->
 <Configuration status="info">
     <properties>
         <property name="layout">%d[%t] %highlight %5level %logger - %m%n</property>

@@ -23,7 +23,6 @@ public class Orders {
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "car_id", nullable = true)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
-    //@JsonIgnoreProperties
     private Car car;
 
 

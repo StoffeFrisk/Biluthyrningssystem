@@ -28,7 +28,7 @@ public class Customer {
     @Column(length = 20, nullable = false)
     private String phone;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer",  fetch = FetchType.LAZY)
     @JsonIgnoreProperties("customer")
     private List<Orders> orders = new ArrayList<>();
 
