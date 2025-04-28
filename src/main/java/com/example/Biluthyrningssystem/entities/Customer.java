@@ -1,6 +1,8 @@
 package com.example.Biluthyrningssystem.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +29,7 @@ public class Customer {
     private String phone;
 
     @OneToMany(mappedBy = "customer",  fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("customer")
     private List<Orders> orders = new ArrayList<>();
 
     public Customer() {}

@@ -1,12 +1,4 @@
-
-
-INSERT INTO customer (personnummer, first_name, last_name, address_id, email, phone) VALUES
-('19850101-1234','Anna','Svensson',1,,),
-('19900215-5678','Erik','Johansson',2,,),
-('19751230-9101','Maria','Lindberg',3,,),
-('19881122-3456','Johan','Karlsson',4,,),
-(' 19950505-7890','Elin','Andersson',5,,);
-
+-- Lynsey Fox
 INSERT INTO address (street, postal_code, city) VALUES
 ('Jönköpingsvägen', '55129', 'Huskvarna'),
 ('Älgstigen', '55339', 'Jönköping'),
@@ -21,16 +13,17 @@ INSERT INTO customer (personnummer, first_name, last_name, address_id, email, ph
 ('19881122-3456','Johan','Karlsson',4,'null','0800 00 1066'),
 ('19950505-7890','Elin','Andersson',5,'null','0800 00 1066');
 
---Ben Portsmouth
-INSERT INTO orders(personnummer,car_id,hire_start_date,hire_end_date,num_of_days_hired,total_price,order_cancelled) VALUES
-('19850101-1234',null, '2025-04-20','2025-04-25', 5, 700.00, false),
-('19751230-9101',null, '2022-04-20','2022-04-30', 10, 7000.00, true),
-('19950505-7890',null, '2025-06-10','2025-06-11', 1, 85.00, false);
-
-<!-- Christoffer Frisk-->
+-- Christoffer Frisk
 INSERT INTO car (brand, model, registration_number, price_per_day, booked, in_service) VALUES
 ('Volvo', 'V70', 'ABC123', 499.0, FALSE, FALSE),
 ('Saab', '9-3', 'DEF456', 399.0, TRUE, FALSE),
 ('Tesla', 'Model 3', 'TES789', 899.0, FALSE, FALSE),
 ('BMW', '320i', 'BMW320', 599.0, FALSE, TRUE),
 ('Toyota', 'Corolla', 'TOY111', 459.0, TRUE, TRUE);
+
+--Ben Portsmouth
+INSERT INTO orders(personnummer,car_id,hire_start_date,hire_end_date,total_price,order_cancelled) VALUES
+('19850101-1234',1, '2025-04-20','2025-04-25', 700.00, false),
+('19751230-9101',1, '2022-04-20','2022-04-30', 7000.00, true),
+('19950505-7890',1, '2025-06-10','2025-06-11', 85.00, false);
+
