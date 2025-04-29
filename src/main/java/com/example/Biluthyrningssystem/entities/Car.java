@@ -9,7 +9,7 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(length = 15, nullable = false)
     private String brand;
@@ -29,7 +29,7 @@ public class Car {
     public Car() {
     }
 
-    public Car(int id, String brand, String model, String registrationNumber, double pricePerDay, boolean booked, boolean inService) {
+    public Car(Long id, String brand, String model, String registrationNumber, double pricePerDay, boolean booked, boolean inService) {
         this.id = id;
         this.brand = brand;
         this.model = model;
@@ -39,11 +39,11 @@ public class Car {
         this.inService = inService;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
