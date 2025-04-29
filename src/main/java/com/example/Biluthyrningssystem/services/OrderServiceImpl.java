@@ -37,13 +37,14 @@ public class OrderServiceImpl implements OrderService {
     public Orders addOrder(Orders order, String username) {
         Optional<Customer> customerCheck = customerRepository.findById(username);
         if (customerCheck.isPresent()){
+            if (!order.getCustomer().getPersonnummer().equals(username) && order.getCustomer().getPersonnummer() != null){
+                throw new UnauthorisedRequestException("User", username, "create new order for user: "+order.getCustomer().getPersonnummer(), "Users can only create orders for themselves");
+            }
             order.setCustomer(customerCheck.get());
         } else {
             throw new ResourceNotFoundException("Customer", "ID", order.getCustomer().getPersonnummer());
         }
-        if (order.getCustomer().getPersonnummer() != username){
-            throw new UnauthorisedRequestException("User", username, "create new order", "Users can only create orders for themselves");
-        }
+
 
         checkOrderInformation(order);
         //Add exception checks
@@ -135,11 +136,14 @@ public class OrderServiceImpl implements OrderService {
         } else {
             throw new ResourceNotFoundException("Car", "ID", order.getCar().getId());
         }
-        if (order.getHireStartDate() == null || order.getHireStartDate().after(order.getHireEndDate())){
+        if (order.getHireStartDate() == null){
             throw new IncorrectInputException("Order", "Hire Start Date", order.getHireStartDate(),"YYYY-MM-DD","Start date must be BEFORE end date.");
         }
-        if (order.getHireEndDate() == null || order.getHireEndDate().before(order.getHireStartDate())){
+        if (order.getHireEndDate() == null){
             throw new IncorrectInputException("Order", "Hire End Date", order.getHireStartDate(),"YYYY-MM-DD","End date must be AfTER end date.");
+        }
+        if (order.getHireStartDate().after(order.getHireEndDate())){
+            throw new IncorrectInputException("Order", "Hire Start-End Dates", ("Start:"+order.getHireStartDate()+"->End:"+order.getHireEndDate()),"YYY-MM-DD","Start date must be BEFORE end date.");
         }
         double priceCalc = (order.getHireEndDate().compareTo(order.getHireStartDate()))*order.getCar().getPricePerDay();
         if ((Double)order.getTotalPrice() == null || order.getTotalPrice() == Double.valueOf(0)){
