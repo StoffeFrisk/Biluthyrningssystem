@@ -8,7 +8,7 @@ public interface CustomerService {
 
     public List<Customer> getAllCustomers();
 
-    public Customer getCustomerById(String id);
+    public Customer getCustomerByPersonnummer(String personnummer);
 
     public Customer addCustomer(Customer customer);
 

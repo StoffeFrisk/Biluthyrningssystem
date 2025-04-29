@@ -1,5 +1,6 @@
 package com.example.Biluthyrningssystem.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -14,11 +15,12 @@ public class Orders {
     private long id;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "personnummer", nullable = true)
+    @JoinColumn(name = "personnummer", nullable = false)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
+    @JsonIgnoreProperties("orders")
     private Customer customer;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "car_id", nullable = true)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
     private Car car;
@@ -30,11 +32,8 @@ public class Orders {
     @Column(length = 10)
     private Date hireEndDate;
 
-    @Column(length = 3)
-    private int numOfDaysHired;
-
-    @Column(length = 7)
-    private float totalPrice;
+    @Column(length = 7, nullable = true)
+    private double totalPrice;
 
     @Column(nullable = true)
     private boolean orderCancelled;
@@ -42,13 +41,12 @@ public class Orders {
     public Orders() {
     }
 
-    public Orders(long id, Customer customer, Car car, Date hireStartDate, Date hireEndDate, int numOfDaysHired, float totalPrice, boolean orderCancelled) {
+    public Orders(long id, Customer customer, Car car, Date hireStartDate, Date hireEndDate, double totalPrice, boolean orderCancelled) {
         this.id = id;
         this.customer = customer;
         this.car = car;
         this.hireStartDate = hireStartDate;
         this.hireEndDate = hireEndDate;
-        this.numOfDaysHired = numOfDaysHired;
         this.totalPrice = totalPrice;
         this.orderCancelled = orderCancelled;
     }
@@ -93,19 +91,11 @@ public class Orders {
         this.hireEndDate = hireEndDate;
     }
 
-    public int getNumOfDaysHired() {
-        return numOfDaysHired;
-    }
-
-    public void setNumOfDaysHired(int numOfDaysHired) {
-        this.numOfDaysHired = numOfDaysHired;
-    }
-
-    public float getTotalPrice() {
+    public double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(float totalPrice) {
+    public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
 
