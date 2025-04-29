@@ -1,5 +1,6 @@
 package com.example.Biluthyrningssystem.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -10,14 +11,25 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
+    //Christoffer Frisk. Lägger till konstruktor för filtret
+    private final MdcLoggingFilter mdcLoggingFilter;
+
+    @Autowired
+    public SecurityConfig(MdcLoggingFilter mdcLoggingFilter) {
+        this.mdcLoggingFilter = mdcLoggingFilter;
+    }
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                //Christoffer Frisk. Adderar lite för logg, en rad under.
+                .addFilterBefore(mdcLoggingFilter, UsernamePasswordAuthenticationFilter.class)
                 .httpBasic(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
