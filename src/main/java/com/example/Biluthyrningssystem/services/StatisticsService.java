@@ -17,4 +17,5 @@ public interface StatisticsService {
     // Extra, ej obligatoriska
     List<StatisticsDTO> getMostRentedCarsByBrand(String brand);
     List<StatisticsDTO> getMostRentedCarsForPeriod(String startDate, String endDate);
+
 }
