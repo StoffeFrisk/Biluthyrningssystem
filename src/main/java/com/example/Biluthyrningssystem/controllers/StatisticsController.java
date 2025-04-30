@@ -23,7 +23,7 @@ public class StatisticsController {
         this.statisticsService = statisticsService;
     }
 
-    @GetMapping("")
+    @GetMapping("/statistics")
     public List<StatisticsDTO> getStatistics() {
         System.out.println("getStatistics");
         return statisticsService.getStatistics();
