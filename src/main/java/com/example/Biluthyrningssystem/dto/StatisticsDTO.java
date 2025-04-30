@@ -1,5 +1,7 @@
 // Niklas Einarsson
 
+// Används inte nu
+
 package com.example.Biluthyrningssystem.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
