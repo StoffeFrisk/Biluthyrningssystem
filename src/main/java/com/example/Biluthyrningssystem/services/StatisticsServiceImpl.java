@@ -33,61 +33,19 @@ public class StatisticsServiceImpl implements StatisticsService {
         return List.of();
     }
 
-    // TODO Lägga till exception för startDate-endDate. Kontrollera så att startDate är tidigare än endDate.
     @Override
     public Map<String, Long> getMostRentedBrandForPeriod(String startDate, String endDate) {
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate start = LocalDate.parse(startDate, formatter);
-        LocalDate end = LocalDate.parse(endDate, formatter);
-
-        List<Orders> allOrders = orderRepository.findAll();
-
-        Map<String, Long> brandCounts = new HashMap<>();
-        for (Orders order : allOrders) {
-            LocalDate hireStart = order.getHireStartDate().toLocalDate();
-
-            if (hireStart.isEqual(start) || hireStart.isBefore(end) && hireStart.isAfter(start) || hireStart.isEqual(end)) {
-                Car car = order.getCar();
-                if (car != null) {
-                    String brand = car.getBrand();
-                    brandCounts.put(brand, brandCounts.getOrDefault(brand, 0L) + 1);
-                }
-            }
-        }
-
-        return brandCounts.entrySet().stream()
-                .max(Map.Entry.comparingByValue())
-                .map(entry -> Map.of(entry.getKey(), entry.getValue()))
-                .orElse(Collections.emptyMap());
+        return Map.of();
     }
 
-
-    // TODO Lägga till exception för carId.
     @Override
     public Map<String, Object> getRentalCountByCar(Long carId) {
-
-        List<Orders> allOrders = orderService.getAllOrders();
-        long count = allOrders.stream().filter(order -> order.getCar() != null && order.getCar().getId() == carId).count();
-        System.out.println(count);
-
-        Map<String, Object> result = new LinkedHashMap<>();
-        result.put("car id", carId);
-        result.put("count", count);
-
-        return result;
+        return Map.of();
     }
 
     @Override
     public Map<Integer, Long> getRentalDurationsByDays() {
-        List<Orders> allOrders = orderService.getAllOrders();
-
-        return allOrders.stream().filter(order -> order.getHireStartDate() != null && order.getHireEndDate() != null)
-                .map(order -> {
-                    long days = ChronoUnit.DAYS.between(order.getHireStartDate().toLocalDate(), order.getHireEndDate().toLocalDate());
-                    return (int) days;
-                })
-                .collect(Collectors.groupingBy(days -> days, Collectors.counting()));
+        return Map.of();
     }
 
     @Override
@@ -104,4 +62,5 @@ public class StatisticsServiceImpl implements StatisticsService {
     public double getTotalRevenueForPeriod(String startDate, String endDate) {
         return 0;
     }
+
 }
