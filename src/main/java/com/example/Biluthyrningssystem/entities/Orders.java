@@ -15,7 +15,7 @@ public class Orders {
     private long id;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "personnummer", nullable = false)
+    @JoinColumn(name = "personnummer", nullable = true)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
     @JsonIgnoreProperties("orders")
     private Customer customer;
@@ -41,8 +41,7 @@ public class Orders {
     public Orders() {
     }
 
-    public Orders(long id, Customer customer, Car car, Date hireStartDate, Date hireEndDate, double totalPrice, boolean orderCancelled) {
-        this.id = id;
+    public Orders(Customer customer, Car car, Date hireStartDate, Date hireEndDate, double totalPrice, boolean orderCancelled) {
         this.customer = customer;
         this.car = car;
         this.hireStartDate = hireStartDate;

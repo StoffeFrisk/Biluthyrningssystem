@@ -29,6 +29,15 @@ public class Car {
     public Car() {
     }
 
+    public Car(String brand, String model, String registrationNumber, double pricePerDay, boolean booked, boolean inService) {
+        this.brand = brand;
+        this.model = model;
+        this.registrationNumber = registrationNumber;
+        this.pricePerDay = pricePerDay;
+        this.booked = booked;
+        this.inService = inService;
+    }
+
     public Car(int id, String brand, String model, String registrationNumber, double pricePerDay, boolean booked, boolean inService) {
         this.id = id;
         this.brand = brand;
