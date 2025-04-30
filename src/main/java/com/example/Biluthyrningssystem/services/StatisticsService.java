@@ -1,21 +1,21 @@
+// Niklas Einarsson
+
 package com.example.Biluthyrningssystem.services;
 
 import com.example.Biluthyrningssystem.dto.StatisticsDTO;
 
 import java.util.List;
+import java.util.Map;
 
 public interface StatisticsService {
 
     List<StatisticsDTO> getStatistics();
-    List<StatisticsDTO> getMostRentedBrandForPeriod(String startDate, String endDate);
-    List<StatisticsDTO> getRentalCountByCar(String brand, String startDate, String endDate);
-    double getAverageRentalDurationByDays();
+    Map<String, Long> getMostRentedBrandForPeriod(String startDate, String endDate);
+    Map<String, Object> getRentalCountByCar(Long carId);
+    Map<Integer, Long> getRentalDurationsByDays();
+
+    //TODO
     double getAverageCostPerOrder();
     double getTotalRevenuePerCar();
     double getTotalRevenueForPeriod(String startDate, String endDate);
-
-    // Extra, ej obligatoriska
-    List<StatisticsDTO> getMostRentedCarsByBrand(String brand);
-    List<StatisticsDTO> getMostRentedCarsForPeriod(String startDate, String endDate);
-
 }

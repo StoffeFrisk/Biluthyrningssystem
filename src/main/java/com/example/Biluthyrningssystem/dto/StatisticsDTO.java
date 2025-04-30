@@ -1,10 +1,16 @@
+// Niklas Einarsson
+
 package com.example.Biluthyrningssystem.dto;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class StatisticsDTO {
 
     private String carBrand;
     private String carModel;
     private long orderCount;
+
+
     private double totalRevenue;
     private double averageRentalDuration;
     private double averageCostPerOrder;
