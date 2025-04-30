@@ -107,15 +107,4 @@ public class StatisticsServiceImpl implements StatisticsService {
     public double getTotalRevenueForPeriod(String startDate, String endDate) {
         return 0;
     }
-
-    @Override
-    public List<StatisticsDTO> getMostRentedCarsByBrand(String brand) {
-        return null;
-    }
-
-    @Override
-    public List<StatisticsDTO> getMostRentedCarsForPeriod(String startDate, String endDate) {
-        return List.of();
-    }
-
 }
