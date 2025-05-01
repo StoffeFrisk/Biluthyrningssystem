@@ -30,13 +30,26 @@ public class StatisticsServiceImpl implements StatisticsService {
     @Override
     public Map<String, Object> getStatistics() {
 
-        Map<String, Object> statistics = new HashMap<>();
+        Map<String, Object> statistics = new LinkedHashMap<>();
 
         Map<String, Double> totalRevenue2025 = getTotalRevenueForPeriod("2025-01-01", "2025-12-31");
         statistics.put("Intäkter 2025", totalRevenue2025.get("Totala intäkter för perioden"));
 
         Map<String, Double> revenuePerOrder = getAverageCostPerOrder();
         statistics.put("Genomsnittlig intäkt per bokning", revenuePerOrder.get("Genomsnittlig kostnad per bokning"));
+
+        Map<String, Object> endpoints = new LinkedHashMap<>();
+
+        endpoints.put("Tillgängliga endpoints", List.of(
+                "/statistics",
+                "/statistics/mostrentedbrand/period/{startDate}/{endDate}",
+                "/statistics/carrentalcount/{carId}",
+                "/statistics/rentaldurations",
+                "/statistics/averageordercost",
+                "/statistics/revenuepercar",
+                "/statistics/revenue/period/{startDate}/{endDate}"
+        ));
+        statistics.putAll(endpoints);
 
         return statistics;
     }

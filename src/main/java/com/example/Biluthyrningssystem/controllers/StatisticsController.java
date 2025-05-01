@@ -73,7 +73,7 @@ public class StatisticsController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/statistics/populardurations")
+    @GetMapping("/statistics/rentaldurations")
     public ResponseEntity<Map<String, Object>> getPopularDurations() {
         Map<Integer, Long> result = statisticsService.getRentalDurationsByDays();
 
@@ -90,7 +90,7 @@ public class StatisticsController {
 
     }
 
-    @GetMapping("/statistics/averagecost")
+    @GetMapping("/statistics/averageordercost")
     public ResponseEntity<Map<String, Double>> getAverageCost() {
         Map<String, Double> result = statisticsService.getAverageCostPerOrder();
         return ResponseEntity.ok(result);
