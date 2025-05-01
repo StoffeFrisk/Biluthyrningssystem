@@ -2,7 +2,6 @@
 
 package com.example.Biluthyrningssystem.services;
 
-import com.example.Biluthyrningssystem.dto.StatisticsDTO;
 import com.example.Biluthyrningssystem.entities.Car;
 import com.example.Biluthyrningssystem.entities.Orders;
 import com.example.Biluthyrningssystem.repositories.OrderRepository;
@@ -27,13 +26,22 @@ public class StatisticsServiceImpl implements StatisticsService {
         this.orderService = orderService;
     }
 
-
+    // TODO Lägga till mer data för overview
     @Override
-    public List<StatisticsDTO> getStatistics() {
-        return List.of();
+    public Map<String, Object> getStatistics() {
+
+        Map<String, Object> statistics = new HashMap<>();
+
+        Map<String, Double> totalRevenue2025 = getTotalRevenueForPeriod("2025-01-01", "2025-12-31");
+        statistics.put("Intäkter 2025", totalRevenue2025.get("Totala intäkter för perioden"));
+
+        Map<String, Double> revenuePerOrder = getAverageCostPerOrder();
+        statistics.put("Genomsnittlig intäkt per bokning", revenuePerOrder.get("Genomsnittlig kostnad per bokning"));
+
+        return statistics;
     }
 
-    // TODO Lägga till exception för startDate-endDate. Kontrollera så att startDate är tidigare än endDate.
+    // TODO Lägga till exception för startDate-endDate. Kontrollera så att startDate är tidigare än endDate. + Fixa Loggning.
     @Override
     public Map<String, Long> getMostRentedBrandForPeriod(String startDate, String endDate) {
 
@@ -56,14 +64,23 @@ public class StatisticsServiceImpl implements StatisticsService {
             }
         }
 
-        return brandCounts.entrySet().stream()
-                .max(Map.Entry.comparingByValue())
-                .map(entry -> Map.of(entry.getKey(), entry.getValue()))
-                .orElse(Collections.emptyMap());
+            return brandCounts.entrySet().stream()
+                    .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
+                    .collect(Collectors.toMap(
+                            Map.Entry::getKey,
+                            Map.Entry::getValue,
+                            (e1, e2) -> e1,
+                            LinkedHashMap::new
+                    ));
+
+//                 return brandCounts.entrySet().stream()
+//                .max(Map.Entry.comparingByValue())
+//                .map(entry -> Map.of(entry.getKey(), entry.getValue()))
+//                .orElse(Collections.emptyMap());
     }
 
 
-    // TODO Lägga till exception för carId.
+    // TODO Lägga till exception för carId + fixa loggning.
     @Override
     public Map<String, Object> getRentalCountByCar(Long carId) {
 
@@ -78,6 +95,7 @@ public class StatisticsServiceImpl implements StatisticsService {
         return result;
     }
 
+    // TODO Exceptions + loggning
     @Override
     public Map<Integer, Long> getRentalDurationsByDays() {
         List<Orders> allOrders = orderService.getAllOrders();
@@ -89,19 +107,71 @@ public class StatisticsServiceImpl implements StatisticsService {
                 })
                 .collect(Collectors.groupingBy(days -> days, Collectors.counting()));
     }
-
+    // TODO Exceptions + loggning
     @Override
-    public double getAverageCostPerOrder() {
-        return 0;
+    public Map<String, Double> getAverageCostPerOrder() {
+
+        List<Orders> allOrders = orderService.getAllOrders();
+
+        List<Orders> ordersToCalculate = allOrders.stream().filter(order -> order.getHireStartDate() != null).collect(Collectors.toList());
+
+        if (ordersToCalculate.isEmpty()) {
+            return Collections.emptyMap();
+        }
+
+        double totalRevenue = ordersToCalculate.stream()
+                .mapToDouble(Orders::getTotalPrice)
+                .sum();
+
+        double average = totalRevenue / ordersToCalculate.size();
+        average = Math.round(average * 100) / 100.0;
+
+        return Map.of("Genomsnittlig kostnad per bokning", average);
     }
 
+    // TODO Exceptions + loggning
     @Override
-    public double getTotalRevenuePerCar() {
-        return 0;
-    }
+    public Map<Long, Double> getTotalRevenuePerCar() {
 
+        List<Orders> allOrders = orderService.getAllOrders();
+
+        Map<Long, Double> revenuePerCar = new HashMap<>();
+
+        for (Orders order : allOrders) {
+            if (order.getCar() != null) {
+                Long carId = order.getCar().getId();
+                double totalPrice = order.getTotalPrice();
+                revenuePerCar.put(carId, revenuePerCar.getOrDefault(carId, 0.0) + totalPrice);
+
+            }
+        }
+
+        return revenuePerCar.entrySet().stream()
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        e -> Math.round(e.getValue() * 100) / 100.0
+                ));
+    }
+    // TODO Exceptions + loggning
     @Override
-    public double getTotalRevenueForPeriod(String startDate, String endDate) {
-        return 0;
+    public Map<String, Double> getTotalRevenueForPeriod(String startDate, String endDate) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate start = LocalDate.parse(startDate, formatter);
+        LocalDate end = LocalDate.parse(endDate, formatter);
+
+        List<Orders> allOrders = orderService.getAllOrders();
+
+        double totalRevenue = allOrders.stream()
+                .filter(order -> {
+                    LocalDate hireStart = order.getHireStartDate().toLocalDate();
+                    return (hireStart.isEqual(start) || hireStart.isAfter(start)) &&
+                            (hireStart.isEqual(end) || hireStart.isBefore(end));
+                })
+                .mapToDouble(Orders::getTotalPrice)
+                .sum();
+
+        totalRevenue = Math.round(totalRevenue * 100) / 100.0;
+
+        return Map.of("Totala intäkter för perioden", totalRevenue);
     }
 }
