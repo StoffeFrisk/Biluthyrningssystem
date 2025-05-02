@@ -25,9 +25,6 @@ class OrderRepositoryTest {
     private CarRepository carRepositoryMock;
 
     @Mock
-    private AddressRepository addressRepositoryMock;
-
-    @Mock
     private CustomerRepository customerRepositoryMock;
 
     private static Orders order;
@@ -44,7 +41,7 @@ class OrderRepositoryTest {
     }
 
     @Test
-    void findOrderByIDShouldReturnPresent() {
+    void findOrderByIDShouldReturnTrue() {
         orderRepository.save(order);
 
         Optional<Orders> expectedOrder = orderRepository.findById(1L);
