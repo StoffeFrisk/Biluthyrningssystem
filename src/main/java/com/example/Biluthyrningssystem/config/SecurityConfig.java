@@ -1,3 +1,5 @@
+// Niklas Einarsson
+
 package com.example.Biluthyrningssystem.config;
 
 import org.springframework.context.annotation.Bean;
@@ -21,10 +23,11 @@ public class SecurityConfig {
                 .httpBasic(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/api/v1/**").hasRole("CUSTOMER")
+                        .requestMatchers("/api/v1/**").hasRole("USER")
                         .requestMatchers("/h2-console/**").permitAll()
                         .anyRequest().authenticated()
                 )
+                .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable())) // Rad för att fixa h2-console
                 .csrf(csrf -> csrf.disable());
         return http.build();
     }
@@ -40,36 +43,35 @@ public class SecurityConfig {
         UserDetails annasvensson = User
                 .withUsername("19850101-1234")
                 .password("{noop}1234")
-                .roles("CUSTOMER")
+                .roles("USER")
                 .build();
 
         UserDetails erikjohansson = User
                 .withUsername("19900215-5678")
                 .password("{noop}5678")
-                .roles("CUSTOMER")
+                .roles("USER")
                 .build();
 
         UserDetails marialindberg = User
                 .withUsername("19751230-9101")
                 .password("{noop}9101")
-                .roles("CUSTOMER")
+                .roles("USER")
                 .build();
 
         UserDetails johankarlsson = User
                 .withUsername("19881122-3456")
                 .password("{noop}3456")
-                .roles("CUSTOMER")
+                .roles("USER")
                 .build();
 
         UserDetails elinandersson = User
                 .withUsername("19950505-7890")
                 .password("{noop}7890")
-                .roles("CUSTOMER")
+                .roles("USER")
                 .build();
 
         return new InMemoryUserDetailsManager(admin, annasvensson, erikjohansson, marialindberg, johankarlsson, elinandersson);
     }
-
 
 
 }
