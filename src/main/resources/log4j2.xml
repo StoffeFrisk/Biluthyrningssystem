@@ -1,4 +1,4 @@
-<!-- Christoffer Frisk-->
+<!--Christoffer Frisk-->
 <Configuration status="info">
     <Properties>
         <Property name="layout">[%X{user}] %d [%t] %highlight{%5level} %logger - %m%n</Property>
@@ -9,18 +9,24 @@
             <PatternLayout pattern="${layout}"/>
         </Console>
 
-        <File name="InfoFile" fileName="logs/app.log" append="true">
+        <File name="LogFile"
+              fileName="logs/app.log"
+              append="true">
             <PatternLayout pattern="${layout}"/>
             <LevelRangeFilter minLevel="INFO" maxLevel="WARN"
                               onMatch="ACCEPT" onMismatch="DENY"/>
         </File>
 
-        <File name="ErrorFile" fileName="logs/error.log" append="true">
+        <File name="ErrorFile"
+              fileName="logs/error.log"
+              append="true">
             <PatternLayout pattern="${layout}"/>
             <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
         </File>
 
-        <File name="BookingFile" fileName="logs/booking.log" append="true">
+        <File name="BookingFile"
+              fileName="logs/booking.log"
+              append="true">
             <PatternLayout pattern="${layout}"/>
         </File>
     </Appenders>
@@ -28,7 +34,7 @@
     <Loggers>
         <Root level="info">
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="InfoFile"/>
+            <AppenderRef ref="LogFile"/>
             <AppenderRef ref="ErrorFile"/>
         </Root>
 
