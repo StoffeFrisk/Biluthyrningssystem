@@ -85,6 +85,7 @@ public class StatisticsController {
             details.put("Dagar: " + days, "Bokningar: " + frequency);
         });
 
+
         response.put("längder", details);
         return ResponseEntity.ok(response);
 
