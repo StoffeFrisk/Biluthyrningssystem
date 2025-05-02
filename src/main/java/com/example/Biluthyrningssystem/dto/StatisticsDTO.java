@@ -4,6 +4,7 @@
 
 package com.example.Biluthyrningssystem.dto;
 
+import com.example.Biluthyrningssystem.entities.Orders;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class StatisticsDTO {
@@ -29,11 +30,12 @@ public class StatisticsDTO {
     }
 
 
-    public StatisticsDTO(String carBrand, String carModel, long orderCount) {
-        this.carBrand = carBrand;
-        this.carModel = carModel;
+    public StatisticsDTO(Orders orders, long orderCount) {
+        this.carBrand = orders.getCar().getBrand();
+        this.carModel = orders.getCar().getModel();
         this.orderCount = orderCount;
     }
+
 
 
     public String getCarBrand() {
