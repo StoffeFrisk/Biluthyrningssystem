@@ -1,8 +1,8 @@
 package com.example.Biluthyrningssystem.entities;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,8 +28,10 @@ public class Customer {
     @Column(length = 20, nullable = false)
     private String phone;
 
-    @OneToMany(mappedBy = "customer",  fetch = FetchType.LAZY)
-    @JsonIgnoreProperties("customer")
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.REMOVE)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Orders> orders = new ArrayList<>();
 
     public Customer() {}
