@@ -35,12 +35,12 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer getCustomerById(String id) {
-        Optional<Customer> schrodingersCustomer = customerRepository.findById(id);
+    public Customer getCustomerByPersonnummer(String personnummer) {
+        Optional<Customer> schrodingersCustomer = customerRepository.findById(personnummer);
         if(schrodingersCustomer.isPresent()){
             return schrodingersCustomer.get();
         }
-        throw new ResourceNotFoundException("Customer", "Id", id);
+        throw new ResourceNotFoundException("Customer", "personnummer", personnummer);
     }
 
     @Override
@@ -90,7 +90,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer updateCustomer(Customer customerToUpdate) {
-        Customer existing = getCustomerById(customerToUpdate.getPersonnummer());
+        Customer existing = getCustomerByPersonnummer(customerToUpdate.getPersonnummer());
 
         existing.setFirstName(customerToUpdate.getFirstName());
         existing.setLastName(customerToUpdate.getLastName());
@@ -107,13 +107,13 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void deleteCustomer(String id) {
-        Optional<Customer> schrodingersCustomer = customerRepository.findById(id);
+    public void deleteCustomer(String personnummer) {
+        Optional<Customer> schrodingersCustomer = customerRepository.findById(personnummer);
         if(schrodingersCustomer.isPresent()){
             customerRepository.delete(schrodingersCustomer.get());
             return;
         }else
         // Implementera loggning
-        throw new ResourceNotFoundException("Customer", "personnumer", id);
+        throw new ResourceNotFoundException("Customer", "personnumer", personnummer);
     }
 }

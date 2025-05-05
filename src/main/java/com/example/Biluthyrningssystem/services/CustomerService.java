@@ -8,11 +8,11 @@ public interface CustomerService {
 
     public List<Customer> getAllCustomers();
 
-    public Customer getCustomerById(String id);
+    public Customer getCustomerByPersonnummer(String personnummer);
 
     public Customer addCustomer(Customer customer);
 
     public Customer updateCustomer(Customer newCustomer);
 
-    public void deleteCustomer(String id);
+    public void deleteCustomer(String personnummer);
 }
