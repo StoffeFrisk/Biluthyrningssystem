@@ -7,11 +7,11 @@ INSERT INTO address (street, postal_code, city) VALUES
 ('789 Pine Road', '54321', 'Ogdenville');
 
 INSERT INTO customer (personnummer, first_name, last_name, address_id, email, phone) VALUES
-('19850101-1234','Anna','Svensson',1,'anna.svensson@hotmail.com','0800 00 1066'),
-('19900215-5678','Erik','Johansson',2,'erik.johansson@hotmail.com','0800 00 1066'),
-('19751230-9101','Maria','Lindberg',3,'maria.lindberg@hotmail.com','0800 00 1066'),
-('19881122-3456','Johan','Karlsson',4,'johan.karlsson@hotmail.com','0800 00 1066'),
-('19950505-7890','Elin','Andersson',5,'elin.andersson@hotmail.com','0800 00 1066');
+('19850101-1234','Anna','Svensson',1,'anna.svensson@hotmail.com','0789654123'),
+('19900215-5678','Erik','Johansson',2,'erik.johansson@hotmail.com','467963258741'),
+('19751230-9101','Maria','Lindberg',3,'maria.lindberg@hotmail.com','0741852369'),
+('19881122-3456','Johan','Karlsson',4,'johan.karlsson@hotmail.com','0714852369'),
+('19950505-7890','Elin','Andersson',5,'elin.andersson@hotmail.com','467852693115');
 
 -- Christoffer Frisk
 INSERT INTO car (brand, model, registration_number, price_per_day, booked, in_service) VALUES
