@@ -25,9 +25,9 @@ public class CustomerController {       //Lynsey Fox
         return ResponseEntity.ok(customerService.getAllCustomers());
     }
 
-    @GetMapping("/admin/customer/{id}")
-    public ResponseEntity<Customer> getCustomerById(@PathVariable String id) {
-        return ResponseEntity.ok(customerService.getCustomerById(id));
+    @GetMapping("/admin/customer/{personnummer}")
+    public ResponseEntity<Customer> getCustomerById(@PathVariable String personnummer) {
+        return ResponseEntity.ok(customerService.getCustomerById(personnummer));
     }
 
     @PutMapping("/updateinfo")
@@ -40,10 +40,10 @@ public class CustomerController {       //Lynsey Fox
         return ResponseEntity.ok(customerService.addCustomer(customerToAdd));
     }
 
-    @DeleteMapping("/admin/removecustomer/{id}")
-    public ResponseEntity<String> removeCustomer(@PathVariable String id) {
-        customerService.deleteCustomer(id);
-        return ResponseEntity.ok("Member deleted");
+    @DeleteMapping("/admin/removecustomer/{personnummer}")
+    public ResponseEntity<String> removeCustomer(@PathVariable String personnummer) {
+        customerService.deleteCustomer(personnummer);
+        return ResponseEntity.ok(" Customer with personnummer " + personnummer + " successfully deleted");
     }
 
 }
