@@ -27,7 +27,7 @@ public class CustomerController {       //Lynsey Fox
     @GetMapping("/admin/customer/{personnummer}")
 
     public ResponseEntity<Customer> getCustomerById(@PathVariable String personnummer) {
-        return ResponseEntity.ok(customerService.getCustomerById(personnummer));
+        return ResponseEntity.ok(customerService.getCustomerByPersonnummer(personnummer));
 
     }
 
