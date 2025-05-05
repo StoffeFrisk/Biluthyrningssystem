@@ -8,13 +8,13 @@ import java.util.List;
 //BP
 public interface OrderService {
 //Customer
-    Orders addOrder(Orders order);
-    Orders cancelOrder(Orders order);
-    List<Orders> getAllCustomerOrders();
-    List<Orders> getActiveCustomerOrders();
+    Orders addOrder(Orders order, String username);
+    Orders cancelOrder(Orders order, String username);
+    List<Orders> getAllCustomerOrders(String username);
+    List<Orders> getActiveCustomerOrders(String username);
 //Admin
     List<Orders> getActiveOrders();
     List<Orders> getAllOrders();
-    void deleteOrder(Orders order);
+    void deleteOrderById(Long Id);
     List<Long> deleteOrdersBeforeDate(Date date);
 }

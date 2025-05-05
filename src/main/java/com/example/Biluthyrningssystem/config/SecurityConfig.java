@@ -1,5 +1,8 @@
+// Niklas Einarsson
+
 package com.example.Biluthyrningssystem.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -10,22 +13,36 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
+    //Christoffer Frisk. Lägger till konstruktor för filtret
+    private final MdcLoggingFilter mdcLoggingFilter;
+
+    @Autowired
+    public SecurityConfig(MdcLoggingFilter mdcLoggingFilter) {
+        this.mdcLoggingFilter = mdcLoggingFilter;
+    }
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                // Christoffer Frisk adderade lite för sortering av användare i loggen.
+                .addFilterAfter(mdcLoggingFilter, BasicAuthenticationFilter.class)
                 .httpBasic(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/api/v1/**").hasRole("CUSTOMER")
+                        .requestMatchers("/api/v1/**").hasRole("USER")
                         .requestMatchers("/h2-console/**").permitAll()
                         .anyRequest().authenticated()
                 )
+                .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable()))
                 .csrf(csrf -> csrf.disable());
+
         return http.build();
     }
 
@@ -40,36 +57,35 @@ public class SecurityConfig {
         UserDetails annasvensson = User
                 .withUsername("19850101-1234")
                 .password("{noop}1234")
-                .roles("CUSTOMER")
+                .roles("USER")
                 .build();
 
         UserDetails erikjohansson = User
                 .withUsername("19900215-5678")
                 .password("{noop}5678")
-                .roles("CUSTOMER")
+                .roles("USER")
                 .build();
 
         UserDetails marialindberg = User
                 .withUsername("19751230-9101")
                 .password("{noop}9101")
-                .roles("CUSTOMER")
+                .roles("USER")
                 .build();
 
         UserDetails johankarlsson = User
                 .withUsername("19881122-3456")
                 .password("{noop}3456")
-                .roles("CUSTOMER")
+                .roles("USER")
                 .build();
 
         UserDetails elinandersson = User
                 .withUsername("19950505-7890")
                 .password("{noop}7890")
-                .roles("CUSTOMER")
+                .roles("USER")
                 .build();
 
         return new InMemoryUserDetailsManager(admin, annasvensson, erikjohansson, marialindberg, johankarlsson, elinandersson);
     }
-
 
 
 }

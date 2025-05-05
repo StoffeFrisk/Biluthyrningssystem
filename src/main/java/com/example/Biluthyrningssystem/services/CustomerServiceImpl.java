@@ -36,11 +36,13 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer getCustomerByPersonnummer(String personnummer) {
+
         Optional<Customer> schrodingersCustomer = customerRepository.findById(personnummer);
         if(schrodingersCustomer.isPresent()){
             return schrodingersCustomer.get();
         }
         throw new ResourceNotFoundException("Customer", "personnummer", personnummer);
+
     }
 
     @Override
@@ -107,6 +109,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+
     public void deleteCustomer(String personnummer) {
         Optional<Customer> schrodingersCustomer = customerRepository.findById(personnummer);
         if(schrodingersCustomer.isPresent()){
