@@ -14,13 +14,13 @@ public class Orders {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "personnummer", nullable = true)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
     @JsonIgnoreProperties("orders")
     private Customer customer;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "car_id", nullable = true)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
     private Car car;
