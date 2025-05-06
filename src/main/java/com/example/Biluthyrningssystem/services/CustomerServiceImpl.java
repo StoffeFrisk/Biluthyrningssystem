@@ -22,7 +22,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     private final Logger logger = LoggerFactory.getLogger(CustomerServiceImpl.class);
     Authentication authentication;
-    String username;
     private final CustomerRepository customerRepository;
     private final AddressRepository addressRepository;
 
@@ -35,10 +34,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public List<Customer> getAllCustomers() {
-        authentication = SecurityContextHolder.getContext().getAuthentication();
-        username = authentication.getName();
-        logger.info("Customer list accessed by user: {}", username);
-
+        logger.info("Customer list accessed");
         return customerRepository.findAll();
 
     }
@@ -50,21 +46,17 @@ public class CustomerServiceImpl implements CustomerService {
         if (schrodingersCustomer.isPresent()) {
             Customer customerToShow = schrodingersCustomer.get();
 
-            authentication = SecurityContextHolder.getContext().getAuthentication();
-            username = authentication.getName();
-            logger.info("Customer with Personnummer: {} details accessed by user: {}", customerToShow.getPersonnummer(), username);
+            logger.info("Customer with Personnummer: {} details accessed", customerToShow.getPersonnummer());
 
             return schrodingersCustomer.get();
         }
-        logger.warn("Customer with Personnummer: {} not found, search performed by user: {}", personnummer, username);
+        logger.error("Customer with Personnummer: {} not found", personnummer);
         throw new ResourceNotFoundException("Customer", "personnummer", personnummer);
 
     }
 
     @Override
     public Customer addCustomer(Customer newCustomer) {
-        authentication = SecurityContextHolder.getContext().getAuthentication();
-        username = authentication.getName();
 
         validateStringField(newCustomer.getFirstName(), "first name");
         validateStringField(newCustomer.getLastName(), "last name");
@@ -73,17 +65,17 @@ public class CustomerServiceImpl implements CustomerService {
         validateStringField(newCustomer.getPhone(), "phone number");
 
         if (!isValidEmail(newCustomer.getEmail())) {
-            logger.warn("Invalid email format: {}, performed by user: {}", newCustomer.getEmail(), username);
+            logger.error("Invalid email format: {}", newCustomer.getEmail());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid email format");
         }
 
         if (!isValidPhone(newCustomer.getPhone())) {
-            logger.warn("Invalid phone number format: {}, performed by user: {}", newCustomer.getPhone(), username);
+            logger.error("Invalid phone number format: {}", newCustomer.getPhone());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid phone number format");
         }
 
         if (newCustomer.getAddress() == null || newCustomer.getAddress().getId() == null) {
-            logger.warn("Missing or invalid address for customer, performed by user: {}", username);
+            logger.error("Missing or invalid address for customer");
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Customer must have an address with a valid ID");
         }
 
@@ -91,7 +83,7 @@ public class CustomerServiceImpl implements CustomerService {
 
         Address existingAddress = addressRepository.findById(addressId)
                 .orElseThrow(() -> {
-                    logger.warn("Address not found with ID: {}, performed by user: {}", addressId, username);
+                    logger.error("Address not found with ID: {}", addressId);
                     return new ResourceNotFoundException("Address", "id", addressId);
                 });
 
@@ -99,13 +91,13 @@ public class CustomerServiceImpl implements CustomerService {
 
         Customer savedCustomer = customerRepository.save(newCustomer);
 
-        logger.info("New customer added to database with Personnummer: {} performed by user: {}", savedCustomer.getPersonnummer(), username);
+        logger.info("New customer added to database with Personnummer: {}", savedCustomer.getPersonnummer());
         return savedCustomer;
     }
 
     private void validateStringField(String value, String fieldName) {
         if (value == null || value.isBlank()) {
-            logger.warn("Missing field: {}, performed by user: {}", fieldName, username);
+            logger.error("Missing field: {}", fieldName);
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Customer must have a " + fieldName);
         }
     }
@@ -125,10 +117,9 @@ public class CustomerServiceImpl implements CustomerService {
         Customer existing = getCustomerByPersonnummer(customerToUpdate.getPersonnummer());
 
         authentication = SecurityContextHolder.getContext().getAuthentication();
-        username = authentication.getName();
 
         if (existing.getPersonnummer() != authentication.getPrincipal()) {
-            logger.warn("User: {} attempted to update another user's details", username);
+            logger.error("You attempted to update another user's details");
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "You can only update your own details");
         }
 
@@ -140,13 +131,13 @@ public class CustomerServiceImpl implements CustomerService {
         Long addressId = customerToUpdate.getAddress().getId();
         Address existingAddress = addressRepository.findById(addressId)
                 .orElseThrow(() -> {
-                    logger.warn("Address not found with ID: {}, performed by user: {}", addressId, username);
+                    logger.error("Address not found with ID: {}", addressId);
                     return new ResourceNotFoundException("Address", "id", addressId);
                 });
 
         existing.setAddress(existingAddress);
 
-        logger.info("Customer details updated in database for customer with Personnummer: {} by user: {}", customerToUpdate.getPersonnummer(), username);
+        logger.info("Customer details updated in database for customer with Personnummer: {}", customerToUpdate.getPersonnummer());
 
         return customerRepository.save(existing);
     }
@@ -159,13 +150,10 @@ public class CustomerServiceImpl implements CustomerService {
             customerRepository.delete(schrodingersCustomer.get());
             Customer customerToDelete = schrodingersCustomer.get();
 
-            authentication = SecurityContextHolder.getContext().getAuthentication();
-            username = authentication.getName();
-
-            logger.info("Customer with personnummer: {} removed from database by user: {}", customerToDelete.getPersonnummer(), username);
+            logger.info("Customer with personnummer: {} removed from database.", customerToDelete.getPersonnummer());
 
         } else {
-            logger.warn("Customer not found with personnummer: {}, performed by user: {}", personnummer, username);
+            logger.error("Customer not found with personnummer: {}", personnummer);
             throw new ResourceNotFoundException("Customer", "personnumer", personnummer);
         }
 
