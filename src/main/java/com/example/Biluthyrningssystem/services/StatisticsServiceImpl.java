@@ -4,12 +4,17 @@ package com.example.Biluthyrningssystem.services;
 
 import com.example.Biluthyrningssystem.entities.Car;
 import com.example.Biluthyrningssystem.entities.Orders;
+import com.example.Biluthyrningssystem.exceptions.IncorrectCalculationException;
+import com.example.Biluthyrningssystem.exceptions.IncorrectInputException;
+import com.example.Biluthyrningssystem.exceptions.ResourceNotFoundException;
+import com.example.Biluthyrningssystem.repositories.CarRepository;
 import com.example.Biluthyrningssystem.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -19,11 +24,13 @@ public class StatisticsServiceImpl implements StatisticsService {
 
     private final OrderRepository orderRepository;
     private final OrderService orderService;
+    private final CarRepository carRepository;
 
     @Autowired
-    public StatisticsServiceImpl(OrderRepository orderRepository, OrderService orderService) {
+    public StatisticsServiceImpl(OrderRepository orderRepository, OrderService orderService, CarRepository carRepository) {
         this.orderRepository = orderRepository;
         this.orderService = orderService;
+        this.carRepository = carRepository;
     }
 
     // TODO Lägga till mer data för overview
@@ -54,13 +61,39 @@ public class StatisticsServiceImpl implements StatisticsService {
         return statistics;
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // TODO Lägga till exception för startDate-endDate. Kontrollera så att startDate är tidigare än endDate. + Fixa Loggning.
     @Override
     public Map<String, Long> getMostRentedBrandForPeriod(String startDate, String endDate) {
 
+        LocalDate start;
+        LocalDate end;
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate start = LocalDate.parse(startDate, formatter);
-        LocalDate end = LocalDate.parse(endDate, formatter);
+        try {
+            start = LocalDate.parse(startDate, formatter);
+            end = LocalDate.parse(endDate, formatter);
+        } catch (DateTimeParseException e) {
+            throw new IncorrectInputException("Statistics", "date input", startDate + " and " + endDate, "yyyy-MM-dd", "Please use the correct date format.");
+        }
+
+        if(start.isAfter(end)){
+            System.out.println("Start date is after end date");
+            throw new IncorrectInputException("Statistics", "Start-End Dates", ("Start:"+startDate+"->End:"+endDate),"YYYY-MM-DD","Start date must be BEFORE end date.");
+        }
 
         List<Orders> allOrders = orderRepository.findAll();
 
@@ -93,9 +126,23 @@ public class StatisticsServiceImpl implements StatisticsService {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
     // TODO Lägga till exception för carId + fixa loggning.
     @Override
     public Map<String, Object> getRentalCountByCar(Long carId) {
+
+        Car car = carRepository.findById(carId).orElseThrow(() -> new ResourceNotFoundException("Bil", "id", carId));
 
         List<Orders> allOrders = orderService.getAllOrders();
         long count = allOrders.stream().filter(order -> order.getCar() != null && order.getCar().getId() == carId).count();
@@ -107,6 +154,22 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         return result;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // TODO Exceptions + loggning
     @Override
@@ -120,6 +183,20 @@ public class StatisticsServiceImpl implements StatisticsService {
                 })
                 .collect(Collectors.groupingBy(days -> days, Collectors.counting()));
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // TODO Exceptions + loggning
     @Override
     public Map<String, Double> getAverageCostPerOrder() {
@@ -141,6 +218,14 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         return Map.of("Genomsnittlig kostnad per bokning", average);
     }
+
+
+
+
+
+
+
+
 
     // TODO Exceptions + loggning
     @Override
@@ -165,12 +250,37 @@ public class StatisticsServiceImpl implements StatisticsService {
                         e -> Math.round(e.getValue() * 100) / 100.0
                 ));
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
     // TODO Exceptions + loggning
     @Override
     public Map<String, Double> getTotalRevenueForPeriod(String startDate, String endDate) {
+        LocalDate start;
+        LocalDate end;
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate start = LocalDate.parse(startDate, formatter);
-        LocalDate end = LocalDate.parse(endDate, formatter);
+        try {
+            start = LocalDate.parse(startDate, formatter);
+            end = LocalDate.parse(endDate, formatter);
+        } catch (DateTimeParseException e) {
+            throw new IncorrectInputException("Statistics", "date input", startDate + " and " + endDate, "yyyy-MM-dd", "Please use the correct date format.");
+        }
+
+        if(start.isAfter(end)){
+            System.out.println("Start date is after end date");
+            throw new IncorrectInputException("Statistics", "Start-End Dates", ("Start:"+startDate+"->End:"+endDate),"YYYY-MM-DD","Start date must be BEFORE end date.");
+        }
 
         List<Orders> allOrders = orderService.getAllOrders();
 
