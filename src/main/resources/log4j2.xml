@@ -10,13 +10,14 @@
         </Console>
 
         <File name="LogFile"
-              fileName="logs/app.log"
-              append="true"
-              createOnDemand="true">
-            <PatternLayout pattern="${layout}"/>
-            <LevelRangeFilter minLevel="INFO" maxLevel="WARN"
-                              onMatch="ACCEPT" onMismatch="DENY"/>
-        </File>
+                     fileName="logs/app.log"
+                     append="true"
+                     createOnDemand="true">
+        <PatternLayout pattern="${layout}"/>
+        <Filters>
+            <LevelMatchFilter level="ERROR" onMatch="DENY" onMismatch="NEUTRAL"/>
+        </Filters>
+    </File>
 
         <File name="ErrorFile"
               fileName="logs/error.log"

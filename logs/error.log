@@ -1,0 +1,1 @@
+[admin] 2025-05-06 12:08:42,746 [http-nio-9090-exec-2] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Failed to update car with id 9999: Car with id '9999' not found
