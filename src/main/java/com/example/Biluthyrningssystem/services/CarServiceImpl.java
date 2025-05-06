@@ -24,49 +24,49 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<Car> getAllCars() {
-        logger.info("Hämtar alla bilar från databasen.");
+        logger.info("Getting all cars from database.");
         List<Car> cars = carRepository.findAll();
-        logger.info("Totalt {} bilar hämtade", cars.size());
+        logger.info("A total of {} cars shown", cars.size());
         return cars;
     }
 
     @Override
     public List<Car> getAvailableCars() {
-        logger.info("Hämtar tillgängliga bilar");
+        logger.info("Getting available cars from database.");
         List<Car> availableCars = carRepository.findAll()
                 .stream()
                 .filter(c->!c.isBooked() && !c.isInService())
                 .collect(Collectors.toList());
-        logger.info("{} bilar är tillgängliga", availableCars.size());
+        logger.info("A total of {} cars available", availableCars.size());
         return availableCars;
     }
 
     @Override
     public Car getCarById(Long id) {
-        logger.info("Försöker hämta bil med id {}", id);
+        logger.info("Attempting to get car whit id: {}", id);
 
         try {
             Car car = carRepository.findById(id)
                     .orElseThrow(() -> new ResourceNotFoundException("Car", "id", id));
-            logger.info("Bil hittad: {}", car);
+            logger.info("Car found: {}", car);
             return car;
 
         } catch (ResourceNotFoundException ex) {
-            logger.error("Bil hittades ej, id {}: {}", id, ex.getMessage());
+            logger.error("Car not found, id {}: {}", id, ex.getMessage());
             throw ex;
         }
     }
     @Override
     public Car addCar(Car car) {
-        logger.info("Lägger till ny bil: {} {}", car.getBrand(), car.getModel());
+        logger.info("Adding new car: {} {}", car.getBrand(), car.getModel());
         Car saved = carRepository.save(car);
-        logger.info("Ny bil sparad med id {}", saved.getId());
+        logger.info("New car saved with id {}", saved.getId());
         return saved;
     }
 
     @Override
     public Car updateCar(Long id, Car updatedCar) {
-        logger.info("Försöker uppdatera bil med id {}", id);
+        logger.info("Attempting to update car with id {}", id);
         try {
             Car existing = carRepository.findById(id)
                     .orElseThrow(() -> new ResourceNotFoundException("Car", "id", id));
@@ -79,24 +79,24 @@ public class CarServiceImpl implements CarService {
             existing.setInService(updatedCar.isInService());
 
             Car saved = carRepository.save(existing);
-            logger.info("Bil med id {} uppdaterad: {}", id, saved);
+            logger.info("Car with id {} updated: {}", id, saved);
             return saved;
         } catch (ResourceNotFoundException ex) {
-            logger.error("Uppdatering misslyckades för id {}: {}", id, ex.getMessage());
+            logger.error("Failed to update car with id {}: {}", id, ex.getMessage());
             throw ex;
         }
     }
 
     @Override
     public void deleteCar(Long id) {
-        logger.info("Försöker radera bil med id {}", id);
+        logger.info("Attempting to delete car with id: {}", id);
         try {
             Car existing = carRepository.findById(id)
                     .orElseThrow(() -> new ResourceNotFoundException("Car", "id", id));
             carRepository.delete(existing);
-            logger.info("Bil med id {} raderad", id);
+            logger.info("Car with id {} deleted", id);
         } catch (ResourceNotFoundException ex) {
-            logger.error("Radering misslyckades för id {}: {}", id, ex.getMessage());
+            logger.error("Failed deletion for id {}: {}", id, ex.getMessage());
             throw ex;
         }
     }
