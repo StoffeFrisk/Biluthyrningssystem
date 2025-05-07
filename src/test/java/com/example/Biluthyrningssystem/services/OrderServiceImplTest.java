@@ -1,7 +1,10 @@
 package com.example.Biluthyrningssystem.services;
 
+import com.example.Biluthyrningssystem.entities.Car;
 import com.example.Biluthyrningssystem.entities.Customer;
 import com.example.Biluthyrningssystem.entities.Orders;
+import com.example.Biluthyrningssystem.exceptions.IncorrectCalculationException;
+import com.example.Biluthyrningssystem.exceptions.IncorrectInputException;
 import com.example.Biluthyrningssystem.exceptions.ResourceNotFoundException;
 import com.example.Biluthyrningssystem.exceptions.UnauthorisedRequestException;
 import com.example.Biluthyrningssystem.repositories.CarRepository;
@@ -80,17 +83,33 @@ class OrderServiceImplTest {
     }
 
     @Test
+    void addOrderWithCustomerContainingOnlyIDShouldReturnMatchingOrdersObject() {
+        //When
+        Customer emptyCustomer = new Customer();
+        emptyCustomer.setPersonnummer(username);
+        order.setCustomer(emptyCustomer);
+        Orders addedOrder = orderService.addOrder(order,username);
+        //Then
+        assertThat(orderRepository.getOrdersById(addedOrder.getId()).equals(addedOrder));
+
+        assertThat(order.getCustomer().equals(addedOrder.getCustomer()));
+        assertEquals(998.0, addedOrder.getTotalPrice());
+        assertFalse(addedOrder.isOrderCancelled());
+    }
+
+
+    @Test
     void addOrderShouldThrowUnauthorisedRequestException() {
         //Given
         order.setCustomer(customerRepository.findById(secondUsername).get());
         //When
         UnauthorisedRequestException response = assertThrows(UnauthorisedRequestException.class, ()-> orderService.addOrder(order,username));
         //Then
-        assertThat(response.getMessage().equals("User ["+username+"] is not authorised to create new order for user: "+secondUsername+" - Users can only create orders for themselves"));
+        assertEquals("User ["+username+"] is not authorised to create new order for user: "+secondUsername+" - Users can only create orders for themselves",response.getMessage());
     }
 
     @Test
-    void addOrderShouldThrowResourceNotFoundException() {
+    void addOrderWithNonExistentCustomerShouldThrowResourceNotFoundException() {
         //Given
         Customer nonCustomer = new Customer();
         nonCustomer.setPersonnummer("10");
@@ -98,7 +117,7 @@ class OrderServiceImplTest {
         //When
         ResourceNotFoundException response = assertThrows(ResourceNotFoundException.class, ()-> orderService.addOrder(order,username));
         //Then
-        assertThat(response.getMessage().equals("Customer with ID '10' not found"));
+        assertEquals("Customer with ID '10' not found",response.getMessage());
     }
 
     @Test
@@ -121,7 +140,7 @@ class OrderServiceImplTest {
 
         UnauthorisedRequestException response = assertThrows(UnauthorisedRequestException.class, () -> orderService.cancelOrder(orderToBeCancelled,secondUsername));
         //Then
-        assertThat(response.getMessage().equals("User ["+secondUsername+"] is not authorised to cancel an order - Users can only edit their own orders"));
+        assertEquals("User ["+secondUsername+"] is not authorised to cancel an order - Users can only edit their own orders",response.getMessage());
    }
 
     @Test
@@ -131,7 +150,7 @@ class OrderServiceImplTest {
         //When
         ResourceNotFoundException response = assertThrows(ResourceNotFoundException.class, () -> orderService.cancelOrder(order,username));
         //Then
-        assertThat(response.getMessage().equals("Order with ID '12' not found"));
+        assertEquals("Order with ID '12' not found",response.getMessage());
     }
 
     @Test
@@ -183,7 +202,7 @@ class OrderServiceImplTest {
         //When
         ResourceNotFoundException response = assertThrows(ResourceNotFoundException.class, () -> orderService.deleteOrderById(12L));
         //Then
-        assertThat(response.getMessage().equals("Order with ID '12' not found"));
+        assertEquals("Order with ID '12' not found",response.getMessage());
     }
 
     @Test
@@ -195,4 +214,120 @@ class OrderServiceImplTest {
         assertEquals(5, orderRepository.findAll().size());
 
     }
+
+
+
+    @Test
+    void addOrderWithoutCarShouldThrowResourceNotFoundException() {
+        //Given
+        order.setCar(null);
+        //When
+        ResourceNotFoundException response = assertThrows(ResourceNotFoundException.class, ()-> orderService.addOrder(order,username));
+        //Then
+        assertEquals("Car with ID 'null' not found", response.getMessage());
+    }
+
+    @Test
+    void addOrderWithNonExistentCarShouldThrowResourceNotFoundException() {
+        //Given
+        Car falseCar = new Car();
+        falseCar.setId(12L);
+        order.setCar(falseCar);
+        //When
+        ResourceNotFoundException response = assertThrows(ResourceNotFoundException.class, ()-> orderService.addOrder(order,username));
+        //Then
+        assertEquals("Car with ID '12' not found", response.getMessage());
+    }
+
+    @Test
+    void addOrderWithoutStartDateShouldThrowIncorrectInputException() {
+        //Given
+        order.setHireStartDate(null);
+        //When
+        IncorrectInputException response = assertThrows(IncorrectInputException.class, ()-> orderService.addOrder(order,username));
+        //Then
+        assertEquals("Order attribute - Hire Start Date, with value null, is formatted incorrectly. Enter data with the following format YYYY-MM-DD. Start date must be BEFORE end date.",response.getMessage());
+    }
+
+    @Test
+    void addOrderWithoutEndDateShouldThrowIncorrectInputException() {
+        //Given
+        order.setHireEndDate(null);
+        //When
+        IncorrectInputException response = assertThrows(IncorrectInputException.class, ()-> orderService.addOrder(order,username));
+        //Then
+        assertEquals("Order attribute - Hire End Date, with value null, is formatted incorrectly. Enter data with the following format YYYY-MM-DD. End date must be AfTER start date.",response.getMessage());
+    }
+
+    @Test
+    void addOrderWithEndDateBeforeStartDateShouldThrowIncorrectInputException() {
+        //Given
+        order.setHireStartDate(Date.valueOf("2025-10-10"));
+        order.setHireEndDate(Date.valueOf("2025-10-01"));
+        //When
+        IncorrectInputException response = assertThrows(IncorrectInputException.class, ()-> orderService.addOrder(order,username));
+        //Then
+        assertEquals("Order attribute - Hire Start-End Dates, with value Start:2025-10-10->End:2025-10-01, is formatted incorrectly. Enter data with the following format YYY-MM-DD. Start date must be BEFORE end date.",response.getMessage());
+    }
+
+    @Test
+    void addOrderWithIncorrectTotalPriceShouldThrowIncorrectCalculationException() {
+        //Given
+        order.setTotalPrice(103.0);
+        //When
+        IncorrectCalculationException response = assertThrows(IncorrectCalculationException.class, ()-> orderService.addOrder(order,username));
+        //Then
+        assertEquals("Order with Total Price [103.0] does not match calculated value [998.0]. Enter calculated value or leave field empty to be automatically calculated.",response.getMessage());
+    }
+
+
+    @Test
+    void addOrderThatIsAlreadyCancelledShouldThrowIncorrectInputEsception() {
+        //Given
+        order.setOrderCancelled(true);
+        //When
+        IncorrectInputException response = assertThrows(IncorrectInputException.class, ()-> orderService.addOrder(order,username));
+        //Then
+        assertEquals("Order attribute - Order Cancelled, with value true, is formatted incorrectly. Enter data with the following format false. You cannot create a cancelled order.",response.getMessage());
+    }
+
+    @Test
+    void addOrderWithNullCancelStatusShouldReturnMatchingOrdersObject() {
+        //When
+        order.setOrderCancelled(Boolean.valueOf(null));
+        Orders addedOrder = orderService.addOrder(order,username);
+        //Then
+        assertThat(orderRepository.getOrdersById(addedOrder.getId()).equals(addedOrder));
+
+        assertThat(order.getCustomer().equals(addedOrder.getCustomer()));
+        assertEquals(998.0, addedOrder.getTotalPrice());
+        assertFalse(addedOrder.isOrderCancelled());
+    }
+
+    @Test
+    void addOrderWithNullTotalPriceShouldReturnMatchingOrdersObject() {
+        //When
+        order.setTotalPrice(null);
+        Orders addedOrder = orderService.addOrder(order,username);
+        //Then
+        assertThat(orderRepository.getOrdersById(addedOrder.getId()).equals(addedOrder));
+
+        assertThat(order.getCustomer().equals(addedOrder.getCustomer()));
+        assertEquals(998.0, addedOrder.getTotalPrice());
+        assertFalse(addedOrder.isOrderCancelled());
+    }
+
+    @Test
+    void addOrderWithTotalPrice0ShouldReturnMatchingOrdersObject() {
+        //When
+        order.setTotalPrice(Double.valueOf(0));
+        Orders addedOrder = orderService.addOrder(order,username);
+        //Then
+        assertThat(orderRepository.getOrdersById(addedOrder.getId()).equals(addedOrder));
+
+        assertThat(order.getCustomer().equals(addedOrder.getCustomer()));
+        assertEquals(998.0, addedOrder.getTotalPrice());
+        assertFalse(addedOrder.isOrderCancelled());
+    }
+
 }

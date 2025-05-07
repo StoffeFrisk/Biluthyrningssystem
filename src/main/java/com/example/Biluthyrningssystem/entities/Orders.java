@@ -33,7 +33,7 @@ public class Orders {
     private Date hireEndDate;
 
     @Column(length = 7, nullable = true)
-    private double totalPrice;
+    private Double totalPrice;
 
     @Column(nullable = true)
     private boolean orderCancelled;
@@ -90,11 +90,11 @@ public class Orders {
         this.hireEndDate = hireEndDate;
     }
 
-    public double getTotalPrice() {
+    public Double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(double totalPrice) {
+    public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;
     }
 

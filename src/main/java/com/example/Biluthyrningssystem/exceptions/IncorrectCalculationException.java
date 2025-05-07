@@ -10,7 +10,7 @@ public class IncorrectCalculationException extends RuntimeException {
     private Object value;
     private String actual;
     public IncorrectCalculationException(String resource,String field, Object value, String actual) {
-        super(String.format("%s with %s [%s] does not match calculated value [%s]. Enter calculated value or leave field empty to be automatically calulated", resource, field, value, actual));
+        super(String.format("%s with %s [%s] does not match calculated value [%s]. Enter calculated value or leave field empty to be automatically calculated.", resource, field, value, actual));
         this.resource = resource;
         this.field = field;
         this.value = value;
