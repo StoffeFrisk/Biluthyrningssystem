@@ -9,8 +9,13 @@ import com.example.Biluthyrningssystem.exceptions.IncorrectInputException;
 import com.example.Biluthyrningssystem.exceptions.ResourceNotFoundException;
 import com.example.Biluthyrningssystem.repositories.CarRepository;
 import com.example.Biluthyrningssystem.repositories.OrderRepository;
+import org.apache.logging.log4j.LogManager;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -21,6 +26,10 @@ import java.util.stream.Collectors;
 
 @Service
 public class StatisticsServiceImpl implements StatisticsService {
+
+    private static final Logger logger = (Logger) LoggerFactory.getLogger(StatisticsServiceImpl.class);
+    private static final Logger applicationLogger = LoggerFactory.getLogger("app");
+
 
     private final OrderRepository orderRepository;
     private final OrderService orderService;
@@ -36,6 +45,8 @@ public class StatisticsServiceImpl implements StatisticsService {
     // TODO Lägga till mer data för overview
     @Override
     public Map<String, Object> getStatistics() {
+
+        logger.info("Endpoint /admin/statistics was used");
 
         Map<String, Object> statistics = new LinkedHashMap<>();
 
@@ -62,22 +73,11 @@ public class StatisticsServiceImpl implements StatisticsService {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     // TODO Lägga till exception för startDate-endDate. Kontrollera så att startDate är tidigare än endDate. + Fixa Loggning.
     @Override
     public Map<String, Long> getMostRentedBrandForPeriod(String startDate, String endDate) {
+
+        logger.info("Endpoint /admin/statistics/mostrentedbrand was used");
 
         LocalDate start;
         LocalDate end;
@@ -87,12 +87,14 @@ public class StatisticsServiceImpl implements StatisticsService {
             start = LocalDate.parse(startDate, formatter);
             end = LocalDate.parse(endDate, formatter);
         } catch (DateTimeParseException e) {
+            logger.warn("Could not parse date {} because wrong format was used.", startDate);
             throw new IncorrectInputException("Statistics", "date input", startDate + " and " + endDate, "yyyy-MM-dd", "Please use the correct date format.");
         }
 
-        if(start.isAfter(end)){
+        if (start.isAfter(end)) {
             System.out.println("Start date is after end date");
-            throw new IncorrectInputException("Statistics", "Start-End Dates", ("Start:"+startDate+"->End:"+endDate),"YYYY-MM-DD","Start date must be BEFORE end date.");
+            logger.warn("Invalid date because start date {} is after end date {}", startDate, endDate);
+            throw new IncorrectInputException("Statistics", "Start-End Dates", ("Start:" + startDate + "->End:" + endDate), "YYYY-MM-DD", "Start date must be BEFORE end date.");
         }
 
         List<Orders> allOrders = orderRepository.findAll();
@@ -110,14 +112,14 @@ public class StatisticsServiceImpl implements StatisticsService {
             }
         }
 
-            return brandCounts.entrySet().stream()
-                    .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
-                    .collect(Collectors.toMap(
-                            Map.Entry::getKey,
-                            Map.Entry::getValue,
-                            (e1, e2) -> e1,
-                            LinkedHashMap::new
-                    ));
+        return brandCounts.entrySet().stream()
+                .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (e1, e2) -> e1,
+                        LinkedHashMap::new
+                ));
 
 //                 return brandCounts.entrySet().stream()
 //                .max(Map.Entry.comparingByValue())
@@ -126,23 +128,20 @@ public class StatisticsServiceImpl implements StatisticsService {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     // TODO Lägga till exception för carId + fixa loggning.
     @Override
     public Map<String, Object> getRentalCountByCar(Long carId) {
 
-        Car car = carRepository.findById(carId).orElseThrow(() -> new ResourceNotFoundException("Bil", "id", carId));
+        logger.info("Endpoint /admin/statistics/carrentalcount was used");
+
+        Optional<Car> optionalCar = carRepository.findById(carId);
+        if (optionalCar.isEmpty()) {
+            logger.warn("Could not find car with id " + carId);
+            throw new ResourceNotFoundException("Car", "id", carId);
+
+        }
+
+        Car car = optionalCar.get();
 
         List<Orders> allOrders = orderService.getAllOrders();
         long count = allOrders.stream().filter(order -> order.getCar() != null && order.getCar().getId() == carId).count();
@@ -152,28 +151,20 @@ public class StatisticsServiceImpl implements StatisticsService {
         result.put("car id", carId);
         result.put("count", count);
 
+        logger.info("Endpoint /admin/statistics/carrentalcount was used with carId " + carId);
+
         return result;
+
+
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     // TODO Exceptions + loggning
     @Override
     public Map<Integer, Long> getRentalDurationsByDays() {
+
+        logger.info("Endpoint /admin/statistics/rentaldurations was used");
+
         List<Orders> allOrders = orderService.getAllOrders();
 
         return allOrders.stream().filter(order -> order.getHireStartDate() != null && order.getHireEndDate() != null)
@@ -185,21 +176,11 @@ public class StatisticsServiceImpl implements StatisticsService {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     // TODO Exceptions + loggning
     @Override
     public Map<String, Double> getAverageCostPerOrder() {
+
+        logger.info("Endpoint /admin/statistics/averageordercost was used");
 
         List<Orders> allOrders = orderService.getAllOrders();
 
@@ -220,16 +201,11 @@ public class StatisticsServiceImpl implements StatisticsService {
     }
 
 
-
-
-
-
-
-
-
     // TODO Exceptions + loggning
     @Override
     public Map<Long, Double> getTotalRevenuePerCar() {
+
+        logger.info("Endpoint /admin/statistics/revenuepercar was used");
 
         List<Orders> allOrders = orderService.getAllOrders();
 
@@ -252,20 +228,12 @@ public class StatisticsServiceImpl implements StatisticsService {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
     // TODO Exceptions + loggning
     @Override
     public Map<String, Double> getTotalRevenueForPeriod(String startDate, String endDate) {
+
+        logger.info("Endpoint /admin/statistics/revenue was used");
+
         LocalDate start;
         LocalDate end;
 
@@ -277,9 +245,9 @@ public class StatisticsServiceImpl implements StatisticsService {
             throw new IncorrectInputException("Statistics", "date input", startDate + " and " + endDate, "yyyy-MM-dd", "Please use the correct date format.");
         }
 
-        if(start.isAfter(end)){
+        if (start.isAfter(end)) {
             System.out.println("Start date is after end date");
-            throw new IncorrectInputException("Statistics", "Start-End Dates", ("Start:"+startDate+"->End:"+endDate),"YYYY-MM-DD","Start date must be BEFORE end date.");
+            throw new IncorrectInputException("Statistics", "Start-End Dates", ("Start:" + startDate + "->End:" + endDate), "YYYY-MM-DD", "Start date must be BEFORE end date.");
         }
 
         List<Orders> allOrders = orderService.getAllOrders();
@@ -295,6 +263,62 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         totalRevenue = Math.round(totalRevenue * 100) / 100.0;
 
+        logger.info("Endpoint /admin/statistics/revenue was used with period " + startDate + " and " + endDate);
+
         return Map.of("Totala intäkter för perioden", totalRevenue);
+
     }
+
+
+    // Metod för att kolla antal canceled orders under period
+    @Override
+    public Map<String, Object> getCanceledOrderCountByPeriod(String startDate, String endDate) {
+
+        logger.info("Endpoint /admin/statistics/canceledordercountbyperiod was used");
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate start;
+        LocalDate end;
+
+        try {
+            start = LocalDate.parse(startDate, formatter);
+            end = LocalDate.parse(endDate, formatter);
+        } catch (DateTimeParseException e) {
+            logger.warn("Could not parse startDate {} endDate {} because wrong format was used.", startDate, endDate);
+            throw new IncorrectInputException("Statistics", "date input", startDate + " and " + endDate, "yyyy-MM-dd", "");
+        }
+
+        if (start.isAfter(end)) {
+            logger.warn("Invalid date because start date {} is after end date {}", startDate, endDate);
+            throw new IncorrectInputException("Statistics", "Start-End Dates", startDate + " -> " + endDate, "YYYY-MM-DD", "Start date must be BEFORE end date.");
+        }
+
+        List<Orders> allOrders = orderService.getAllOrders();
+
+        long canceledCount = allOrders.stream()
+                .filter(order -> {
+                    LocalDate orderDate = order.getHireStartDate().toLocalDate();
+                    return order.isOrderCancelled() && (orderDate.isEqual(start) || orderDate.isAfter(start)) && (orderDate.isEqual(end) || orderDate.isBefore(end));
+                })
+                .count();
+
+        double totalPriceOfCanceledOrders = allOrders.stream()
+                .filter(order -> order.isOrderCancelled()
+                        && !order.getHireStartDate().toLocalDate().isBefore(start)
+                        && !order.getHireEndDate().toLocalDate().isAfter(end))
+                .mapToDouble(Orders::getTotalPrice)
+                .sum();
+
+        Map<String, Object> result = new LinkedHashMap<>();
+        result.put("start date", start);
+        result.put("end date", end);
+        result.put("cancelled orders", canceledCount);
+        result.put("lost revenue", totalPriceOfCanceledOrders);
+
+        logger.info("Endpoint /admin/statistics/cancelledorders was used with startDate {} and endDate {}", startDate, endDate);
+
+
+        return result;
+    }
+
 }

@@ -13,4 +13,5 @@ public interface StatisticsService {
     Map<String, Double> getAverageCostPerOrder();
     Map<Long, Double> getTotalRevenuePerCar();
     Map<String, Double> getTotalRevenueForPeriod(String startDate, String endDate);
+    Map<String, Object> getCanceledOrderCountByPeriod(String startDate, String endDate);
 }

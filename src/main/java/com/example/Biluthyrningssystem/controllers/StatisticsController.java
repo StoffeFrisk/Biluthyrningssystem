@@ -109,5 +109,11 @@ public class StatisticsController {
 
     }
 
+    @GetMapping("/statistics/cancelledorders/period/{startDate}/{endDate}")
+    public ResponseEntity<Map<String, Object>> getCancelledOrders(@PathVariable String startDate, @PathVariable String endDate) {
+        Map<String, Object> result = statisticsService.getCanceledOrderCountByPeriod(startDate, endDate);
+        return ResponseEntity.ok(result);
+    }
+
 
 }

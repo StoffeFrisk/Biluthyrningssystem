@@ -1,21 +1,21 @@
-[] 2025-05-06 11:35:15,459 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 22.0.2 with PID 6416 (C:\Users\tiefr\IdeaProjects\Biluthyrningssystem\target\classes started by tiefr in C:\Users\tiefr\IdeaProjects\Biluthyrningssystem)
-[] 2025-05-06 11:35:15,474 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
-[] 2025-05-06 11:35:16,199 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[] 2025-05-06 11:35:16,288 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77 ms. Found 4 JPA repository interfaces.
-[] 2025-05-06 11:35:16,859 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
-[] 2025-05-06 11:35:16,874 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
-[] 2025-05-06 11:35:16,876 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
-[] 2025-05-06 11:35:16,877 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
-[] 2025-05-06 11:35:16,923 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-[] 2025-05-06 11:35:16,924 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1404 ms
-[] 2025-05-06 11:35:17,085 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-[] 2025-05-06 11:35:17,134 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
-[] 2025-05-06 11:35:17,162 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-[] 2025-05-06 11:35:17,407 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-[] 2025-05-06 11:35:17,448 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[] 2025-05-06 11:35:17,610 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
-[] 2025-05-06 11:35:17,612 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[] 2025-05-06 11:35:17,668 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+[] 2025-05-07 10:28:51,698 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 25188 (C:\Users\neina\IdeaProjects\Biluthyrningssystem\target\classes started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-07 10:28:51,707 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-07 10:28:52,244 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-07 10:28:52,296 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 4 JPA repository interfaces.
+[] 2025-05-07 10:28:52,665 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+[] 2025-05-07 10:28:52,675 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:28:52,676 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[] 2025-05-07 10:28:52,676 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+[] 2025-05-07 10:28:52,714 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[] 2025-05-07 10:28:52,715 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 974 ms
+[] 2025-05-07 10:28:52,830 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-07 10:28:52,867 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-07 10:28:52,894 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-07 10:28:53,091 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-07 10:28:53,114 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-07 10:28:53,246 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
+[] 2025-05-07 10:28:53,247 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-07 10:28:53,289 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 2.3.232
@@ -23,37 +23,44 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-[] 2025-05-06 11:35:18,516 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[] 2025-05-06 11:35:18,570 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[] 2025-05-06 11:35:18,894 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[] 2025-05-06 11:35:18,932 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-[] 2025-05-06 11:35:19,365 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
-[] 2025-05-06 11:35:19,445 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
-[] 2025-05-06 11:35:19,464 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
-[] 2025-05-06 11:35:19,471 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 4.409 seconds (process running for 5.735)
-[] 2025-05-06 11:44:23,918 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-[] 2025-05-06 11:44:23,925 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
-[] 2025-05-06 11:44:23,930 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-[] 2025-05-06 11:44:23,931 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-[] 2025-05-06 11:44:23,935 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-[] 2025-05-06 12:02:45,306 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 22.0.2 with PID 6408 (C:\Users\tiefr\IdeaProjects\Biluthyrningssystem\target\classes started by tiefr in C:\Users\tiefr\IdeaProjects\Biluthyrningssystem)
-[] 2025-05-06 12:02:45,320 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
-[] 2025-05-06 12:02:46,020 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[] 2025-05-06 12:02:46,093 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 4 JPA repository interfaces.
-[] 2025-05-06 12:02:46,614 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
-[] 2025-05-06 12:02:46,631 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
-[] 2025-05-06 12:02:46,634 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
-[] 2025-05-06 12:02:46,634 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
-[] 2025-05-06 12:02:46,684 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-[] 2025-05-06 12:02:46,684 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1319 ms
-[] 2025-05-06 12:02:46,852 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-[] 2025-05-06 12:02:46,901 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
-[] 2025-05-06 12:02:46,932 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-[] 2025-05-06 12:02:47,190 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-[] 2025-05-06 12:02:47,236 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[] 2025-05-06 12:02:47,423 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
-[] 2025-05-06 12:02:47,425 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[] 2025-05-06 12:02:47,482 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+[] 2025-05-07 10:28:53,973 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-07 10:28:54,030 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:28:54,285 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-07 10:28:54,314 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-07 10:28:54,618 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
+[] 2025-05-07 10:28:54,679 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:28:54,692 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[] 2025-05-07 10:28:54,698 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 3.306 seconds (process running for 4.14)
+[] 2025-05-07 10:29:11,828 [http-nio-9090-exec-7]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 2025-05-07 10:29:11,828 [http-nio-9090-exec-7]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[] 2025-05-07 10:29:11,829 [http-nio-9090-exec-7]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[admin] 2025-05-07 10:29:12,019 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/canceledordercountbyperiod was used
+[admin] 2025-05-07 10:29:12,019 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[admin] 2025-05-07 10:29:12,151 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
+[admin] 2025-05-07 10:29:12,153 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/cancelledorders was used with period 2022-01-01 and 2026-01-01
+[] 2025-05-07 10:30:37,788 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[] 2025-05-07 10:30:37,898 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[] 2025-05-07 10:30:37,932 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:30:37,934 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-07 10:30:37,941 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-07 10:30:42,324 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 7660 (C:\Users\neina\IdeaProjects\Biluthyrningssystem\target\classes started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-07 10:30:42,334 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-07 10:30:42,845 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-07 10:30:42,894 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 4 JPA repository interfaces.
+[] 2025-05-07 10:30:43,235 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+[] 2025-05-07 10:30:43,244 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:30:43,246 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[] 2025-05-07 10:30:43,246 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+[] 2025-05-07 10:30:43,286 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[] 2025-05-07 10:30:43,287 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 919 ms
+[] 2025-05-07 10:30:43,402 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-07 10:30:43,438 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-07 10:30:43,466 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-07 10:30:43,671 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-07 10:30:43,693 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-07 10:30:43,824 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
+[] 2025-05-07 10:30:43,826 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-07 10:30:43,871 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 2.3.232
@@ -61,42 +68,37 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-[] 2025-05-06 12:02:48,476 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[] 2025-05-06 12:02:48,558 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[] 2025-05-06 12:02:48,915 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[] 2025-05-06 12:02:48,958 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-[] 2025-05-06 12:02:49,378 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
-[] 2025-05-06 12:02:49,465 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
-[] 2025-05-06 12:02:49,483 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
-[] 2025-05-06 12:02:49,489 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 4.553 seconds (process running for 5.706)
-[] 2025-05-06 12:02:50,249 [http-nio-9090-exec-3]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-[] 2025-05-06 12:02:50,249 [http-nio-9090-exec-3]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-[] 2025-05-06 12:02:50,250 [http-nio-9090-exec-3]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-[19850101-1234] 2025-05-06 12:02:50,438 [http-nio-9090-exec-3]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Getting available cars from database.
-[19850101-1234] 2025-05-06 12:02:50,562 [http-nio-9090-exec-3]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - A total of 2 cars available
-[] 2025-05-06 12:04:16,560 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-[] 2025-05-06 12:04:16,566 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
-[] 2025-05-06 12:04:16,571 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-[] 2025-05-06 12:04:16,573 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-[] 2025-05-06 12:04:16,576 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-[] 2025-05-06 12:05:11,914 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 22.0.2 with PID 1480 (C:\Users\tiefr\IdeaProjects\Biluthyrningssystem\target\classes started by tiefr in C:\Users\tiefr\IdeaProjects\Biluthyrningssystem)
-[] 2025-05-06 12:05:11,922 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
-[] 2025-05-06 12:05:12,593 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[] 2025-05-06 12:05:12,663 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 4 JPA repository interfaces.
-[] 2025-05-06 12:05:13,145 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
-[] 2025-05-06 12:05:13,159 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
-[] 2025-05-06 12:05:13,162 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
-[] 2025-05-06 12:05:13,162 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
-[] 2025-05-06 12:05:13,204 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-[] 2025-05-06 12:05:13,205 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1242 ms
-[] 2025-05-06 12:05:13,359 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-[] 2025-05-06 12:05:13,409 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
-[] 2025-05-06 12:05:13,436 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-[] 2025-05-06 12:05:13,669 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-[] 2025-05-06 12:05:13,701 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[] 2025-05-06 12:05:13,885 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
-[] 2025-05-06 12:05:13,887 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[] 2025-05-06 12:05:13,960 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+[] 2025-05-07 10:30:44,541 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-07 10:30:44,593 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:30:44,855 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-07 10:30:44,885 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-07 10:30:45,180 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
+[] 2025-05-07 10:30:45,234 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:30:45,248 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[] 2025-05-07 10:30:45,254 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 3.23 seconds (process running for 4.053)
+[] 2025-05-07 10:31:23,366 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[] 2025-05-07 10:31:23,447 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[] 2025-05-07 10:31:23,456 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:31:23,459 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-07 10:31:23,464 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-07 10:31:27,248 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 30500 (C:\Users\neina\IdeaProjects\Biluthyrningssystem\target\classes started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-07 10:31:27,257 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-07 10:31:27,802 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-07 10:31:27,851 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 4 JPA repository interfaces.
+[] 2025-05-07 10:31:28,213 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+[] 2025-05-07 10:31:28,223 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:31:28,225 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[] 2025-05-07 10:31:28,225 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+[] 2025-05-07 10:31:28,267 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[] 2025-05-07 10:31:28,268 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 977 ms
+[] 2025-05-07 10:31:28,384 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-07 10:31:28,424 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-07 10:31:28,451 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-07 10:31:28,667 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-07 10:31:28,691 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-07 10:31:28,830 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
+[] 2025-05-07 10:31:28,831 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-07 10:31:28,878 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 2.3.232
@@ -104,17 +106,295 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-[] 2025-05-06 12:05:14,919 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[] 2025-05-06 12:05:14,980 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[] 2025-05-06 12:05:15,323 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[] 2025-05-06 12:05:15,362 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-[] 2025-05-06 12:05:15,770 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
-[] 2025-05-06 12:05:15,855 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
-[] 2025-05-06 12:05:15,873 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
-[] 2025-05-06 12:05:15,880 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 4.368 seconds (process running for 5.455)
-[] 2025-05-06 12:05:32,035 [http-nio-9090-exec-1]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-[] 2025-05-06 12:05:32,035 [http-nio-9090-exec-1]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-[] 2025-05-06 12:05:32,036 [http-nio-9090-exec-1]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-[19850101-1234] 2025-05-06 12:05:32,217 [http-nio-9090-exec-1]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Getting available cars from database.
-[19850101-1234] 2025-05-06 12:05:32,337 [http-nio-9090-exec-1]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - A total of 2 cars available
-[admin] 2025-05-06 12:08:42,731 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to update car with id 9999
+[] 2025-05-07 10:31:29,657 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-07 10:31:29,713 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:31:29,993 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-07 10:31:30,025 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-07 10:31:30,341 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
+[] 2025-05-07 10:31:30,414 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[] 2025-05-07 10:31:30,421 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 3.492 seconds (process running for 4.294)
+[] 2025-05-07 10:31:30,423 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[] 2025-05-07 10:31:30,502 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[] 2025-05-07 10:31:30,506 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:31:30,507 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-07 10:31:30,509 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-07 10:31:37,887 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 32836 (C:\Users\neina\IdeaProjects\Biluthyrningssystem\target\classes started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-07 10:31:37,898 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-07 10:31:38,444 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-07 10:31:38,495 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 4 JPA repository interfaces.
+[] 2025-05-07 10:31:38,854 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+[] 2025-05-07 10:31:38,865 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:31:38,867 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[] 2025-05-07 10:31:38,867 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+[] 2025-05-07 10:31:38,905 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[] 2025-05-07 10:31:38,905 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 970 ms
+[] 2025-05-07 10:31:39,023 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-07 10:31:39,058 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-07 10:31:39,085 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-07 10:31:39,294 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-07 10:31:39,315 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-07 10:31:39,439 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
+[] 2025-05-07 10:31:39,441 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-07 10:31:39,480 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-07 10:31:40,174 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-07 10:31:40,216 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:31:40,462 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-07 10:31:40,493 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-07 10:31:40,800 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
+[] 2025-05-07 10:31:40,852 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:31:40,866 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[] 2025-05-07 10:31:40,873 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 3.276 seconds (process running for 4.093)
+[] 2025-05-07 10:31:45,279 [http-nio-9090-exec-7]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 2025-05-07 10:31:45,279 [http-nio-9090-exec-7]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[] 2025-05-07 10:31:45,281 [http-nio-9090-exec-7]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[admin] 2025-05-07 10:31:45,460 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/canceledordercountbyperiod was used
+[admin] 2025-05-07 10:31:45,461 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[admin] 2025-05-07 10:31:45,588 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
+[admin] 2025-05-07 10:31:45,590 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/cancelledorders was used with 2022-01-01 and endDate 2026-01-01
+[] 2025-05-07 10:32:05,225 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[] 2025-05-07 10:32:05,317 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[] 2025-05-07 10:32:05,322 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:32:05,324 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-07 10:32:05,327 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-07 10:32:09,007 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 36392 (C:\Users\neina\IdeaProjects\Biluthyrningssystem\target\classes started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-07 10:32:09,016 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-07 10:32:09,556 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-07 10:32:09,610 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 4 JPA repository interfaces.
+[] 2025-05-07 10:32:09,979 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+[] 2025-05-07 10:32:09,988 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:32:09,990 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[] 2025-05-07 10:32:09,990 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+[] 2025-05-07 10:32:10,029 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[] 2025-05-07 10:32:10,029 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 979 ms
+[] 2025-05-07 10:32:10,147 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-07 10:32:10,182 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-07 10:32:10,211 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-07 10:32:10,430 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-07 10:32:10,453 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-07 10:32:10,592 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
+[] 2025-05-07 10:32:10,594 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-07 10:32:10,639 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-07 10:32:11,323 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-07 10:32:11,377 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:32:11,634 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-07 10:32:11,666 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-07 10:32:11,988 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
+[] 2025-05-07 10:32:12,054 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:32:12,068 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[] 2025-05-07 10:32:12,076 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 3.371 seconds (process running for 4.192)
+[] 2025-05-07 10:32:15,340 [http-nio-9090-exec-2]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 2025-05-07 10:32:15,340 [http-nio-9090-exec-2]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[] 2025-05-07 10:32:15,341 [http-nio-9090-exec-2]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[admin] 2025-05-07 10:32:15,532 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/canceledordercountbyperiod was used
+[admin] 2025-05-07 10:32:15,533 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[admin] 2025-05-07 10:32:15,672 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
+[admin] 2025-05-07 10:32:15,674 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/cancelledorders was used with startDate 2022-01-01 and endDate 2026-01-01
+[] 2025-05-07 10:33:13,311 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[] 2025-05-07 10:33:13,461 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[] 2025-05-07 10:33:13,471 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:33:13,475 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-07 10:33:13,482 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-07 10:33:17,183 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 3640 (C:\Users\neina\IdeaProjects\Biluthyrningssystem\target\classes started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-07 10:33:17,192 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-07 10:33:17,703 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-07 10:33:17,754 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 4 JPA repository interfaces.
+[] 2025-05-07 10:33:18,116 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+[] 2025-05-07 10:33:18,125 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:33:18,127 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[] 2025-05-07 10:33:18,127 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+[] 2025-05-07 10:33:18,167 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[] 2025-05-07 10:33:18,167 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 941 ms
+[] 2025-05-07 10:33:18,283 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-07 10:33:18,319 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-07 10:33:18,346 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-07 10:33:18,553 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-07 10:33:18,574 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-07 10:33:18,702 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
+[] 2025-05-07 10:33:18,704 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-07 10:33:18,744 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-07 10:33:19,410 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-07 10:33:19,461 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:33:19,716 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-07 10:33:19,745 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-07 10:33:20,048 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
+[] 2025-05-07 10:33:20,105 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:33:20,118 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[] 2025-05-07 10:33:20,125 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 3.254 seconds (process running for 4.076)
+[] 2025-05-07 10:33:24,032 [http-nio-9090-exec-4]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 2025-05-07 10:33:24,032 [http-nio-9090-exec-4]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[] 2025-05-07 10:33:24,033 [http-nio-9090-exec-4]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[admin] 2025-05-07 10:33:24,218 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/canceledordercountbyperiod was used
+[admin] 2025-05-07 10:33:24,219 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[admin] 2025-05-07 10:33:24,344 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
+[admin] 2025-05-07 10:33:24,346 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/cancelledorders was used with startDate 2022-01-01 and endDate 2026-01-01
+[] 2025-05-07 10:33:32,804 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[] 2025-05-07 10:33:32,920 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[] 2025-05-07 10:33:32,936 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:33:32,939 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-07 10:33:32,942 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-07 10:33:36,802 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 10984 (C:\Users\neina\IdeaProjects\Biluthyrningssystem\target\classes started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-07 10:33:36,810 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-07 10:33:37,384 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-07 10:33:37,436 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 4 JPA repository interfaces.
+[] 2025-05-07 10:33:37,790 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+[] 2025-05-07 10:33:37,800 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:33:37,802 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[] 2025-05-07 10:33:37,802 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+[] 2025-05-07 10:33:37,841 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[] 2025-05-07 10:33:37,841 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 991 ms
+[] 2025-05-07 10:33:37,956 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-07 10:33:37,993 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-07 10:33:38,022 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-07 10:33:38,228 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-07 10:33:38,251 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-07 10:33:38,373 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
+[] 2025-05-07 10:33:38,375 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-07 10:33:38,415 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-07 10:33:39,079 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-07 10:33:39,130 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:33:39,385 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-07 10:33:39,417 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-07 10:33:39,724 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
+[] 2025-05-07 10:33:39,776 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:33:39,790 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[] 2025-05-07 10:33:39,796 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 3.306 seconds (process running for 4.149)
+[] 2025-05-07 10:33:43,362 [http-nio-9090-exec-5]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 2025-05-07 10:33:43,363 [http-nio-9090-exec-5]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[] 2025-05-07 10:33:43,363 [http-nio-9090-exec-5]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+[admin] 2025-05-07 10:33:43,535 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/canceledordercountbyperiod was used
+[admin] 2025-05-07 10:33:43,536 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[admin] 2025-05-07 10:33:43,672 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
+[admin] 2025-05-07 10:33:43,675 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/cancelledorders was used with startDate 2022-01-01 and endDate 2026-01-01
+[admin] 2025-05-07 10:36:15,549 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/rentaldurations was used
+[admin] 2025-05-07 10:36:15,549 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[admin] 2025-05-07 10:36:15,553 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
+[admin] 2025-05-07 10:37:36,684 [http-nio-9090-exec-3]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/averageordercost was used
+[admin] 2025-05-07 10:37:36,685 [http-nio-9090-exec-3]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[admin] 2025-05-07 10:37:36,691 [http-nio-9090-exec-3]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
+[] 2025-05-07 10:42:38,289 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[] 2025-05-07 10:42:38,394 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[] 2025-05-07 10:42:38,404 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:42:38,407 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-07 10:42:38,411 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-07 10:43:20,292 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 18396 (C:\Users\neina\IdeaProjects\Biluthyrningssystem\target\classes started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-07 10:43:20,302 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-07 10:43:20,829 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-07 10:43:20,882 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 4 JPA repository interfaces.
+[] 2025-05-07 10:43:21,253 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+[] 2025-05-07 10:43:21,264 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:43:21,265 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[] 2025-05-07 10:43:21,265 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+[] 2025-05-07 10:43:21,301 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[] 2025-05-07 10:43:21,303 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 965 ms
+[] 2025-05-07 10:43:21,418 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-07 10:43:21,456 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-07 10:43:21,482 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-07 10:43:21,689 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-07 10:43:21,714 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-07 10:43:21,843 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
+[] 2025-05-07 10:43:21,844 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-07 10:43:21,886 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-07 10:43:22,548 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-07 10:43:22,602 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:43:22,851 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-07 10:43:22,880 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-07 10:43:23,180 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
+[] 2025-05-07 10:43:23,242 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:43:23,255 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[] 2025-05-07 10:43:23,259 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 3.297 seconds (process running for 4.139)
+[] 2025-05-07 10:43:29,018 [http-nio-9090-exec-2]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 2025-05-07 10:43:29,018 [http-nio-9090-exec-2]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[] 2025-05-07 10:43:29,026 [http-nio-9090-exec-2]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+[admin] 2025-05-07 10:43:29,193 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/canceledordercountbyperiod was used
+[admin] 2025-05-07 10:43:29,193 [http-nio-9090-exec-2]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Invalid date because start date 2026-01-01 is after end date 2022-01-01
+[admin] 2025-05-07 10:44:40,341 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/canceledordercountbyperiod was used
+[admin] 2025-05-07 10:44:40,342 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[admin] 2025-05-07 10:44:40,478 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
+[admin] 2025-05-07 10:44:40,480 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/cancelledorders was used with startDate 2022-01-01 and endDate 2026-01-01
+[admin] 2025-05-07 10:45:01,665 [http-nio-9090-exec-6]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/canceledordercountbyperiod was used
+[admin] 2025-05-07 10:45:01,666 [http-nio-9090-exec-6]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Could not parse date 01-01-2022 because wrong format was used.
+[] 2025-05-07 10:46:05,690 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[] 2025-05-07 10:46:05,770 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[] 2025-05-07 10:46:05,770 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:46:05,770 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-07 10:46:05,770 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-07 10:46:09,598 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 34660 (C:\Users\neina\IdeaProjects\Biluthyrningssystem\target\classes started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-07 10:46:09,606 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-07 10:46:10,107 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-07 10:46:10,159 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 4 JPA repository interfaces.
+[] 2025-05-07 10:46:10,508 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+[] 2025-05-07 10:46:10,519 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:46:10,520 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[] 2025-05-07 10:46:10,520 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+[] 2025-05-07 10:46:10,565 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[] 2025-05-07 10:46:10,566 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 935 ms
+[] 2025-05-07 10:46:10,681 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-07 10:46:10,717 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-07 10:46:10,741 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-07 10:46:10,935 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-07 10:46:10,958 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-07 10:46:11,081 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
+[] 2025-05-07 10:46:11,082 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-07 10:46:11,123 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-07 10:46:11,791 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-07 10:46:11,850 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 10:46:12,102 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-07 10:46:12,124 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-07 10:46:12,437 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
+[] 2025-05-07 10:46:12,500 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[] 2025-05-07 10:46:12,500 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[] 2025-05-07 10:46:12,522 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 3.219 seconds (process running for 4.053)
+[] 2025-05-07 10:46:16,274 [http-nio-9090-exec-3]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 2025-05-07 10:46:16,274 [http-nio-9090-exec-3]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[] 2025-05-07 10:46:16,277 [http-nio-9090-exec-3]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+[admin] 2025-05-07 10:46:16,448 [http-nio-9090-exec-3]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/canceledordercountbyperiod was used
+[admin] 2025-05-07 10:46:16,448 [http-nio-9090-exec-3]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Could not parse startDate 01-01-2022 endDate 01-01-2026 because wrong format was used.
+[admin] 2025-05-07 10:48:11,437 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/canceledordercountbyperiod was used
+[admin] 2025-05-07 10:48:11,437 [http-nio-9090-exec-4]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Invalid date because start date 2026-01-01 is after end date 2022-01-01
+[] 2025-05-07 11:02:39,175 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[] 2025-05-07 11:02:39,317 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[] 2025-05-07 11:02:39,325 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-07 11:02:39,330 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-07 11:02:39,336 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
