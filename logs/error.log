@@ -1,1 +1,1 @@
-[admin] 2025-05-02 13:50:21,684 [http-nio-9090-exec-1] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Radering misslyckades för id 9999: Car with id '9999' not found
+[admin] 2025-05-06 12:08:42,746 [http-nio-9090-exec-2] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Failed to update car with id 9999: Car with id '9999' not found
