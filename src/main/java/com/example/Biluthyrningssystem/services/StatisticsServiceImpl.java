@@ -50,13 +50,13 @@ public class StatisticsServiceImpl implements StatisticsService {
         Map<String, Double> totalRevenue2025 = getTotalRevenueForPeriod("2025-01-01", "2025-12-31");
             statistics.put("Revenue 2025", totalRevenue2025.get("Total revenue for period"));
 
-        Map<String, Double> revenuePerOrder = getAverageCostPerOrder();
-            statistics.put("Average revenue of orders", revenuePerOrder.get("Average order price"));
 
         Map<String, Object> cancelledOrders = getCanceledOrderCountByPeriod("2025-01-01", "2025-12-31");
-            statistics.put("Cancelled orders 2025", cancelledOrders.get("cancelled orders"));
-            statistics.put("Lost revenue from cancelled orders", cancelledOrders.get("lost revenue"));
+        statistics.put("Cancelled orders 2025", cancelledOrders.get("cancelled orders"));
+        statistics.put("Lost revenue from cancelled orders", cancelledOrders.get("lost revenue"));
 
+        Map<String, Double> revenuePerOrder = getAverageCostPerOrder();
+        statistics.put("Average revenue of orders", revenuePerOrder.get("Average order price"));
         Map<String, Object> endpoints = new LinkedHashMap<>();
 
         endpoints.put("Available endpoints", List.of(
@@ -67,13 +67,13 @@ public class StatisticsServiceImpl implements StatisticsService {
                 "/statistics/averageordercost",
                 "/statistics/revenuepercar",
                 "/statistics/revenue/period/{startDate}/{endDate}",
-                "/statistics/cancelledorders/period/{startDate}/{endDate}"
+                "/statistics/cancelledorders/period/{startDate}/{endDate}",
+                "/statistics/orders/period/{startDate}/{endDate}"
         ));
         statistics.putAll(endpoints);
 
         return statistics;
     }
-
 
 
     @Override
