@@ -30,7 +30,7 @@ public class StatisticsController {
     }
 
 
-    @GetMapping("/statistics/mostrentedbrand/period/{startDate}/{endDate}")
+    @GetMapping("/statistics/mostrentedbrands/period/{startDate}/{endDate}")
     public ResponseEntity<Map<String, Object>> getMostRentedBrandForPeriod(@PathVariable String startDate, @PathVariable String endDate) {
 
 
