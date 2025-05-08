@@ -37,7 +37,7 @@ public class StatisticsController {
         Map<String, Long> sortedBrands = statisticsService.getMostRentedBrandForPeriod(startDate, endDate);
 
         Map<String, Object> response = new LinkedHashMap<>();
-        response.put("message", "Alla bilmärken sorterade efter antal uthyrningar under perioden.");
+        response.put("message", "All car brands sorted by order count during period");
         response.put("data", sortedBrands);
 
         return ResponseEntity.ok(response);
@@ -67,7 +67,7 @@ public class StatisticsController {
         Long count = (Long) result.get("count");
 
         Map<String, Object> response = new LinkedHashMap<>();
-        response.put("message", "Bilen med ID " + carId + " har hyrts ut " + count + " gånger.");
+        response.put("message", "Car with ID " + carId + " has been booked " + count + " time(s).");
         response.putAll(result);
 
         return ResponseEntity.ok(response);
@@ -78,15 +78,14 @@ public class StatisticsController {
         Map<Integer, Long> result = statisticsService.getRentalDurationsByDays();
 
         Map<String, Object> response = new LinkedHashMap<>();
-        response.put("message", " De vanligaste längderna och hur ofta dom förekommer");
+        response.put("message", "The most common rental durations.");
 
         Map<String, Object> details = new LinkedHashMap<>();
         result.forEach((days, frequency) -> {
-            details.put("Dagar: " + days, "Bokningar: " + frequency);
+            details.put("Days: " + days, "Bookings: " + frequency);
         });
 
-
-        response.put("längder", details);
+        response.put("Durations", details);
         return ResponseEntity.ok(response);
 
     }

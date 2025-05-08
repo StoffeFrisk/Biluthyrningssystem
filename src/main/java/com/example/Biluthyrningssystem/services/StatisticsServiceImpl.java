@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 public class StatisticsServiceImpl implements StatisticsService {
 
     private static final Logger logger = (Logger) LoggerFactory.getLogger(StatisticsServiceImpl.class);
-    private static final Logger applicationLogger = LoggerFactory.getLogger("app");
+//    private static final Logger applicationLogger = LoggerFactory.getLogger("app");
 
 
     private final OrderRepository orderRepository;
@@ -48,18 +48,18 @@ public class StatisticsServiceImpl implements StatisticsService {
         Map<String, Object> statistics = new LinkedHashMap<>();
 
         Map<String, Double> totalRevenue2025 = getTotalRevenueForPeriod("2025-01-01", "2025-12-31");
-        statistics.put("Intäkter 2025", totalRevenue2025.get("Totala intäkter för perioden"));
+            statistics.put("Revenue 2025", totalRevenue2025.get("Totala intäkter för perioden"));
 
         Map<String, Double> revenuePerOrder = getAverageCostPerOrder();
-        statistics.put("Genomsnittlig intäkt per bokning", revenuePerOrder.get("Genomsnittlig kostnad per bokning"));
+            statistics.put("Average revenue of orders", revenuePerOrder.get("Genomsnittlig kostnad per bokning"));
 
         Map<String, Object> cancelledOrders = getCanceledOrderCountByPeriod("2025-01-01", "2025-12-31");
-                statistics.put("Cancelled orders 2025", cancelledOrders.get("cancelled orders"));
-                statistics.put("Lost revenue from cancelled orders", cancelledOrders.get("lost revenue"));
+            statistics.put("Cancelled orders 2025", cancelledOrders.get("cancelled orders"));
+            statistics.put("Lost revenue from cancelled orders", cancelledOrders.get("lost revenue"));
 
         Map<String, Object> endpoints = new LinkedHashMap<>();
 
-        endpoints.put("Tillgängliga endpoints", List.of(
+        endpoints.put("Available endpoints", List.of(
                 "/statistics",
                 "/statistics/mostrentedbrands/period/{startDate}/{endDate}",
                 "/statistics/carrentalcount/{carId}",
@@ -153,7 +153,7 @@ public class StatisticsServiceImpl implements StatisticsService {
         result.put("brand", car.getBrand());
         result.put("model", car.getModel());
         result.put("registrationnumber", car.getRegistrationNumber());
-        result.put("count", count);
+        result.put("order count", count);
 
         logger.info("Endpoint /admin/statistics/carrentalcount was used with carId {}.", carId);
 
@@ -219,19 +219,10 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         logger.info("Endpoint /admin/statistics/averageordercost was used and returned average of {}", average);
 
-        return Map.of("Genomsnittlig kostnad per bokning", average);
+        return Map.of("Average order price", average);
     }
 
 
-
-
-
-
-
-
-
-
-    // TODO Exceptions + loggning
     @Override
     public Map<Long, Double> getTotalRevenuePerCar() {
 
@@ -319,7 +310,7 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         logger.info("Endpoint /admin/statistics/revenue was used with startDate {} and endDate {} and returned {}", startDate, endDate, totalRevenue);
 
-        return Map.of("Totala intäkter för perioden", totalRevenue);
+        return Map.of("Total revenue for period", totalRevenue);
 
     }
 
@@ -360,6 +351,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                 })
                 .count();
 
+
         double totalPriceOfCanceledOrders = allOrders.stream()
                 .filter(order -> {
                     LocalDate hireStart = order.getHireStartDate().toLocalDate();
@@ -380,7 +372,7 @@ public class StatisticsServiceImpl implements StatisticsService {
         result.put("cancelled orders", canceledCount);
         result.put("lost revenue", totalPriceOfCanceledOrders);
 
-        logger.info("Endpoint /admin/statistics/cancelledorders was used with startDate {} and endDate {}", startDate, endDate);
+        logger.info("Endpoint /admin/statistics/cancelledorders was used with startDate {} endDate {} and returned {} cancelled orders with revenue lost {} ", startDate, endDate,canceledCount, totalPriceOfCanceledOrders );
 
 
         return result;
