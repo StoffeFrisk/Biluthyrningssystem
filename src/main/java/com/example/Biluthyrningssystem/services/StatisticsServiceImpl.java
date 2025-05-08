@@ -47,8 +47,11 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         Map<String, Object> statistics = new LinkedHashMap<>();
 
+        Map<String, Object> orderCount2025 = getOrderCountForPeriod("2025-01-01", "2025-12-31");
+        statistics.put("Orders 2025", orderCount2025.get("orders"));
         Map<String, Double> totalRevenue2025 = getTotalRevenueForPeriod("2025-01-01", "2025-12-31");
-            statistics.put("Revenue 2025", totalRevenue2025.get("Total revenue for period"));
+        statistics.put("Revenue 2025", totalRevenue2025.get("Total revenue for period"));
+
 
 
         Map<String, Object> cancelledOrders = getCanceledOrderCountByPeriod("2025-01-01", "2025-12-31");
@@ -56,7 +59,7 @@ public class StatisticsServiceImpl implements StatisticsService {
         statistics.put("Lost revenue from cancelled orders", cancelledOrders.get("lost revenue"));
 
         Map<String, Double> revenuePerOrder = getAverageCostPerOrder();
-        statistics.put("Average revenue of orders", revenuePerOrder.get("Average order price"));
+        statistics.put("Average revenue of orders (All time)", revenuePerOrder.get("Average order price"));
         Map<String, Object> endpoints = new LinkedHashMap<>();
 
         endpoints.put("Available endpoints", List.of(
