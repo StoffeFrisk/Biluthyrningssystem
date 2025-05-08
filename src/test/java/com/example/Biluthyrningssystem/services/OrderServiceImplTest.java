@@ -14,24 +14,27 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
-@AutoConfigureMockMvc
+//BP
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+
 @SqlGroup(
         @Sql(value = "/data.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_CLASS)
 )
+@Transactional
+@Rollback
 class OrderServiceImplTest {
 
     private OrderServiceImpl orderService;
@@ -40,8 +43,8 @@ class OrderServiceImplTest {
     private CustomerRepository customerRepository;
 
     private static Orders order;
-    private static String username;
-    private static String secondUsername;
+    private String username;
+    private String secondUsername;
 
     @Autowired
     public OrderServiceImplTest(OrderServiceImpl orderService, OrderRepository orderRepository, CarRepository carRepository, CustomerRepository customerRepository){
@@ -49,12 +52,13 @@ class OrderServiceImplTest {
         this.orderRepository = orderRepository;
         this.carRepository = carRepository;
         this.customerRepository = customerRepository;
-        this.username = "19850101-1234";
-        this.secondUsername = "19950505-7890";
     }
 
     @BeforeEach
     void beforeEach(){
+        this.username = "19850101-1234";
+        this.secondUsername = "19950505-7890";
+
         order = new Orders();
         order.setHireStartDate(Date.valueOf("2025-10-10"));
         order.setHireEndDate(Date.valueOf("2025-10-11"));
@@ -75,9 +79,8 @@ class OrderServiceImplTest {
         //When
         Orders addedOrder = orderService.addOrder(order,username);
         //Then
-        assertThat(orderRepository.getOrdersById(addedOrder.getId()).equals(addedOrder));
-
-        assertThat(order.getCustomer().equals(addedOrder.getCustomer()));
+        Optional<Orders> completedOrder = orderRepository.getOrdersById(addedOrder.getId());
+        assertEquals(addedOrder, completedOrder.get());
         assertEquals(998.0, addedOrder.getTotalPrice());
         assertFalse(addedOrder.isOrderCancelled());
     }
@@ -90,9 +93,8 @@ class OrderServiceImplTest {
         order.setCustomer(emptyCustomer);
         Orders addedOrder = orderService.addOrder(order,username);
         //Then
-        assertThat(orderRepository.getOrdersById(addedOrder.getId()).equals(addedOrder));
-
-        assertThat(order.getCustomer().equals(addedOrder.getCustomer()));
+        Optional<Orders> completedOrder = orderRepository.getOrdersById(addedOrder.getId());
+        assertEquals(addedOrder, completedOrder.get());
         assertEquals(998.0, addedOrder.getTotalPrice());
         assertFalse(addedOrder.isOrderCancelled());
     }
@@ -124,7 +126,7 @@ class OrderServiceImplTest {
     void cancelOrderShouldReturnTrue() {
         //Given
         Orders orderToBeCancelled = orderService.addOrder(order, username);
-        assertThat(orderRepository.findById(orderToBeCancelled.getId()).equals(orderToBeCancelled));
+        assertEquals(orderToBeCancelled, orderRepository.findById(orderToBeCancelled.getId()).get());
         //When
         Orders cancelledOrder = orderService.cancelOrder(orderToBeCancelled, username);
         //Then
@@ -135,7 +137,7 @@ class OrderServiceImplTest {
     void cancelOrderShouldThrowUnauthorisedRequestException(){
         //Given
         Orders orderToBeCancelled = orderService.addOrder(order, username);
-        assertThat(orderRepository.findById(orderToBeCancelled.getId()).equals(orderToBeCancelled));
+        assertEquals(orderToBeCancelled, orderRepository.findById(orderToBeCancelled.getId()).get());
         //When
 
         UnauthorisedRequestException response = assertThrows(UnauthorisedRequestException.class, () -> orderService.cancelOrder(orderToBeCancelled,secondUsername));
@@ -189,12 +191,12 @@ class OrderServiceImplTest {
     void deleteOrderByIdShouldRemoveOrderFrom() {
         //Given
         Orders orderToDelete = orderService.addOrder(order, username);
-        assertThat(orderRepository.findById(orderToDelete.getId()).equals(orderToDelete));
+        assertEquals(orderToDelete, orderRepository.findById(orderToDelete.getId()).get());
         //When
         orderService.deleteOrderById(orderToDelete.getId());
         Optional<Orders> deletedOrder = orderRepository.findById(orderToDelete.getId());
         //Then
-        assertThat(deletedOrder.isEmpty());
+        assertTrue(deletedOrder.isEmpty());
     }
 
     @Test
@@ -297,9 +299,8 @@ class OrderServiceImplTest {
         order.setOrderCancelled(Boolean.valueOf(null));
         Orders addedOrder = orderService.addOrder(order,username);
         //Then
-        assertThat(orderRepository.getOrdersById(addedOrder.getId()).equals(addedOrder));
-
-        assertThat(order.getCustomer().equals(addedOrder.getCustomer()));
+        Optional<Orders> completedOrder = orderRepository.getOrdersById(addedOrder.getId());
+        assertEquals(addedOrder, completedOrder.get());
         assertEquals(998.0, addedOrder.getTotalPrice());
         assertFalse(addedOrder.isOrderCancelled());
     }
@@ -310,9 +311,8 @@ class OrderServiceImplTest {
         order.setTotalPrice(null);
         Orders addedOrder = orderService.addOrder(order,username);
         //Then
-        assertThat(orderRepository.getOrdersById(addedOrder.getId()).equals(addedOrder));
-
-        assertThat(order.getCustomer().equals(addedOrder.getCustomer()));
+        Optional<Orders> completedOrder = orderRepository.getOrdersById(addedOrder.getId());
+        assertEquals(addedOrder, completedOrder.get());
         assertEquals(998.0, addedOrder.getTotalPrice());
         assertFalse(addedOrder.isOrderCancelled());
     }
@@ -323,9 +323,8 @@ class OrderServiceImplTest {
         order.setTotalPrice(Double.valueOf(0));
         Orders addedOrder = orderService.addOrder(order,username);
         //Then
-        assertThat(orderRepository.getOrdersById(addedOrder.getId()).equals(addedOrder));
-
-        assertThat(order.getCustomer().equals(addedOrder.getCustomer()));
+        Optional<Orders> completedOrder = orderRepository.getOrdersById(addedOrder.getId());
+        assertEquals(addedOrder, completedOrder.get());
         assertEquals(998.0, addedOrder.getTotalPrice());
         assertFalse(addedOrder.isOrderCancelled());
     }
