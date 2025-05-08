@@ -66,7 +66,8 @@ public class StatisticsServiceImpl implements StatisticsService {
                 "/statistics/rentaldurations",
                 "/statistics/averageordercost",
                 "/statistics/revenuepercar",
-                "/statistics/revenue/period/{startDate}/{endDate}"
+                "/statistics/revenue/period/{startDate}/{endDate}",
+                "/statistics/cancelledorders/period/{startDate}/{endDate}"
         ));
         statistics.putAll(endpoints);
 
