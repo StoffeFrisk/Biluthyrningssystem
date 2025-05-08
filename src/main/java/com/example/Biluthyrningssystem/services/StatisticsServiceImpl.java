@@ -48,10 +48,10 @@ public class StatisticsServiceImpl implements StatisticsService {
         Map<String, Object> statistics = new LinkedHashMap<>();
 
         Map<String, Double> totalRevenue2025 = getTotalRevenueForPeriod("2025-01-01", "2025-12-31");
-            statistics.put("Revenue 2025", totalRevenue2025.get("Totala intäkter för perioden"));
+            statistics.put("Revenue 2025", totalRevenue2025.get("Total revenue for period"));
 
         Map<String, Double> revenuePerOrder = getAverageCostPerOrder();
-            statistics.put("Average revenue of orders", revenuePerOrder.get("Genomsnittlig kostnad per bokning"));
+            statistics.put("Average revenue of orders", revenuePerOrder.get("Average order price"));
 
         Map<String, Object> cancelledOrders = getCanceledOrderCountByPeriod("2025-01-01", "2025-12-31");
             statistics.put("Cancelled orders 2025", cancelledOrders.get("cancelled orders"));
@@ -156,7 +156,7 @@ public class StatisticsServiceImpl implements StatisticsService {
         result.put("registrationnumber", car.getRegistrationNumber());
         result.put("order count", count);
 
-        logger.info("Endpoint /admin/statistics/carrentalcount was used with carId {}.", carId);
+        logger.info("Endpoint /admin/statistics/carrentalcount was used with carId {} and returned count {}.", carId, count);
 
         return result;
 
@@ -377,6 +377,36 @@ public class StatisticsServiceImpl implements StatisticsService {
 
 
         return result;
+    }
+
+    @Override
+    public Map<String, Object> getOrderCountForPeriod(String startDate, String endDate) {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate start;
+        LocalDate end;
+
+        try {
+            start = LocalDate.parse(startDate, formatter);
+            end = LocalDate.parse(endDate, formatter);
+        } catch (DateTimeParseException e) {
+            logger.warn("/statistics/orders Could not parse date {} - {} because wrong format was used.", startDate, endDate);
+            throw new IncorrectInputException("Statistics", "date input", startDate + " and " + endDate, "yyyy-MM-dd", "");
+        }
+
+        if (start.isAfter(end)) {
+            logger.warn("/statistics/orders Invalid date because start date {} is after end date {}.", startDate, endDate);
+            throw new IncorrectInputException("Statistics", "Start-End Dates", startDate + " -> " + endDate, "YYYY-MM-DD", "Start date must be BEFORE end date.");
+        }
+        List<Orders> allOrders = orderRepository.findByHireStartDateBetween(start,end);
+
+        if (allOrders.isEmpty()) {
+            logger.warn("/statistics/orders getAllOrders returned empty list with no orders.");
+            throw new DataNotFoundException("/statistics/orders", "", "No orders were found during given period." );
+        }
+
+        logger.info("Endpoint admin/statistics/orders was used with startDate {} endDate {} and returned order count {}.", startDate, endDate, allOrders.size());
+        return Map.of("startDate", start, "endDate", end, "orders", allOrders.size());
     }
 
 }

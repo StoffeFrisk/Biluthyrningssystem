@@ -2,14 +2,11 @@
 
 package com.example.Biluthyrningssystem.controllers;
 
-import com.example.Biluthyrningssystem.dto.StatisticsDTO;
 import com.example.Biluthyrningssystem.services.StatisticsService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -64,7 +61,7 @@ public class StatisticsController {
     public ResponseEntity<Map<String, Object>> getRentalCountByCar(@PathVariable Long carId) {
 
         Map<String, Object> result = statisticsService.getRentalCountByCar(carId);
-        Long count = (Long) result.get("count");
+        Long count = (Long) result.get("order count");
 
         Map<String, Object> response = new LinkedHashMap<>();
         response.put("message", "Car with ID " + carId + " has been booked " + count + " time(s).");
@@ -111,6 +108,12 @@ public class StatisticsController {
     @GetMapping("/statistics/cancelledorders/period/{startDate}/{endDate}")
     public ResponseEntity<Map<String, Object>> getCancelledOrders(@PathVariable String startDate, @PathVariable String endDate) {
         Map<String, Object> result = statisticsService.getCanceledOrderCountByPeriod(startDate, endDate);
+        return ResponseEntity.ok(result);
+    }
+
+    @GetMapping("/statistics/orders/period/{startDate}/{endDate}")
+    public ResponseEntity<Map<String, Object>> getOrderCount(@PathVariable String startDate, @PathVariable String endDate) {
+        Map<String, Object> result = statisticsService.getOrderCountForPeriod(startDate, endDate);
         return ResponseEntity.ok(result);
     }
 
