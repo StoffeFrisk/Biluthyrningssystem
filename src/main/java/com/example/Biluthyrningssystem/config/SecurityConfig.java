@@ -46,7 +46,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public InMemoryUserDetailsManager userDetailsService() { //Lynsey Fox - update return class type to work with CustomerService method addCustomer
+    public InMemoryUserDetailsManager userDetailsService() {   //Lynsey Fox - update return class type to work with CustomerService method addCustomer
         UserDetails admin = User
                 .withUsername("admin")
                 .password("{noop}admin")
