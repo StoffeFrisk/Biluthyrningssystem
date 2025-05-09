@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -100,7 +101,7 @@ public class OrderServiceImpl implements OrderService {
         LOGGER.info("Locating all active orders registered to user: {} in database. Request made by user: {}", username, username);
         List<Orders> activeCustomerOrders = new ArrayList<>();
         for (Orders order: orderRepository.findAll()){
-            if (!order.isOrderCancelled() && order.getCustomer().getPersonnummer().equals(username)){
+            if (!order.isOrderCancelled() && order.getCustomer().getPersonnummer().equals(username) && order.getHireEndDate().after(Date.valueOf(LocalDate.now()))){
                 activeCustomerOrders.add(order);
             }
         }
@@ -113,7 +114,7 @@ public class OrderServiceImpl implements OrderService {
         LOGGER.info("Locating all active orders in database. Request made by admin");
         List<Orders> activeOrders = new ArrayList<>();
         for (Orders order : orderRepository.findAll()){
-            if (!order.isOrderCancelled()){
+            if (!order.isOrderCancelled() && order.getHireEndDate().after(Date.valueOf(LocalDate.now()))){
                 activeOrders.add(order);
             }
         }
@@ -178,9 +179,14 @@ public class OrderServiceImpl implements OrderService {
             LOGGER.error("Invalid date format for hireEndDate. Correct format is 'YYYY-MM-DD'. Date input by {} during order creation.", username);
             throw new IncorrectInputException("Order", "Hire End Date", order.getHireEndDate(),"YYYY-MM-DD","End date must be AfTER start date.");
         }
+        if (order.getHireStartDate().before(Date.valueOf(LocalDate.now()))){
+            LOGGER.error("Invalid input for hireStartDate. Start date must be set from today onwards. Date input by {} during order creation.", username);
+            throw new IncorrectInputException("Order", "Hire Start Date", order.getHireStartDate(),"YYYY-MM-DD","Start date must be ON|AFTER today's date.");
+        }
+
         if (order.getHireStartDate().after(order.getHireEndDate())){
             LOGGER.error("Invalid date(s) input. hireEndDate must come after hireStartDate. Date input by {} during order creation.", username);
-            throw new IncorrectInputException("Order", "Hire Start-End Dates", ("Start:"+order.getHireStartDate()+"->End:"+order.getHireEndDate()),"YYY-MM-DD","Start date must be BEFORE end date.");
+            throw new IncorrectInputException("Order", "Hire Start-End Dates", ("Start:"+order.getHireStartDate()+"->End:"+order.getHireEndDate()),"YYYY-MM-DD","Start date must be BEFORE end date.");
         }
         double priceCalc = ((order.getHireEndDate().compareTo(order.getHireStartDate()))*order.getCar().getPricePerDay())+order.getCar().getPricePerDay();
         if (order.getTotalPrice() == null || order.getTotalPrice().equals(Double.valueOf(0))){

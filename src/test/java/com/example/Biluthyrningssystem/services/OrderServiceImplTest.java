@@ -166,13 +166,13 @@ class OrderServiceImplTest {
     @Test
     void getActiveCustomerOrdersShouldEqual3() {
         //When
-        List<Orders> expectedOrders = orderService.getActiveCustomerOrders(secondUsername);
+        List<Orders> expectedOrders = orderService.getActiveCustomerOrders(username);
         //Then
-        assertEquals(3,expectedOrders.size());
+        assertEquals(1,expectedOrders.size());
     }
 
     @Test
-    void getActiveOrdersShouldEqual2() {
+    void getActiveOrdersShouldEqual4() {
         //When
         List<Orders> expectedOrders = orderService.getActiveOrders();
         //Then
@@ -180,11 +180,11 @@ class OrderServiceImplTest {
     }
 
     @Test
-    void getAllOrdersShouldEqual3() {
+    void getAllOrdersShouldEqual8() {
         //When
         List<Orders> expectedOrders = orderService.getAllOrders();
         //Then
-        assertEquals(7, expectedOrders.size());
+        assertEquals(8, expectedOrders.size());
     }
 
     @Test
@@ -213,7 +213,7 @@ class OrderServiceImplTest {
         List<Long> deletedIDsList = orderService.deleteOrdersBeforeDate(Date.valueOf("2025-06-01"));
         //Then
         assertEquals(2, deletedIDsList.size());
-        assertEquals(5, orderRepository.findAll().size());
+        assertEquals(6, orderRepository.findAll().size());
 
     }
 
@@ -262,6 +262,17 @@ class OrderServiceImplTest {
     }
 
     @Test
+    void addOrderWithStartDateBeforeTodaysDateShouldThrowIncorrectInputException() {
+        //Given
+        order.setHireStartDate(Date.valueOf("2024-10-10"));
+        order.setHireEndDate(Date.valueOf("2025-10-01"));
+        //When
+        IncorrectInputException response = assertThrows(IncorrectInputException.class, ()-> orderService.addOrder(order,username));
+        //Then
+        assertEquals("Order attribute - Hire Start Date, with value 2024-10-10, is formatted incorrectly. Enter data with the following format YYYY-MM-DD. Start date must be ON|AFTER today's date.",response.getMessage());
+    }
+
+    @Test
     void addOrderWithEndDateBeforeStartDateShouldThrowIncorrectInputException() {
         //Given
         order.setHireStartDate(Date.valueOf("2025-10-10"));
@@ -269,7 +280,7 @@ class OrderServiceImplTest {
         //When
         IncorrectInputException response = assertThrows(IncorrectInputException.class, ()-> orderService.addOrder(order,username));
         //Then
-        assertEquals("Order attribute - Hire Start-End Dates, with value Start:2025-10-10->End:2025-10-01, is formatted incorrectly. Enter data with the following format YYY-MM-DD. Start date must be BEFORE end date.",response.getMessage());
+        assertEquals("Order attribute - Hire Start-End Dates, with value Start:2025-10-10->End:2025-10-01, is formatted incorrectly. Enter data with the following format YYYY-MM-DD. Start date must be BEFORE end date.",response.getMessage());
     }
 
     @Test
