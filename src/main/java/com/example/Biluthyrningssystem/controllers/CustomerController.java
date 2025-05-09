@@ -1,5 +1,6 @@
 package com.example.Biluthyrningssystem.controllers;
 
+import com.example.Biluthyrningssystem.dto.CustomerRegistrationDTO;
 import com.example.Biluthyrningssystem.entities.Customer;
 import com.example.Biluthyrningssystem.services.CustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,7 @@ public class CustomerController {       //Lynsey Fox
     }
 
     @PostMapping("/admin/addcustomer")
-    public ResponseEntity<Customer> addCustomer(@RequestBody Customer customerToAdd) {
+    public ResponseEntity<CustomerRegistrationDTO> addCustomer(@RequestBody Customer customerToAdd) {
         return ResponseEntity.ok(customerService.addCustomer(customerToAdd));
     }
 
