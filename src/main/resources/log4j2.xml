@@ -1,5 +1,5 @@
 <!--Christoffer Frisk-->
-<Configuration status="debug">
+<Configuration status="info">
     <Properties>
         <Property name="layout">[%X{user}] %d [%t] %highlight{%5level} %logger - %m%n</Property>
     </Properties>
