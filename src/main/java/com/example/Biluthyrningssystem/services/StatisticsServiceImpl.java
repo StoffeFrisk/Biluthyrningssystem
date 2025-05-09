@@ -25,7 +25,6 @@ import java.util.stream.Collectors;
 public class StatisticsServiceImpl implements StatisticsService {
 
     private static final Logger logger = (Logger) LoggerFactory.getLogger(StatisticsServiceImpl.class);
-//    private static final Logger applicationLogger = LoggerFactory.getLogger("app");
 
 
     private final OrderRepository orderRepository;
@@ -105,7 +104,8 @@ public class StatisticsServiceImpl implements StatisticsService {
         for (Orders order : allOrders) {
             LocalDate hireStart = order.getHireStartDate().toLocalDate();
 
-            if ((hireStart.isEqual(start) || hireStart.isAfter(start)) &&
+            if (!order.isOrderCancelled() &&
+                    (hireStart.isEqual(start) || hireStart.isAfter(start)) &&
                     (hireStart.isEqual(end) || hireStart.isBefore(end))) {
                 Car car = order.getCar();
                 if (car != null) {
@@ -150,7 +150,9 @@ public class StatisticsServiceImpl implements StatisticsService {
             logger.warn("/carrentalcount/{} getAllOrders returned empty list.", carId);
             throw new DataNotFoundException("/carrentalcount", carId.toString(), "No orders were found");
         }
-        long count = allOrders.stream().filter(order -> order.getCar() != null && order.getCar().getId() == carId).count();
+        long count = allOrders.stream()
+                .filter(order -> order.getCar() != null && !order.isOrderCancelled() && order.getCar().getId().equals(carId))
+                .count();
 
         Map<String, Object> result = new LinkedHashMap<>();
         result.put("car id", carId);
@@ -207,7 +209,10 @@ public class StatisticsServiceImpl implements StatisticsService {
             throw new DataNotFoundException("/averagecostperorder","","No orders were found");
         }
 
-        List<Orders> ordersToCalculate = allOrders.stream().filter(order -> order.getHireStartDate() != null).collect(Collectors.toList());
+        List<Orders> ordersToCalculate = allOrders.stream()
+                .filter(order -> order.getHireStartDate() != null && !order.isOrderCancelled())
+                .collect(Collectors.toList());
+
 
         if (ordersToCalculate.isEmpty()) {
             logger.warn("/averagecostperorder ordersToCalculate returned empty because no valid data was found.");
@@ -403,13 +408,24 @@ public class StatisticsServiceImpl implements StatisticsService {
         }
         List<Orders> allOrders = orderRepository.findByHireStartDateBetween(start,end);
 
-        if (allOrders.isEmpty()) {
-            logger.warn("/statistics/orders getAllOrders returned empty list with no orders.");
-            throw new DataNotFoundException("/statistics/orders", "", "No orders were found during given period." );
+        List<Orders> activeOrders = allOrders.stream()
+                .filter(order -> !order.isOrderCancelled())
+                .toList();
+
+        if (activeOrders.isEmpty()) {
+            logger.warn("/statistics/orders activeOrders returned empty list with no orders.");
+            throw new DataNotFoundException("/statistics/orders", "", "No active orders were found during given period." );
         }
 
-        logger.info("Endpoint admin/statistics/orders was used with startDate {} endDate {} and returned order count {}.", startDate, endDate, allOrders.size());
-        return Map.of("startDate", start, "endDate", end, "orders", allOrders.size());
+        Map<String, Object> result = new LinkedHashMap<>();
+        result.put("start date", start);
+        result.put("end date", end);
+        result.put("active orders", activeOrders.size());
+
+
+
+        logger.info("Endpoint admin/statistics/orders was used with startDate {} endDate {} and returned order count {}.", startDate, endDate, activeOrders.size());
+        return result;
     }
 
 }
