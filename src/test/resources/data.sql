@@ -24,6 +24,7 @@ INSERT INTO car (brand, model, registration_number, price_per_day, booked, in_se
 --Ben Portsmouth
 INSERT INTO orders(personnummer,car_id,hire_start_date,hire_end_date,total_price,order_cancelled) VALUES
 ('19850101-1234',1, '2025-04-20','2025-04-25', 700.00, false),
+('19850101-1234',1, '2025-06-20','2025-06-25', 700.00, false),
 ('19751230-9101',1, '2022-04-20','2022-04-30', 7000.00, true),
 ('19950505-7890',1, '2025-06-10','2025-06-11', 85.00, false),
 ('19950505-7890',2, '2025-06-10','2025-06-11', 85.00, false),
