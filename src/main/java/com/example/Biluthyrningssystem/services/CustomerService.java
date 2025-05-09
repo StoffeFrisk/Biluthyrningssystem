@@ -1,5 +1,6 @@
 package com.example.Biluthyrningssystem.services;
 
+import com.example.Biluthyrningssystem.dto.CustomerRegistrationDTO;
 import com.example.Biluthyrningssystem.entities.Customer;
 
 import java.util.List;
@@ -10,7 +11,7 @@ public interface CustomerService {
 
     public Customer getCustomerByPersonnummer(String personnummer);
 
-    public Customer addCustomer(Customer customer);
+    public CustomerRegistrationDTO addCustomer(Customer customer);
 
     public Customer updateCustomer(Customer newCustomer);
 
