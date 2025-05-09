@@ -158,6 +158,10 @@ public class OrderServiceImpl implements OrderService {
 
 
     private void checkOrderInformation(Orders order, String username){
+        if (order.getCar() == null){
+            LOGGER.error("Car with ID: {} not found. Request made by {} during order creation", order.getCar(), username);
+            throw new ResourceNotFoundException("Car", "ID", order.getCar());
+        }
         Optional<Car> carCheck = carRepository.findById(order.getCar().getId());
         if (carCheck.isPresent()){
             LOGGER.info("Car with ID {} added to order.", carCheck.get().getId());
@@ -172,14 +176,14 @@ public class OrderServiceImpl implements OrderService {
         }
         if (order.getHireEndDate() == null){
             LOGGER.error("Invalid date format for hireEndDate. Correct format is 'YYYY-MM-DD'. Date input by {} during order creation.", username);
-            throw new IncorrectInputException("Order", "Hire End Date", order.getHireStartDate(),"YYYY-MM-DD","End date must be AfTER end date.");
+            throw new IncorrectInputException("Order", "Hire End Date", order.getHireEndDate(),"YYYY-MM-DD","End date must be AfTER start date.");
         }
         if (order.getHireStartDate().after(order.getHireEndDate())){
             LOGGER.error("Invalid date(s) input. hireEndDate must come after hireStartDate. Date input by {} during order creation.", username);
             throw new IncorrectInputException("Order", "Hire Start-End Dates", ("Start:"+order.getHireStartDate()+"->End:"+order.getHireEndDate()),"YYY-MM-DD","Start date must be BEFORE end date.");
         }
         double priceCalc = ((order.getHireEndDate().compareTo(order.getHireStartDate()))*order.getCar().getPricePerDay())+order.getCar().getPricePerDay();
-        if ((Double)order.getTotalPrice() == null || order.getTotalPrice() == Double.valueOf(0)){
+        if (order.getTotalPrice() == null || order.getTotalPrice().equals(Double.valueOf(0))){
             LOGGER.info("Total price calculated to {}. Price added to order.", priceCalc);
             order.setTotalPrice(priceCalc);
         }
@@ -187,12 +191,11 @@ public class OrderServiceImpl implements OrderService {
             LOGGER.error("Incorrect calculation of totalPrice by user. Calculated price: {}. User input price: {}. Price input by {} during order creation.", priceCalc, order.getTotalPrice(), username);
             throw new IncorrectCalculationException("Order", "Total Price", order.getTotalPrice(), String.valueOf(priceCalc));
         }
-        if ((Boolean)order.isOrderCancelled() == null){
-            order.setOrderCancelled(false);
-        }
         if (order.isOrderCancelled()){
             LOGGER.error("Invalid input of orderCancelled. Order cannot be created already cancelled. Order status input by {} during order creation.", username);
             throw new IncorrectInputException("Order", "Order Cancelled", order.isOrderCancelled(), "false","You cannot create a cancelled order.");
+        } else {
+            order.setOrderCancelled(false);
         }
     }
 }
