@@ -1,21 +1,30 @@
-[] 2025-05-09 15:57:05,035 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 13024 (C:\Users\neina\IdeaProjects\Biluthyrningssystem\target\classes started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
-[] 2025-05-09 15:57:05,044 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
-[] 2025-05-09 15:57:05,910 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[] 2025-05-09 15:57:05,971 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 54 ms. Found 4 JPA repository interfaces.
-[] 2025-05-09 15:57:06,388 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
-[] 2025-05-09 15:57:06,399 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
-[] 2025-05-09 15:57:06,400 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
-[] 2025-05-09 15:57:06,400 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
-[] 2025-05-09 15:57:06,459 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-[] 2025-05-09 15:57:06,459 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1381 ms
-[] 2025-05-09 15:57:06,605 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-[] 2025-05-09 15:57:06,664 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
-[] 2025-05-09 15:57:06,694 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-[] 2025-05-09 15:57:06,996 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-[] 2025-05-09 15:57:07,026 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[] 2025-05-09 15:57:07,177 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
-[] 2025-05-09 15:57:07,177 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[] 2025-05-09 15:57:07,243 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+[admin] 2025-05-09 17:59:21,433 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 17:59:21,433 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-01 endDate 2025-04-30 and returned order count 1.
+[admin] 2025-05-09 17:59:53,183 [http-nio-9090-exec-6]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 17:59:53,184 [http-nio-9090-exec-6]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-01 endDate 2025-04-30 and returned order count 1.
+[] 2025-05-09 18:00:28,210 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[] 2025-05-09 18:00:28,296 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[] 2025-05-09 18:00:28,299 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-09 18:00:28,300 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-09 18:00:28,303 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-09 18:00:30,485 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 20408 (C:\Users\neina\IdeaProjects\Biluthyrningssystem\target\classes started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-09 18:00:30,496 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-09 18:00:31,012 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-09 18:00:31,064 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 4 JPA repository interfaces.
+[] 2025-05-09 18:00:31,408 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+[] 2025-05-09 18:00:31,419 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[] 2025-05-09 18:00:31,420 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[] 2025-05-09 18:00:31,420 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+[] 2025-05-09 18:00:31,458 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[] 2025-05-09 18:00:31,458 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 932 ms
+[] 2025-05-09 18:00:31,572 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-09 18:00:31,606 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-09 18:00:31,631 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-09 18:00:31,831 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-09 18:00:31,853 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-09 18:00:31,975 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
+[] 2025-05-09 18:00:31,976 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-09 18:00:32,016 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 2.3.232
@@ -23,75 +32,100 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-[] 2025-05-09 15:57:08,000 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[] 2025-05-09 15:57:08,051 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[] 2025-05-09 15:57:08,355 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[] 2025-05-09 15:57:08,445 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-[] 2025-05-09 15:57:08,782 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
-[] 2025-05-09 15:57:08,859 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
-[] 2025-05-09 15:57:08,873 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
-[] 2025-05-09 15:57:08,880 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 4.158 seconds (process running for 6.319)
-[] 2025-05-09 15:57:43,747 [http-nio-9090-exec-1]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-[] 2025-05-09 15:57:43,747 [http-nio-9090-exec-1]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-[] 2025-05-09 15:57:43,751 [http-nio-9090-exec-1]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
-[admin] 2025-05-09 15:57:44,267 [http-nio-9090-exec-1]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
-[admin] 2025-05-09 15:57:45,049 [http-nio-9090-exec-1]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
-[admin] 2025-05-09 15:57:45,053 [http-nio-9090-exec-1]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /rentaldurations was used and returned 5 durations.
-[admin] 2025-05-09 15:58:04,746 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics was used
-[admin] 2025-05-09 15:58:04,769 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-01-01 endDate 2025-12-31 and returned order count 4.
-[admin] 2025-05-09 15:58:04,769 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
-[admin] 2025-05-09 15:58:04,772 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
-[admin] 2025-05-09 15:58:04,775 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/revenue was used with startDate 2025-01-01 and endDate 2025-12-31 and returned 955.0
-[admin] 2025-05-09 15:58:04,775 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
-[admin] 2025-05-09 15:58:04,778 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
-[admin] 2025-05-09 15:58:04,779 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/cancelledorders was used with startDate 2025-01-01 endDate 2025-12-31 and returned 2 cancelled orders with revenue lost 170.0 
-[admin] 2025-05-09 15:58:04,779 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
-[admin] 2025-05-09 15:58:04,780 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
-[admin] 2025-05-09 15:58:04,781 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/averageordercost was used and returned average of 238.75
-[admin] 2025-05-09 15:58:09,471 [http-nio-9090-exec-6]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/mostrentedbrand was used with startDate 2020-12-01 and endDate 2025-12-31
-[admin] 2025-05-09 15:58:13,262 [http-nio-9090-exec-3]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
-[admin] 2025-05-09 15:58:13,277 [http-nio-9090-exec-3]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
-[admin] 2025-05-09 15:58:13,278 [http-nio-9090-exec-3]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/carrentalcount was used with carId 1 and returned count 2.
-[admin] 2025-05-09 15:58:17,427 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
-[admin] 2025-05-09 15:58:17,439 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
-[admin] 2025-05-09 15:58:17,439 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /rentaldurations was used and returned 5 durations.
-[admin] 2025-05-09 15:58:20,046 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
-[admin] 2025-05-09 15:58:20,055 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
-[admin] 2025-05-09 15:58:20,055 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/averageordercost was used and returned average of 238.75
-[admin] 2025-05-09 15:58:22,913 [http-nio-9090-exec-8]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/revenuepercar was used
-[admin] 2025-05-09 15:58:22,913 [http-nio-9090-exec-8]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
-[admin] 2025-05-09 15:58:22,939 [http-nio-9090-exec-8]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
-[admin] 2025-05-09 15:58:22,941 [http-nio-9090-exec-8]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/revenuepercar was used and returned revenue of 3 cars.
-[admin] 2025-05-09 15:58:30,196 [http-nio-9090-exec-9]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
-[admin] 2025-05-09 15:58:30,210 [http-nio-9090-exec-9]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
-[admin] 2025-05-09 15:58:30,211 [http-nio-9090-exec-9]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/revenue was used with startDate 2022-01-01 and endDate 2025-12-31 and returned 955.0
-[admin] 2025-05-09 15:58:36,999 [http-nio-9090-exec-10]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
-[admin] 2025-05-09 15:58:37,021 [http-nio-9090-exec-10]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
-[admin] 2025-05-09 15:58:37,022 [http-nio-9090-exec-10]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/cancelledorders was used with startDate 2022-01-01 endDate 2026-01-01 and returned 3 cancelled orders with revenue lost 7170.0 
-[admin] 2025-05-09 15:58:40,758 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2000-01-01 endDate 2025-12-31 and returned order count 4.
-[] 2025-05-09 16:01:34,246 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-[] 2025-05-09 16:01:34,440 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
-[] 2025-05-09 16:01:34,444 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-[] 2025-05-09 16:01:34,447 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-[] 2025-05-09 16:01:34,450 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-[] 2025-05-09 16:23:18,255 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 15888 (C:\Users\neina\IdeaProjects\Biluthyrningssystem\target\classes started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
-[] 2025-05-09 16:23:18,263 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
-[] 2025-05-09 16:23:18,782 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[] 2025-05-09 16:23:18,835 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 4 JPA repository interfaces.
-[] 2025-05-09 16:23:19,191 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
-[] 2025-05-09 16:23:19,201 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
-[] 2025-05-09 16:23:19,204 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
-[] 2025-05-09 16:23:19,204 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
-[] 2025-05-09 16:23:19,250 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-[] 2025-05-09 16:23:19,250 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 954 ms
-[] 2025-05-09 16:23:19,361 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-[] 2025-05-09 16:23:19,398 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
-[] 2025-05-09 16:23:19,427 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-[] 2025-05-09 16:23:19,652 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-[] 2025-05-09 16:23:19,673 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[] 2025-05-09 16:23:19,797 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
-[] 2025-05-09 16:23:19,798 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[] 2025-05-09 16:23:19,838 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+[] 2025-05-09 18:00:32,683 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-09 18:00:32,736 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-09 18:00:32,991 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-09 18:00:33,016 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-09 18:00:33,302 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
+[] 2025-05-09 18:00:33,363 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[] 2025-05-09 18:00:33,375 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[] 2025-05-09 18:00:33,382 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 3.158 seconds (process running for 4.002)
+[] 2025-05-09 18:00:37,809 [http-nio-9090-exec-1]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 2025-05-09 18:00:37,810 [http-nio-9090-exec-1]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[] 2025-05-09 18:00:37,811 [http-nio-9090-exec-1]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[admin] 2025-05-09 18:00:38,119 [http-nio-9090-exec-1]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:00:38,120 [http-nio-9090-exec-1]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-01 endDate 2025-04-30 and returned order count 1.
+[admin] 2025-05-09 18:00:43,873 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:00:43,874 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-01 endDate 2025-04-30 and returned order count 1.
+[admin] 2025-05-09 18:01:16,122 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:01:16,122 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-02-01 endDate 2025-04-30 and returned order count 1.
+[admin] 2025-05-09 18:01:21,768 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 2
+[admin] 2025-05-09 18:01:21,769 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2022-02-01 endDate 2025-04-30 and returned order count 2.
+[admin] 2025-05-09 18:02:40,015 [http-nio-9090-exec-10]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 7
+[admin] 2025-05-09 18:02:40,015 [http-nio-9090-exec-10]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2000-01-01 endDate 2025-12-31 and returned order count 5.
+[admin] 2025-05-09 18:05:02,611 [http-nio-9090-exec-8]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /revenue Could not parse dates: 2025-04-20 - '2025-04-20. Wrong format used.
+[admin] 2025-05-09 18:05:08,546 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[admin] 2025-05-09 18:05:08,546 [http-nio-9090-exec-4]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[admin] 2025-05-09 18:05:24,492 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[admin] 2025-05-09 18:05:24,493 [http-nio-9090-exec-5]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[admin] 2025-05-09 18:05:36,384 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[admin] 2025-05-09 18:05:36,384 [http-nio-9090-exec-2]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[admin] 2025-05-09 18:05:39,510 [http-nio-9090-exec-6]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:05:39,510 [http-nio-9090-exec-6]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-01 endDate 2025-04-30 and returned order count 1.
+[admin] 2025-05-09 18:05:58,811 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:05:58,812 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-01 endDate 2025-04-30 and returned order count 1.
+[admin] 2025-05-09 18:06:17,468 [http-nio-9090-exec-10]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:06:17,469 [http-nio-9090-exec-10]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-10 endDate 2025-04-30 and returned order count 1.
+[admin] 2025-05-09 18:06:56,676 [http-nio-9090-exec-9]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:06:56,676 [http-nio-9090-exec-9]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-10 endDate 2025-04-26 and returned order count 1.
+[admin] 2025-05-09 18:06:59,155 [http-nio-9090-exec-3]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:06:59,155 [http-nio-9090-exec-3]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-10 endDate 2025-04-25 and returned order count 1.
+[admin] 2025-05-09 18:07:01,911 [http-nio-9090-exec-8]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[admin] 2025-05-09 18:07:01,912 [http-nio-9090-exec-8]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[admin] 2025-05-09 18:07:10,590 [http-nio-9090-exec-1]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[admin] 2025-05-09 18:07:10,590 [http-nio-9090-exec-1]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[admin] 2025-05-09 18:07:16,942 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[admin] 2025-05-09 18:07:16,942 [http-nio-9090-exec-4]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[admin] 2025-05-09 18:07:33,240 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[admin] 2025-05-09 18:07:33,240 [http-nio-9090-exec-5]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[admin] 2025-05-09 18:07:35,567 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[admin] 2025-05-09 18:07:35,568 [http-nio-9090-exec-2]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[admin] 2025-05-09 18:07:44,253 [http-nio-9090-exec-6]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:07:44,254 [http-nio-9090-exec-6]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-20 endDate 2025-04-27 and returned order count 1.
+[admin] 2025-05-09 18:07:46,708 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:07:46,708 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-20 endDate 2025-04-26 and returned order count 1.
+[admin] 2025-05-09 18:07:48,600 [http-nio-9090-exec-10]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:07:48,600 [http-nio-9090-exec-10]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-20 endDate 2025-04-25 and returned order count 1.
+[admin] 2025-05-09 18:07:54,685 [http-nio-9090-exec-9]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[admin] 2025-05-09 18:07:54,685 [http-nio-9090-exec-9]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[admin] 2025-05-09 18:08:49,704 [http-nio-9090-exec-3]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[admin] 2025-05-09 18:08:49,704 [http-nio-9090-exec-3]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[admin] 2025-05-09 18:09:16,967 [http-nio-9090-exec-8]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /revenue Invalid date range: start date 2025-04-29 is after end date 2025-04-24
+[admin] 2025-05-09 18:09:20,575 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[admin] 2025-05-09 18:09:20,575 [http-nio-9090-exec-4]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[admin] 2025-05-09 18:09:35,787 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:09:35,787 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-19 endDate 2025-04-27 and returned order count 1.
+[admin] 2025-05-09 18:09:46,182 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:09:46,182 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-19 endDate 2025-04-26 and returned order count 1.
+[admin] 2025-05-09 18:09:48,466 [http-nio-9090-exec-6]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:09:48,466 [http-nio-9090-exec-6]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-19 endDate 2025-04-25 and returned order count 1.
+[admin] 2025-05-09 18:09:50,409 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[admin] 2025-05-09 18:09:50,409 [http-nio-9090-exec-7]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[admin] 2025-05-09 18:10:35,577 [http-nio-9090-exec-10]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[admin] 2025-05-09 18:10:35,577 [http-nio-9090-exec-10]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[] 2025-05-09 18:12:10,416 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[] 2025-05-09 18:12:10,542 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[] 2025-05-09 18:12:10,579 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-09 18:12:10,587 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-09 18:12:10,603 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-09 18:12:14,378 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 9404 (C:\Users\neina\IdeaProjects\Biluthyrningssystem\target\classes started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-09 18:12:14,384 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-09 18:12:14,948 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-09 18:12:14,997 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 4 JPA repository interfaces.
+[] 2025-05-09 18:12:15,346 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+[] 2025-05-09 18:12:15,356 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[] 2025-05-09 18:12:15,357 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[] 2025-05-09 18:12:15,357 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+[] 2025-05-09 18:12:15,394 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[] 2025-05-09 18:12:15,394 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 971 ms
+[] 2025-05-09 18:12:15,501 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-09 18:12:15,533 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-09 18:12:15,554 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-09 18:12:15,742 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-09 18:12:15,763 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-09 18:12:15,883 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
+[] 2025-05-09 18:12:15,884 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-09 18:12:15,924 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 2.3.232
@@ -99,43 +133,46 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-[] 2025-05-09 16:23:20,488 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[] 2025-05-09 16:23:20,542 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[] 2025-05-09 16:23:20,792 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[] 2025-05-09 16:23:20,817 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-[] 2025-05-09 16:23:21,122 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
-[] 2025-05-09 16:23:21,178 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
-[] 2025-05-09 16:23:21,192 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
-[] 2025-05-09 16:23:21,199 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 3.23 seconds (process running for 4.087)
-[] 2025-05-09 16:23:31,405 [http-nio-9090-exec-1]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-[] 2025-05-09 16:23:31,406 [http-nio-9090-exec-1]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-[] 2025-05-09 16:23:31,408 [http-nio-9090-exec-1]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-[admin] 2025-05-09 16:23:32,250 [http-nio-9090-exec-1]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/mostrentedbrand was used with startDate 2020-12-01 and endDate 2025-12-31
-[admin] 2025-05-09 16:25:14,303 [http-nio-9090-exec-4]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /mostrentedbrands Could not parse dates: 01-01-2020 - 01-01-2025. Wrong format used.
-[admin] 2025-05-09 16:25:55,268 [http-nio-9090-exec-7]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /mostrentedbrands Invalid date range: start date 2025-12-31 is after end date 2020-01-01
-[] 2025-05-09 17:42:12,765 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-[] 2025-05-09 17:42:12,879 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
-[] 2025-05-09 17:42:12,890 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-[] 2025-05-09 17:42:12,895 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-[] 2025-05-09 17:42:12,895 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-[] 2025-05-09 17:44:10,749 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 16272 (C:\Users\neina\IdeaProjects\Biluthyrningssystem\target\classes started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
-[] 2025-05-09 17:44:10,756 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
-[] 2025-05-09 17:44:11,296 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[] 2025-05-09 17:44:11,344 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 4 JPA repository interfaces.
-[] 2025-05-09 17:44:11,686 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
-[] 2025-05-09 17:44:11,695 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
-[] 2025-05-09 17:44:11,696 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
-[] 2025-05-09 17:44:11,696 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
-[] 2025-05-09 17:44:11,735 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-[] 2025-05-09 17:44:11,735 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 939 ms
-[] 2025-05-09 17:44:11,847 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-[] 2025-05-09 17:44:11,882 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
-[] 2025-05-09 17:44:11,906 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-[] 2025-05-09 17:44:12,107 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-[] 2025-05-09 17:44:12,129 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[] 2025-05-09 17:44:12,244 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
-[] 2025-05-09 17:44:12,246 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[] 2025-05-09 17:44:12,284 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+[] 2025-05-09 18:12:16,579 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-09 18:12:16,631 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-09 18:12:16,895 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-09 18:12:16,919 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-09 18:12:17,217 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
+[] 2025-05-09 18:12:17,271 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[] 2025-05-09 18:12:17,284 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[] 2025-05-09 18:12:17,290 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 3.17 seconds (process running for 3.947)
+[] 2025-05-09 18:12:20,806 [http-nio-9090-exec-1]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 2025-05-09 18:12:20,806 [http-nio-9090-exec-1]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[] 2025-05-09 18:12:20,807 [http-nio-9090-exec-1]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[admin] 2025-05-09 18:12:21,091 [http-nio-9090-exec-1]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[admin] 2025-05-09 18:12:21,092 [http-nio-9090-exec-1]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[admin] 2025-05-09 18:12:26,257 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[admin] 2025-05-09 18:12:26,257 [http-nio-9090-exec-4]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[admin] 2025-05-09 18:12:30,421 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[admin] 2025-05-09 18:12:30,422 [http-nio-9090-exec-2]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[] 2025-05-09 18:23:05,491 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[] 2025-05-09 18:23:05,613 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[] 2025-05-09 18:23:05,629 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-09 18:23:05,632 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-09 18:23:05,644 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-09 18:23:09,944 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 944 (C:\Users\neina\IdeaProjects\Biluthyrningssystem\target\classes started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-09 18:23:09,958 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-09 18:23:10,511 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-09 18:23:10,560 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 4 JPA repository interfaces.
+[] 2025-05-09 18:23:10,916 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+[] 2025-05-09 18:23:10,926 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[] 2025-05-09 18:23:10,927 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[] 2025-05-09 18:23:10,928 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+[] 2025-05-09 18:23:10,966 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[] 2025-05-09 18:23:10,966 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 977 ms
+[] 2025-05-09 18:23:11,076 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-09 18:23:11,111 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-09 18:23:11,134 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-09 18:23:11,337 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-09 18:23:11,360 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-09 18:23:11,482 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
+[] 2025-05-09 18:23:11,484 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-09 18:23:11,525 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 2.3.232
@@ -143,29 +180,27 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-[] 2025-05-09 17:44:12,955 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[] 2025-05-09 17:44:13,010 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[] 2025-05-09 17:44:13,264 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[] 2025-05-09 17:44:13,288 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-[] 2025-05-09 17:44:13,585 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
-[] 2025-05-09 17:44:13,637 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
-[] 2025-05-09 17:44:13,650 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
-[] 2025-05-09 17:44:13,657 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 3.168 seconds (process running for 3.927)
-[] 2025-05-09 17:44:19,733 [http-nio-9090-exec-2]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-[] 2025-05-09 17:44:19,733 [http-nio-9090-exec-2]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-[] 2025-05-09 17:44:19,734 [http-nio-9090-exec-2]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-[admin] 2025-05-09 17:44:19,924 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
-[admin] 2025-05-09 17:44:20,048 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
-[admin] 2025-05-09 17:44:20,050 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/cancelledorders was used with startDate 2020-01-01 endDate 2026-01-01 and returned 3 cancelled orders with revenue lost 7170.0 
-[admin] 2025-05-09 17:44:28,914 [http-nio-9090-exec-3]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/mostrentedbrand was used with startDate 2020-12-01 and endDate 2025-12-31
-[admin] 2025-05-09 17:44:34,555 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
-[admin] 2025-05-09 17:44:34,564 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
-[admin] 2025-05-09 17:44:34,565 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/carrentalcount was used with carId 1 and returned count 2.
-[admin] 2025-05-09 17:44:38,959 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
-[admin] 2025-05-09 17:44:38,995 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
-[admin] 2025-05-09 17:44:39,012 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /rentaldurations was used and returned 5 durations.
-[] 2025-05-09 17:44:43,529 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-[] 2025-05-09 17:44:43,942 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
-[] 2025-05-09 17:44:43,950 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-[] 2025-05-09 17:44:43,954 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-[] 2025-05-09 17:44:43,959 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-09 18:23:12,173 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-09 18:23:12,225 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-09 18:23:12,455 [main]  INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[] 2025-05-09 18:23:12,761 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-09 18:23:12,783 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-09 18:23:13,071 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
+[] 2025-05-09 18:23:13,127 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[] 2025-05-09 18:23:13,140 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[] 2025-05-09 18:23:13,146 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 3.476 seconds (process running for 4.26)
+[] 2025-05-09 18:23:29,557 [http-nio-9090-exec-8]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 2025-05-09 18:23:29,557 [http-nio-9090-exec-8]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[] 2025-05-09 18:23:29,559 [http-nio-9090-exec-8]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+[admin] 2025-05-09 18:23:30,486 [http-nio-9090-exec-8]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:23:30,488 [http-nio-9090-exec-8]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-19 endDate 2025-04-20 and returned order count 1.
+[admin] 2025-05-09 18:23:34,315 [http-nio-9090-exec-3]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:23:34,316 [http-nio-9090-exec-3]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-19 endDate 2025-04-30 and returned order count 1.
+[admin] 2025-05-09 18:23:38,865 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:23:38,865 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-10 endDate 2025-04-30 and returned order count 1.
+[admin] 2025-05-09 18:23:46,287 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 1
+[admin] 2025-05-09 18:23:46,287 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-04-01 endDate 2025-04-30 and returned order count 1.
+[admin] 2025-05-09 18:23:52,638 [http-nio-9090-exec-6]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 2
+[admin] 2025-05-09 18:23:52,638 [http-nio-9090-exec-6]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2020-04-01 endDate 2025-04-30 and returned order count 2.
+[admin] 2025-05-09 18:23:59,529 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 7
+[admin] 2025-05-09 18:23:59,530 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2020-04-01 endDate 2025-12-30 and returned order count 5.

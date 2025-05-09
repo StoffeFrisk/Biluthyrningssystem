@@ -365,7 +365,8 @@ public class StatisticsServiceImpl implements StatisticsService {
         LocalDate start = dates[0];
         LocalDate end = dates[1];
 
-        List<Orders> allOrders = orderRepository.findByHireStartDateBetween(start, end);
+        List<Orders> allOrders = orderRepository.findOrdersOverlappingPeriod(start, end);
+        logger.info(String.valueOf(allOrders.size()));
 
         List<Orders> activeOrders = allOrders.stream()
                 .filter(order -> !order.isOrderCancelled())
