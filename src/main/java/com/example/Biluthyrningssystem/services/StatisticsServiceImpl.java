@@ -81,22 +81,10 @@ public class StatisticsServiceImpl implements StatisticsService {
     @Override
     public Map<String, Long> getMostRentedBrandForPeriod(String startDate, String endDate) {
 
-        LocalDate start;
-        LocalDate end;
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        try {
-            start = LocalDate.parse(startDate, formatter);
-            end = LocalDate.parse(endDate, formatter);
-        } catch (DateTimeParseException e) {
-            logger.warn("/mostrentedbrands Could not parse date {} - {} because wrong format was used.", startDate, endDate);
-            throw new IncorrectInputException("Statistics", "date input", startDate + " and " + endDate, "yyyy-MM-dd", "Please use the correct date format.");
-        }
-
-        if (start.isAfter(end)) {
-            logger.warn("/mostrentedbrands Invalid date because start date {} is after end date {}", startDate, endDate);
-            throw new IncorrectInputException("Statistics", "Start-End Dates", ("Start:" + startDate + "->End:" + endDate), "YYYY-MM-DD", "Start date must be BEFORE end date.");
-        }
+        LocalDate[] dates = parseAndValidateDates(startDate, endDate, "/mostrentedbrands");
+        LocalDate start = dates[0];
+        LocalDate end = dates[1];
 
         List<Orders> allOrders = orderRepository.findAll();
 
@@ -283,22 +271,9 @@ public class StatisticsServiceImpl implements StatisticsService {
     @Override
     public Map<String, Double> getTotalRevenueForPeriod(String startDate, String endDate) {
 
-        LocalDate start;
-        LocalDate end;
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        try {
-            start = LocalDate.parse(startDate, formatter);
-            end = LocalDate.parse(endDate, formatter);
-        } catch (DateTimeParseException e) {
-            logger.warn("/revenue Could not parse date {} - {} because wrong format was used.", startDate, endDate);
-            throw new IncorrectInputException("Statistics", "date input", startDate + " and " + endDate, "yyyy-MM-dd", "");
-        }
-
-        if (start.isAfter(end)) {
-            logger.warn("/revenue Invalid date because start date {} is after end date {}", startDate, endDate);
-            throw new IncorrectInputException("Statistics", "Start-End Dates", ("Start:" + startDate + "->End:" + endDate), "YYYY-MM-DD", "Start date must be BEFORE end date.");
-        }
+        LocalDate[] dates = parseAndValidateDates(startDate, endDate, "/revenue");
+        LocalDate start = dates[0];
+        LocalDate end = dates[1];
 
         List<Orders> allOrders = orderService.getAllOrders();
 
@@ -336,22 +311,9 @@ public class StatisticsServiceImpl implements StatisticsService {
     @Override
     public Map<String, Object> getCanceledOrderCountByPeriod(String startDate, String endDate) {
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate start;
-        LocalDate end;
-
-        try {
-            start = LocalDate.parse(startDate, formatter);
-            end = LocalDate.parse(endDate, formatter);
-        } catch (DateTimeParseException e) {
-            logger.warn("/cancelledorders Could not parse date {} - {} because wrong format was used.", startDate, endDate);
-            throw new IncorrectInputException("Statistics", "date input", startDate + " and " + endDate, "yyyy-MM-dd", "");
-        }
-
-        if (start.isAfter(end)) {
-            logger.warn("Invalid date because start date {} is after end date {}", startDate, endDate);
-            throw new IncorrectInputException("Statistics", "Start-End Dates", startDate + " -> " + endDate, "YYYY-MM-DD", "Start date must be BEFORE end date.");
-        }
+        LocalDate[] dates = parseAndValidateDates(startDate, endDate, "/revenue");
+        LocalDate start = dates[0];
+        LocalDate end = dates[1];
 
         List<Orders> allOrders = orderService.getAllOrders();
 
@@ -399,22 +361,10 @@ public class StatisticsServiceImpl implements StatisticsService {
     @Override
     public Map<String, Object> getOrderCountForPeriod(String startDate, String endDate) {
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate start;
-        LocalDate end;
+        LocalDate[] dates = parseAndValidateDates(startDate, endDate, "/revenue");
+        LocalDate start = dates[0];
+        LocalDate end = dates[1];
 
-        try {
-            start = LocalDate.parse(startDate, formatter);
-            end = LocalDate.parse(endDate, formatter);
-        } catch (DateTimeParseException e) {
-            logger.warn("/statistics/orders Could not parse date {} - {} because wrong format was used.", startDate, endDate);
-            throw new IncorrectInputException("Statistics", "date input", startDate + " and " + endDate, "yyyy-MM-dd", "");
-        }
-
-        if (start.isAfter(end)) {
-            logger.warn("/statistics/orders Invalid date because start date {} is after end date {}.", startDate, endDate);
-            throw new IncorrectInputException("Statistics", "Start-End Dates", startDate + " -> " + endDate, "YYYY-MM-DD", "Start date must be BEFORE end date.");
-        }
         List<Orders> allOrders = orderRepository.findByHireStartDateBetween(start, end);
 
         List<Orders> activeOrders = allOrders.stream()
@@ -436,6 +386,26 @@ public class StatisticsServiceImpl implements StatisticsService {
         return result;
     }
 
+    private LocalDate[] parseAndValidateDates(String startDateString, String endDateString, String endpointName) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
+        try {
+            LocalDate start = LocalDate.parse(startDateString, formatter);
+            LocalDate end = LocalDate.parse(endDateString, formatter);
+
+            if (start.isAfter(end)) {
+                logger.warn("{} Invalid date range: start date {} is after end date {}", endpointName, startDateString, endDateString);
+                throw new IncorrectInputException("Statistics", "Start-End Dates",
+                        String.format("Start: %s -> End: %s", startDateString, endDateString),
+                        "yyyy-MM-dd", "Start date must be BEFORE end date.");
+            }
+            return new LocalDate[]{start, end};
+        } catch (DateTimeParseException e) {
+            logger.warn("{} Could not parse dates: {} - {}. Wrong format used.", endpointName, startDateString, endDateString);
+            throw new IncorrectInputException("Statistics", "date input",
+                    startDateString + " and " + endDateString, "yyyy-MM-dd",
+                    "Please use the correct date format.");
+        }
+    }
 
 }
