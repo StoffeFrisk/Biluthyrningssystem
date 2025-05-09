@@ -210,7 +210,6 @@ public class StatisticsServiceImpl implements StatisticsService {
                 .filter(order -> order.getHireStartDate() != null && !order.isOrderCancelled())
                 .toList();
 
-
         if (ordersToCalculate.isEmpty()) {
             logger.warn("/averagecostperorder ordersToCalculate returned empty because no valid data was found.");
             throw new DataNotFoundException("/averagecostperorder", "", "No orders with valid data found");
