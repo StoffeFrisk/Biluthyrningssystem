@@ -1,5 +1,6 @@
 package com.example.Biluthyrningssystem.services;
 
+import com.example.Biluthyrningssystem.dto.CustomerRegistrationDTO;
 import com.example.Biluthyrningssystem.entities.Address;
 import com.example.Biluthyrningssystem.entities.Customer;
 import com.example.Biluthyrningssystem.exceptions.ResourceNotFoundException;
@@ -11,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
@@ -18,17 +22,19 @@ import java.util.Optional;
 import java.util.regex.Pattern;
 
 @Service
-public class CustomerServiceImpl implements CustomerService {
+public class CustomerServiceImpl implements CustomerService { //Lynsey Fox
 
     private final Logger logger = LoggerFactory.getLogger(CustomerServiceImpl.class);
     Authentication authentication;
+    private final InMemoryUserDetailsManager userDetailsManager;
     private final CustomerRepository customerRepository;
     private final AddressRepository addressRepository;
 
     @Autowired
-    public CustomerServiceImpl(CustomerRepository customerRepository, AddressRepository addressRepository) {
+    public CustomerServiceImpl(CustomerRepository customerRepository, AddressRepository addressRepository, InMemoryUserDetailsManager userDetailsManager) {
         this.customerRepository = customerRepository;
         this.addressRepository = addressRepository;
+        this.userDetailsManager = userDetailsManager;
     }
 
 
@@ -56,7 +62,17 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer addCustomer(Customer newCustomer) {
+    public CustomerRegistrationDTO addCustomer(Customer newCustomer) {
+
+        String personnummerToAdd = newCustomer.getPersonnummer();
+
+        if (customerRepository.existsByPersonnummer(personnummerToAdd)) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Customer already exists with given personnummer");
+        }
+
+        if (userDetailsManager.userExists(personnummerToAdd)) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "User already exists with given personnummer");
+        }
 
         validateStringField(newCustomer.getFirstName(), "first name");
         validateStringField(newCustomer.getLastName(), "last name");
@@ -90,9 +106,23 @@ public class CustomerServiceImpl implements CustomerService {
         newCustomer.setAddress(existingAddress);
 
         Customer savedCustomer = customerRepository.save(newCustomer);
+        String username = savedCustomer.getPersonnummer();
+        String password = username.substring(username.length() - 4);
+
+
+        UserDetails user = User.withUsername(personnummerToAdd)
+                .password("{noop}" + password)
+                .roles("USER")
+                .build();
+
+        userDetailsManager.createUser(user);
+        logger.info("Created user login for personnummer: {}", personnummerToAdd);
 
         logger.info("New customer added to database with Personnummer: {}", savedCustomer.getPersonnummer());
-        return savedCustomer;
+
+        String loginInfo = "Login username: " + username + ", password: " + password;
+
+        return new CustomerRegistrationDTO(savedCustomer,loginInfo);
     }
 
     private void validateStringField(String value, String fieldName) {
