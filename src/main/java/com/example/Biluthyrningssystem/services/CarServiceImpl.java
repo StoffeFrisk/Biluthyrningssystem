@@ -43,7 +43,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Car getCarById(Long id) {
-        logger.info("Attempting to get car whit id: {}", id);
+        logger.info("Attempting to get car with id: {}", id);
 
         try {
             Car car = carRepository.findById(id)
