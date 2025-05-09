@@ -2,14 +2,11 @@
 
 package com.example.Biluthyrningssystem.controllers;
 
-import com.example.Biluthyrningssystem.dto.StatisticsDTO;
 import com.example.Biluthyrningssystem.services.StatisticsService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -30,14 +27,14 @@ public class StatisticsController {
     }
 
 
-    @GetMapping("/statistics/mostrentedbrand/period/{startDate}/{endDate}")
+    @GetMapping("/statistics/mostrentedbrands/period/{startDate}/{endDate}")
     public ResponseEntity<Map<String, Object>> getMostRentedBrandForPeriod(@PathVariable String startDate, @PathVariable String endDate) {
 
 
         Map<String, Long> sortedBrands = statisticsService.getMostRentedBrandForPeriod(startDate, endDate);
 
         Map<String, Object> response = new LinkedHashMap<>();
-        response.put("message", "Alla bilmärken sorterade efter antal uthyrningar under perioden.");
+        response.put("message", "All car brands sorted by order count during period");
         response.put("data", sortedBrands);
 
         return ResponseEntity.ok(response);
@@ -64,10 +61,10 @@ public class StatisticsController {
     public ResponseEntity<Map<String, Object>> getRentalCountByCar(@PathVariable Long carId) {
 
         Map<String, Object> result = statisticsService.getRentalCountByCar(carId);
-        Long count = (Long) result.get("count");
+        Long count = (Long) result.get("order count");
 
         Map<String, Object> response = new LinkedHashMap<>();
-        response.put("message", "Bilen med ID " + carId + " har hyrts ut " + count + " gånger.");
+        response.put("message", "Car with ID " + carId + " has been booked " + count + " time(s).");
         response.putAll(result);
 
         return ResponseEntity.ok(response);
@@ -78,28 +75,27 @@ public class StatisticsController {
         Map<Integer, Long> result = statisticsService.getRentalDurationsByDays();
 
         Map<String, Object> response = new LinkedHashMap<>();
-        response.put("message", " De vanligaste längderna och hur ofta dom förekommer");
+        response.put("message", "The most common rental durations.");
 
         Map<String, Object> details = new LinkedHashMap<>();
         result.forEach((days, frequency) -> {
-            details.put("Dagar: " + days, "Bokningar: " + frequency);
+            details.put("Days: " + days, "Bookings: " + frequency);
         });
 
-
-        response.put("längder", details);
+        response.put("Durations", details);
         return ResponseEntity.ok(response);
 
     }
 
-    @GetMapping("/statistics/averageordercost")
+    @GetMapping("/statistics/averageorderprice")
     public ResponseEntity<Map<String, Double>> getAverageCost() {
         Map<String, Double> result = statisticsService.getAverageCostPerOrder();
         return ResponseEntity.ok(result);
     }
 
     @GetMapping("/statistics/revenuepercar")
-    public ResponseEntity<Map<Long, Double>> getRevenuePerCar() {
-        Map<Long, Double> result = statisticsService.getTotalRevenuePerCar();
+    public ResponseEntity<Map<String, Object>> getRevenuePerCar() {
+        Map<String, Object> result = statisticsService.getTotalRevenuePerCar();
         return ResponseEntity.ok(result);
     }
 
@@ -107,6 +103,18 @@ public class StatisticsController {
     public ResponseEntity<Map<String, Double>> getRevenueForPeriod(@PathVariable String startDate, @PathVariable String endDate) {
         return ResponseEntity.ok(statisticsService.getTotalRevenueForPeriod(startDate, endDate));
 
+    }
+
+    @GetMapping("/statistics/cancelledorders/period/{startDate}/{endDate}")
+    public ResponseEntity<Map<String, Object>> getCancelledOrders(@PathVariable String startDate, @PathVariable String endDate) {
+        Map<String, Object> result = statisticsService.getCanceledOrderCountByPeriod(startDate, endDate);
+        return ResponseEntity.ok(result);
+    }
+
+    @GetMapping("/statistics/orders/period/{startDate}/{endDate}")
+    public ResponseEntity<Map<String, Object>> getOrderCount(@PathVariable String startDate, @PathVariable String endDate) {
+        Map<String, Object> result = statisticsService.getOrderCountForPeriod(startDate, endDate);
+        return ResponseEntity.ok(result);
     }
 
 
