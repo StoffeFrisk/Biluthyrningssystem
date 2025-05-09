@@ -49,16 +49,15 @@ public class StatisticsServiceImpl implements StatisticsService {
         Map<String, Object> orderCount2025 = getOrderCountForPeriod("2025-01-01", "2025-12-31");
         statistics.put("Orders 2025", orderCount2025.get("orders"));
         Map<String, Double> totalRevenue2025 = getTotalRevenueForPeriod("2025-01-01", "2025-12-31");
-        statistics.put("Revenue 2025", totalRevenue2025.get("Total revenue for period"));
-
+        statistics.put("Revenue 2025", totalRevenue2025.get("TotalRevenueForPeriod"));
 
 
         Map<String, Object> cancelledOrders = getCanceledOrderCountByPeriod("2025-01-01", "2025-12-31");
-        statistics.put("Cancelled orders 2025", cancelledOrders.get("cancelled orders"));
-        statistics.put("Lost revenue from cancelled orders", cancelledOrders.get("lost revenue"));
+        statistics.put("Cancelled orders 2025", cancelledOrders.get("cancelledOrders"));
+        statistics.put("Lost revenue from cancelled orders", cancelledOrders.get("lostRevenue"));
 
         Map<String, Double> revenuePerOrder = getAverageCostPerOrder();
-        statistics.put("Average revenue of orders (All time)", revenuePerOrder.get("Average order price"));
+        statistics.put("Average revenue of orders (All time)", revenuePerOrder.get("AverageOrderPrice"));
         Map<String, Object> endpoints = new LinkedHashMap<>();
 
         endpoints.put("Available endpoints", List.of(
@@ -66,7 +65,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                 "/statistics/mostrentedbrands/period/{startDate}/{endDate}",
                 "/statistics/carrentalcount/{carId}",
                 "/statistics/rentaldurations",
-                "/statistics/averageordercost",
+                "/statistics/averageorderprice",
                 "/statistics/revenuepercar",
                 "/statistics/revenue/period/{startDate}/{endDate}",
                 "/statistics/cancelledorders/period/{startDate}/{endDate}",
@@ -89,7 +88,7 @@ public class StatisticsServiceImpl implements StatisticsService {
             start = LocalDate.parse(startDate, formatter);
             end = LocalDate.parse(endDate, formatter);
         } catch (DateTimeParseException e) {
-            logger.warn("/mostrentedbrands Could not parse date {} - {} because wrong format was used.", startDate,endDate);
+            logger.warn("/mostrentedbrands Could not parse date {} - {} because wrong format was used.", startDate, endDate);
             throw new IncorrectInputException("Statistics", "date input", startDate + " and " + endDate, "yyyy-MM-dd", "Please use the correct date format.");
         }
 
@@ -115,7 +114,7 @@ public class StatisticsServiceImpl implements StatisticsService {
             }
         }
 
-        if(brandCounts.isEmpty()) {
+        if (brandCounts.isEmpty()) {
             logger.warn("/mostrentedbrands Could not return any data because no brands were found during the given period " + startDate + " - " + endDate);
             throw new DataNotFoundException("/mostrentedbrands", startDate + " - " + endDate, "No brands were found during given period");
         }
@@ -146,7 +145,7 @@ public class StatisticsServiceImpl implements StatisticsService {
         Car car = optionalCar.get();
 
         List<Orders> allOrders = orderService.getAllOrders();
-        if(allOrders.isEmpty()) {
+        if (allOrders.isEmpty()) {
             logger.warn("/carrentalcount/{} getAllOrders returned empty list.", carId);
             throw new DataNotFoundException("/carrentalcount", carId.toString(), "No orders were found");
         }
@@ -155,11 +154,11 @@ public class StatisticsServiceImpl implements StatisticsService {
                 .count();
 
         Map<String, Object> result = new LinkedHashMap<>();
-        result.put("car id", carId);
+        result.put("carId", carId);
         result.put("brand", car.getBrand());
         result.put("model", car.getModel());
         result.put("registrationnumber", car.getRegistrationNumber());
-        result.put("order count", count);
+        result.put("orderCount", count);
 
         logger.info("Endpoint /admin/statistics/carrentalcount was used with carId {} and returned count {}.", carId, count);
 
@@ -172,9 +171,9 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         List<Orders> allOrders = orderService.getAllOrders();
 
-        if(allOrders.isEmpty()) {
+        if (allOrders.isEmpty()) {
             logger.warn("/rentaldurations getAllOrders returned empty list with no orders.");
-            throw new DataNotFoundException("/rentaldurations","","No orders were found");
+            throw new DataNotFoundException("/rentaldurations", "", "No orders were found");
         }
 
         Map<Integer, Long> result = allOrders.stream()
@@ -185,17 +184,15 @@ public class StatisticsServiceImpl implements StatisticsService {
                 })
                 .collect(Collectors.groupingBy(days -> days, Collectors.counting()));
 
-        if(result.isEmpty()) {
+        if (result.isEmpty()) {
             logger.warn("/rentaldurations Result returned empty because no valid data was found.");
             throw new DataNotFoundException("/rentaldurations", "", "No orders with valid data found");
         }
 
         logger.info("Endpoint /rentaldurations was used and returned {} durations.", result.size());
 
-            return result;
-        }
-
-
+        return result;
+    }
 
 
     @Override
@@ -204,9 +201,9 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         List<Orders> allOrders = orderService.getAllOrders();
 
-        if(allOrders.isEmpty()) {
+        if (allOrders.isEmpty()) {
             logger.warn("/averagecostperorder getAllOrders returned empty list with no orders.");
-            throw new DataNotFoundException("/averagecostperorder","","No orders were found");
+            throw new DataNotFoundException("/averagecostperorder", "", "No orders were found");
         }
 
         List<Orders> ordersToCalculate = allOrders.stream()
@@ -216,7 +213,7 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         if (ordersToCalculate.isEmpty()) {
             logger.warn("/averagecostperorder ordersToCalculate returned empty because no valid data was found.");
-            throw new DataNotFoundException("/averagecostperorder","","No orders with valid data found");
+            throw new DataNotFoundException("/averagecostperorder", "", "No orders with valid data found");
         }
 
         double totalRevenue = ordersToCalculate.stream()
@@ -228,47 +225,59 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         logger.info("Endpoint /admin/statistics/averageordercost was used and returned average of {}", average);
 
-        return Map.of("Average order price", average);
+        return Map.of("AverageOrderPrice", average);
     }
 
 
     @Override
-    public Map<Long, Double> getTotalRevenuePerCar() {
+    public Map<String, Object> getTotalRevenuePerCar() {
 
         logger.info("Endpoint /admin/statistics/revenuepercar was used");
 
         List<Orders> allOrders = orderService.getAllOrders();
 
-        if(allOrders.isEmpty()) {
-        logger.warn("/revenuepercar getAllOrders returned empty list with no orders.");
-        throw new DataNotFoundException("/revenuepercar","","No orders were found");
+        if (allOrders.isEmpty()) {
+            logger.warn("/revenuepercar getAllOrders returned empty list with no orders.");
+            throw new DataNotFoundException("/revenuepercar", "", "No orders were found");
         }
 
-        Map<Long, Double> revenuePerCar = new HashMap<>();
+        Map<String, Object> revenuePerCar = new LinkedHashMap<>();
 
         for (Orders order : allOrders) {
             if (order.getCar() != null && !order.isOrderCancelled()) {
-                Long carId = order.getCar().getId();
+                Car car = order.getCar();
+                Long carId = car.getId();
                 double totalPrice = order.getTotalPrice();
-                revenuePerCar.put(carId, revenuePerCar.getOrDefault(carId, 0.0) + totalPrice);
+
+                if (!revenuePerCar.containsKey(carId.toString())) {
+                    Map<String, Object> carDetails = new LinkedHashMap<>();
+                    carDetails.put("registrationNumber", car.getRegistrationNumber());
+                    carDetails.put("brand", car.getBrand());
+                    carDetails.put("model", car.getModel());
+                    carDetails.put("totalRevenue", 0.0);  // Startvärde för totalRevenue
+                    revenuePerCar.put(carId.toString(), carDetails);
+                }
+
+
+                Map<String, Object> carData = (Map<String, Object>) revenuePerCar.get(carId.toString());
+                double currentRevenue = (double) carData.get("totalRevenue");
+                carData.put("totalRevenue", Math.round((currentRevenue + totalPrice) * 100) / 100.0);
 
             }
         }
 
-        if(revenuePerCar.isEmpty()) {
+        if (revenuePerCar.isEmpty()) {
             logger.warn("/revenuepercar No valid orders were found");
-            throw new DataNotFoundException("/revenuepercar","","No valid data was found in orders.");
+            throw new DataNotFoundException("/revenuepercar", "", "No valid data was found in orders.");
         }
 
         logger.info("Endpoint /admin/statistics/revenuepercar was used and returned revenue of {} cars.", revenuePerCar.size());
 
-        return revenuePerCar.entrySet().stream()
-                .collect(Collectors.toMap(
-                        Map.Entry::getKey,
-                        e -> Math.round(e.getValue() * 100) / 100.0
-                ));
-    }
+        Map<String, Object> result = new LinkedHashMap<>();
+        result.put("revenuepercar", revenuePerCar);
 
+        return revenuePerCar;
+    }
 
 
     @Override
@@ -319,7 +328,7 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         logger.info("Endpoint /admin/statistics/revenue was used with startDate {} and endDate {} and returned {}", startDate, endDate, totalRevenue);
 
-        return Map.of("Total revenue for period", totalRevenue);
+        return Map.of("TotalRevenueForPeriod", totalRevenue);
 
     }
 
@@ -348,7 +357,7 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         if (allOrders.isEmpty()) {
             logger.warn("/cancelledorders getAllOrders returned empty list with no orders.");
-            throw new DataNotFoundException("/cancelledorders", "", "No orders were found" );
+            throw new DataNotFoundException("/cancelledorders", "", "No orders were found");
         }
 
         long canceledCount = allOrders.stream()
@@ -376,12 +385,12 @@ public class StatisticsServiceImpl implements StatisticsService {
         totalPriceOfCanceledOrders = Math.round(totalPriceOfCanceledOrders * 100) / 100.0;
 
         Map<String, Object> result = new LinkedHashMap<>();
-        result.put("start date", start);
-        result.put("end date", end);
-        result.put("cancelled orders", canceledCount);
-        result.put("lost revenue", totalPriceOfCanceledOrders);
+        result.put("startDate", start);
+        result.put("endDate", end);
+        result.put("cancelledOrders", canceledCount);
+        result.put("lostRevenue", totalPriceOfCanceledOrders);
 
-        logger.info("Endpoint /admin/statistics/cancelledorders was used with startDate {} endDate {} and returned {} cancelled orders with revenue lost {} ", startDate, endDate,canceledCount, totalPriceOfCanceledOrders );
+        logger.info("Endpoint /admin/statistics/cancelledorders was used with startDate {} endDate {} and returned {} cancelled orders with revenue lost {} ", startDate, endDate, canceledCount, totalPriceOfCanceledOrders);
 
 
         return result;
@@ -406,7 +415,7 @@ public class StatisticsServiceImpl implements StatisticsService {
             logger.warn("/statistics/orders Invalid date because start date {} is after end date {}.", startDate, endDate);
             throw new IncorrectInputException("Statistics", "Start-End Dates", startDate + " -> " + endDate, "YYYY-MM-DD", "Start date must be BEFORE end date.");
         }
-        List<Orders> allOrders = orderRepository.findByHireStartDateBetween(start,end);
+        List<Orders> allOrders = orderRepository.findByHireStartDateBetween(start, end);
 
         List<Orders> activeOrders = allOrders.stream()
                 .filter(order -> !order.isOrderCancelled())
@@ -414,14 +423,13 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         if (activeOrders.isEmpty()) {
             logger.warn("/statistics/orders activeOrders returned empty list with no orders.");
-            throw new DataNotFoundException("/statistics/orders", "", "No active orders were found during given period." );
+            throw new DataNotFoundException("/statistics/orders", "", "No active orders were found during given period.");
         }
 
         Map<String, Object> result = new LinkedHashMap<>();
-        result.put("start date", start);
-        result.put("end date", end);
-        result.put("active orders", activeOrders.size());
-
+        result.put("startDate", start);
+        result.put("endDate", end);
+        result.put("orders", activeOrders.size());
 
 
         logger.info("Endpoint admin/statistics/orders was used with startDate {} endDate {} and returned order count {}.", startDate, endDate, activeOrders.size());

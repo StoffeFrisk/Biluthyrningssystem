@@ -87,15 +87,15 @@ public class StatisticsController {
 
     }
 
-    @GetMapping("/statistics/averageordercost")
+    @GetMapping("/statistics/averageorderprice")
     public ResponseEntity<Map<String, Double>> getAverageCost() {
         Map<String, Double> result = statisticsService.getAverageCostPerOrder();
         return ResponseEntity.ok(result);
     }
 
     @GetMapping("/statistics/revenuepercar")
-    public ResponseEntity<Map<Long, Double>> getRevenuePerCar() {
-        Map<Long, Double> result = statisticsService.getTotalRevenuePerCar();
+    public ResponseEntity<Map<String, Object>> getRevenuePerCar() {
+        Map<String, Object> result = statisticsService.getTotalRevenuePerCar();
         return ResponseEntity.ok(result);
     }
 
