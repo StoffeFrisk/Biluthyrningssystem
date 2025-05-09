@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 @Service
 public class StatisticsServiceImpl implements StatisticsService {
 
-    private static final Logger logger = (Logger) LoggerFactory.getLogger(StatisticsServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(StatisticsServiceImpl.class);
 
 
     private final OrderRepository orderRepository;
@@ -208,7 +208,7 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         List<Orders> ordersToCalculate = allOrders.stream()
                 .filter(order -> order.getHireStartDate() != null && !order.isOrderCancelled())
-                .collect(Collectors.toList());
+                .toList();
 
 
         if (ordersToCalculate.isEmpty()) {
@@ -272,9 +272,6 @@ public class StatisticsServiceImpl implements StatisticsService {
         }
 
         logger.info("Endpoint /admin/statistics/revenuepercar was used and returned revenue of {} cars.", revenuePerCar.size());
-
-        Map<String, Object> result = new LinkedHashMap<>();
-        result.put("revenuepercar", revenuePerCar);
 
         return revenuePerCar;
     }
