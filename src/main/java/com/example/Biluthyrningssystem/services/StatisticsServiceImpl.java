@@ -2,6 +2,7 @@
 
 package com.example.Biluthyrningssystem.services;
 
+import com.example.Biluthyrningssystem.dto.RentalDurationDTO;
 import com.example.Biluthyrningssystem.entities.Car;
 import com.example.Biluthyrningssystem.entities.Orders;
 import com.example.Biluthyrningssystem.exceptions.DataNotFoundException;
@@ -167,7 +168,7 @@ public class StatisticsServiceImpl implements StatisticsService {
     }
 
     @Override
-    public Map<Integer, Long> getRentalDurationsByDays() {
+    public List<RentalDurationDTO> getRentalDurationsByDays() {
 
         List<Orders> allOrders = orderService.getAllOrders();
 
@@ -191,7 +192,10 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         logger.info("Endpoint /rentaldurations was used and returned {} durations.", result.size());
 
-        return result;
+            return result.entrySet().stream()
+                    .map(entry -> new RentalDurationDTO(entry.getKey(), entry.getValue()))
+                    .sorted(Comparator.comparingInt(RentalDurationDTO::getDays))
+                    .collect(Collectors.toList());
     }
 
 
@@ -431,5 +435,7 @@ public class StatisticsServiceImpl implements StatisticsService {
         logger.info("Endpoint admin/statistics/orders was used with startDate {} endDate {} and returned order count {}.", startDate, endDate, activeOrders.size());
         return result;
     }
+
+
 
 }

@@ -2,6 +2,9 @@
 
 package com.example.Biluthyrningssystem.services;
 
+import com.example.Biluthyrningssystem.dto.RentalDurationDTO;
+
+import java.util.List;
 import java.util.Map;
 
 public interface StatisticsService {
@@ -9,7 +12,7 @@ public interface StatisticsService {
     Map<String, Object> getStatistics();
     Map<String, Long> getMostRentedBrandForPeriod(String startDate, String endDate);
     Map<String, Object> getRentalCountByCar(Long carId);
-    Map<Integer, Long> getRentalDurationsByDays();
+    List<RentalDurationDTO> getRentalDurationsByDays();
     Map<String, Double> getAverageCostPerOrder();
     Map<String, Object> getTotalRevenuePerCar();
     Map<String, Double> getTotalRevenueForPeriod(String startDate, String endDate);

@@ -2,11 +2,13 @@
 
 package com.example.Biluthyrningssystem.controllers;
 
+import com.example.Biluthyrningssystem.dto.RentalDurationDTO;
 import com.example.Biluthyrningssystem.services.StatisticsService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -61,7 +63,7 @@ public class StatisticsController {
     public ResponseEntity<Map<String, Object>> getRentalCountByCar(@PathVariable Long carId) {
 
         Map<String, Object> result = statisticsService.getRentalCountByCar(carId);
-        Long count = (Long) result.get("order count");
+        Long count = (Long) result.get("orderCount");
 
         Map<String, Object> response = new LinkedHashMap<>();
         response.put("message", "Car with ID " + carId + " has been booked " + count + " time(s).");
@@ -72,18 +74,15 @@ public class StatisticsController {
 
     @GetMapping("/statistics/rentaldurations")
     public ResponseEntity<Map<String, Object>> getPopularDurations() {
-        Map<Integer, Long> result = statisticsService.getRentalDurationsByDays();
+
+        List<RentalDurationDTO> durations = statisticsService.getRentalDurationsByDays();
 
         Map<String, Object> response = new LinkedHashMap<>();
-        response.put("message", "The most common rental durations.");
+        response.put("message", "Rental durations sorted by order count");
+        response.put("durations", durations);
 
-        Map<String, Object> details = new LinkedHashMap<>();
-        result.forEach((days, frequency) -> {
-            details.put("Days: " + days, "Bookings: " + frequency);
-        });
-
-        response.put("Durations", details);
         return ResponseEntity.ok(response);
+
 
     }
 
