@@ -35,7 +35,7 @@ public class StatisticsServiceImpl implements StatisticsService {
     private final CarRepository carRepository;
 
     @Autowired
-    public StatisticsServiceImpl(OrderRepository orderRepository, OrderService orderService, CarRepository carRepository) {
+    public StatisticsServiceImpl(OrderService orderService, CarRepository carRepository) {
         this.orderService = orderService;
         this.carRepository = carRepository;
     }
