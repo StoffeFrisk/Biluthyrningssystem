@@ -27,4 +27,5 @@ public class RentalDurationDTO {
     public void setOrders(long orders) {
         this.orders = orders;
     }
+    
 }
