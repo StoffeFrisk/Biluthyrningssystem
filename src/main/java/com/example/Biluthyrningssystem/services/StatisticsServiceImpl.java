@@ -2,6 +2,7 @@
 
 package com.example.Biluthyrningssystem.services;
 
+import com.example.Biluthyrningssystem.dto.CarRevenueDTO;
 import com.example.Biluthyrningssystem.dto.RentalDurationDTO;
 import com.example.Biluthyrningssystem.entities.Car;
 import com.example.Biluthyrningssystem.entities.Orders;
@@ -20,7 +21,10 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
+
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @Service
 public class StatisticsServiceImpl implements StatisticsService {
@@ -55,7 +59,8 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         Map<String, Object> cancelledOrders = getCanceledOrderCountByPeriod("2025-01-01", "2025-12-31");
         statistics.put("Cancelled orders 2025", cancelledOrders.get("cancelledOrders"));
-        statistics.put("Lost revenue from cancelled orders", cancelledOrders.get("lostRevenue"));
+        statistics.put("Cancelled order percentage 2025", cancelledOrders.get("cancelledPercentage"));
+        statistics.put("Lost revenue from cancelled orders 2025", cancelledOrders.get("lostRevenue"));
 
         Map<String, Double> revenuePerOrder = getAverageCostPerOrder();
         statistics.put("Average revenue of orders (All time)", revenuePerOrder.get("AverageOrderPrice"));
@@ -86,22 +91,11 @@ public class StatisticsServiceImpl implements StatisticsService {
         LocalDate start = dates[0];
         LocalDate end = dates[1];
 
-        List<Orders> allOrders = orderRepository.findAll();
+        List<Orders> allOrders = orderService.getOrdersOverlappingPeriod(start, end);
 
-        Map<String, Long> brandCounts = new HashMap<>();
-        for (Orders order : allOrders) {
-            LocalDate hireStart = order.getHireStartDate().toLocalDate();
-
-            if (!order.isOrderCancelled() &&
-                    (hireStart.isEqual(start) || hireStart.isAfter(start)) &&
-                    (hireStart.isEqual(end) || hireStart.isBefore(end))) {
-                Car car = order.getCar();
-                if (car != null) {
-                    String brand = car.getBrand();
-                    brandCounts.put(brand, brandCounts.getOrDefault(brand, 0L) + 1);
-                }
-            }
-        }
+        Map<String, Long> brandCounts = allOrders.stream().filter(order -> !order.isOrderCancelled() && order.getCar() != null)
+                .map(order -> order.getCar().getBrand())
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
         if (brandCounts.isEmpty()) {
             logger.warn("/mostrentedbrands Could not return any data because no brands were found during the given period " + startDate + " - " + endDate);
@@ -219,11 +213,8 @@ public class StatisticsServiceImpl implements StatisticsService {
         return Map.of("AverageOrderPrice", average);
     }
 
-
     @Override
-    public Map<String, Object> getTotalRevenuePerCar() {
-
-        logger.info("Endpoint /admin/statistics/revenuepercar was used");
+    public List<CarRevenueDTO> getTotalRevenuePerCar() {
 
         List<Orders> allOrders = orderService.getAllOrders();
 
@@ -232,39 +223,32 @@ public class StatisticsServiceImpl implements StatisticsService {
             throw new DataNotFoundException("/revenuepercar", "", "No orders were found");
         }
 
-        Map<String, Object> revenuePerCar = new LinkedHashMap<>();
-
+        Map<Long, CarRevenueDTO> carRevenueMap = new LinkedHashMap<>();
         for (Orders order : allOrders) {
-            if (order.getCar() != null && !order.isOrderCancelled()) {
+            if(order.getCar() != null && !order.isOrderCancelled()) {
                 Car car = order.getCar();
                 Long carId = car.getId();
-                double totalPrice = order.getTotalPrice();
+                double totalRevenue = order.getTotalPrice();
 
-                if (!revenuePerCar.containsKey(carId.toString())) {
-                    Map<String, Object> carDetails = new LinkedHashMap<>();
-                    carDetails.put("registrationNumber", car.getRegistrationNumber());
-                    carDetails.put("brand", car.getBrand());
-                    carDetails.put("model", car.getModel());
-                    carDetails.put("totalRevenue", 0.0);  // Startvärde för totalRevenue
-                    revenuePerCar.put(carId.toString(), carDetails);
-                }
-
-
-                Map<String, Object> carData = (Map<String, Object>) revenuePerCar.get(carId.toString());
-                double currentRevenue = (double) carData.get("totalRevenue");
-                carData.put("totalRevenue", Math.round((currentRevenue + totalPrice) * 100) / 100.0);
-
+                carRevenueMap.compute(carId, (id, dto) -> {
+                    if (dto == null) {
+                        return new CarRevenueDTO(carId,car.getRegistrationNumber(),car.getModel(),car.getBrand(),Math.round(totalRevenue * 100) / 100.0);
+                    } else {
+                        double newRevenue = Math.round((dto.getTotalCarRevenue()  + totalRevenue) * 100) / 100.0;
+                        dto.setTotalCarRevenue(newRevenue);
+                        return dto;
+                    }
+                });
             }
         }
 
-        if (revenuePerCar.isEmpty()) {
-            logger.warn("/revenuepercar No valid orders were found");
-            throw new DataNotFoundException("/revenuepercar", "", "No valid data was found in orders.");
+        if (carRevenueMap.isEmpty()) {
+            logger.warn("/carrevenuepercar getAllOrders returned empty list with no orders.");
+            throw new DataNotFoundException("/carrevenuepercar", "", "No orders with valid data were found");
         }
 
-        logger.info("Endpoint /admin/statistics/revenuepercar was used and returned revenue of {} cars.", revenuePerCar.size());
-
-        return revenuePerCar;
+        logger.info("Endpoint /admin/statistics/revenuepercar returned revenue for {} cars.", carRevenueMap.size());
+        return new ArrayList<>(carRevenueMap.values());
     }
 
 
@@ -275,27 +259,19 @@ public class StatisticsServiceImpl implements StatisticsService {
         LocalDate start = dates[0];
         LocalDate end = dates[1];
 
-        List<Orders> allOrders = orderService.getAllOrders();
+        List<Orders> allOrders = orderService.getOrdersOverlappingPeriod(start, end);
 
         if (allOrders.isEmpty()) {
             logger.warn("/revenue getAllOrders returned empty list with no orders.");
             throw new DataNotFoundException("/revenue No orders", "", "No orders were found");
         }
 
-
-        List<Orders> filteredOrders = allOrders.stream()
-                .filter(order -> {
-                    LocalDate hireStart = order.getHireStartDate().toLocalDate();
-                    return !order.isOrderCancelled() && (hireStart.isEqual(start) || hireStart.isAfter(start)) &&
-                            (hireStart.isEqual(end) || hireStart.isBefore(end));
-                })
-                .toList();
+        List<Orders> filteredOrders = allOrders.stream().filter(order -> !order.isOrderCancelled()).toList();
 
         if (filteredOrders.isEmpty()) {
             logger.warn("/revenue No orders were found for startDate {} and endDate {} ", startDate, endDate);
             throw new DataNotFoundException("/revenue", startDate + " - " + endDate, "No valid orders were found during given period");
         }
-
 
         double totalRevenue = filteredOrders.stream().mapToDouble(Orders::getTotalPrice).sum();
 
@@ -315,45 +291,31 @@ public class StatisticsServiceImpl implements StatisticsService {
         LocalDate start = dates[0];
         LocalDate end = dates[1];
 
-        List<Orders> allOrders = orderService.getAllOrders();
+        List<Orders> allOrders = orderService.getOrdersOverlappingPeriod(start, end);
 
         if (allOrders.isEmpty()) {
             logger.warn("/cancelledorders getAllOrders returned empty list with no orders.");
             throw new DataNotFoundException("/cancelledorders", "", "No orders were found");
         }
 
-        long canceledCount = allOrders.stream()
-                .filter(order -> {
-                    LocalDate orderDate = order.getHireStartDate().toLocalDate();
-                    return order.isOrderCancelled()
-                            && (orderDate.isEqual(start) || orderDate.isAfter(start))
-                            && (orderDate.isEqual(end) || orderDate.isBefore(end));
-                })
-                .count();
+        long canceledCount = allOrders.stream().filter(Orders::isOrderCancelled).count();
+        long totalOrderCount = allOrders.size();
 
-
-        double totalPriceOfCanceledOrders = allOrders.stream()
-                .filter(order -> {
-                    LocalDate hireStart = order.getHireStartDate().toLocalDate();
-                    LocalDate hireEnd = order.getHireEndDate().toLocalDate();
-                    return order.isOrderCancelled()
-                            && (hireStart.isEqual(start) || hireStart.isAfter(start))
-                            && (hireEnd.isEqual(end) || hireEnd.isBefore(end));
-                })
-                .mapToDouble(Orders::getTotalPrice)
-                .sum();
-
-
+        double totalPriceOfCanceledOrders = allOrders.stream().filter(Orders::isOrderCancelled).mapToDouble(Orders::getTotalPrice).sum();
         totalPriceOfCanceledOrders = Math.round(totalPriceOfCanceledOrders * 100) / 100.0;
+
+        double cancelledPercentage = (double) canceledCount / totalOrderCount * 100;
+        cancelledPercentage = Math.round(cancelledPercentage * 100) / 100.0;
 
         Map<String, Object> result = new LinkedHashMap<>();
         result.put("startDate", start);
         result.put("endDate", end);
         result.put("cancelledOrders", canceledCount);
+        result.put("totalOrderCount", totalOrderCount);
+        result.put("cancelledPercentage", cancelledPercentage);
         result.put("lostRevenue", totalPriceOfCanceledOrders);
 
         logger.info("Endpoint /admin/statistics/cancelledorders was used with startDate {} endDate {} and returned {} cancelled orders with revenue lost {} ", startDate, endDate, canceledCount, totalPriceOfCanceledOrders);
-
 
         return result;
     }
@@ -365,7 +327,7 @@ public class StatisticsServiceImpl implements StatisticsService {
         LocalDate start = dates[0];
         LocalDate end = dates[1];
 
-        List<Orders> allOrders = orderRepository.findOrdersOverlappingPeriod(start, end);
+        List<Orders> allOrders = orderService.getOrdersOverlappingPeriod(start, end);
         logger.info(String.valueOf(allOrders.size()));
 
         List<Orders> activeOrders = allOrders.stream()

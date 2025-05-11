@@ -2,6 +2,7 @@
 
 package com.example.Biluthyrningssystem.controllers;
 
+import com.example.Biluthyrningssystem.dto.CarRevenueDTO;
 import com.example.Biluthyrningssystem.dto.RentalDurationDTO;
 import com.example.Biluthyrningssystem.services.StatisticsService;
 import org.springframework.http.ResponseEntity;
@@ -37,25 +38,9 @@ public class StatisticsController {
 
         Map<String, Object> response = new LinkedHashMap<>();
         response.put("message", "All car brands sorted by order count during period");
-        response.put("data", sortedBrands);
+        response.put("brandCounts", sortedBrands);
 
         return ResponseEntity.ok(response);
-
-    // Gammal kod för att lista endast den populäraste.
-
-//        Map.Entry<String, Long> mostRented = statisticsService.getMostRentedBrandForPeriod(startDate, endDate)
-//                .entrySet()
-//                .stream()
-//                .findFirst()
-//                .orElse(Map.entry("Ingen data", 0L));
-//
-//        Map<String, Object> response = new LinkedHashMap<>();
-//        response.put("message", "Det mest populära bilmärket under perioden var " + mostRented.getKey() +
-//                " med " + mostRented.getValue() + " uthyrningar.");
-//        response.put("brand", mostRented.getKey());
-//        response.put("rentals", mostRented.getValue());
-//
-//        return ResponseEntity.ok(response);
     }
 
 
@@ -93,10 +78,14 @@ public class StatisticsController {
     }
 
     @GetMapping("/statistics/revenuepercar")
-    public ResponseEntity<Map<String, Object>> getRevenuePerCar() {
-        Map<String, Object> result = statisticsService.getTotalRevenuePerCar();
+    public ResponseEntity<List<CarRevenueDTO>> getRevenuePerCar() {
+        List<CarRevenueDTO> result = statisticsService.getTotalRevenuePerCar();
         return ResponseEntity.ok(result);
     }
+//    public ResponseEntity<Map<String, Object>> getRevenuePerCar() {
+//        Map<String, Object> result = statisticsService.getTotalRevenuePerCar();
+//        return ResponseEntity.ok(result);
+//    }
 
     @GetMapping("/statistics/revenue/period/{startDate}/{endDate}")
     public ResponseEntity<Map<String, Double>> getRevenueForPeriod(@PathVariable String startDate, @PathVariable String endDate) {

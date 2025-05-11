@@ -1,3 +1,5 @@
+// Niklas Einarsson
+
 package com.example.Biluthyrningssystem.dto;
 
 public class RentalDurationDTO {
