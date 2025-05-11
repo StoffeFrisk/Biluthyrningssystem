@@ -4,8 +4,8 @@ package com.example.Biluthyrningssystem.dto;
 
 public class RentalDurationDTO {
 
-    private int days;
-    private long orders;
+    private final int days;
+    private final long orders;
 
     public RentalDurationDTO(int days, long orders) {
         this.days = days;

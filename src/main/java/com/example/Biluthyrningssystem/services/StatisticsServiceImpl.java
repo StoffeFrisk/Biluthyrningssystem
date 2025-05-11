@@ -24,7 +24,6 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @Service
 public class StatisticsServiceImpl implements StatisticsService {
@@ -32,13 +31,11 @@ public class StatisticsServiceImpl implements StatisticsService {
     private static final Logger logger = LoggerFactory.getLogger(StatisticsServiceImpl.class);
 
 
-    private final OrderRepository orderRepository;
     private final OrderService orderService;
     private final CarRepository carRepository;
 
     @Autowired
     public StatisticsServiceImpl(OrderRepository orderRepository, OrderService orderService, CarRepository carRepository) {
-        this.orderRepository = orderRepository;
         this.orderService = orderService;
         this.carRepository = carRepository;
     }
