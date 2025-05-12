@@ -3,16 +3,14 @@ package com.example.Biluthyrningssystem.services;
 import com.example.Biluthyrningssystem.entities.Car;
 import com.example.Biluthyrningssystem.entities.Customer;
 import com.example.Biluthyrningssystem.entities.Orders;
-import com.example.Biluthyrningssystem.exceptions.IncorrectCalculationException;
-import com.example.Biluthyrningssystem.exceptions.IncorrectInputException;
-import com.example.Biluthyrningssystem.exceptions.UnauthorisedRequestException;
-import com.example.Biluthyrningssystem.exceptions.ResourceNotFoundException;
+import com.example.Biluthyrningssystem.exceptions.*;
 import com.example.Biluthyrningssystem.repositories.CarRepository;
 import com.example.Biluthyrningssystem.repositories.CustomerRepository;
 import com.example.Biluthyrningssystem.repositories.OrderRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
@@ -74,9 +72,15 @@ public class OrderServiceImpl implements OrderService {
                 LOGGER.error("Unauthorized request by user: {}. Attempted to cancel order {} registered to customer with ID: {}", username,order.getId(),order.getCustomer().getPersonnummer());
                 throw new UnauthorisedRequestException("User", username, "cancel an order", "Users can only edit their own orders");
             }
-            order.setOrderCancelled(true);
-            LOGGER.info("Order with ID {} cancelled. Request made by user: {}", order.getId(), username);
-            return orderRepository.save(order);
+            if (order.isOrderCancelled()){
+                LOGGER.warn("Order with ID: {} has already been cancelled. Request made by user: {}", order.getId(), username);
+                throw new RepeatRequestException("Order", "ID", order.getId(), "Order has already been cancelled.");
+            } else {
+                order.setOrderCancelled(true);
+                LOGGER.info("Order with ID {} cancelled. Request made by user: {}", order.getId(), username);
+                return orderRepository.save(order);
+            }
+
         } else {
             LOGGER.error("Order with ID: {} not found. Request made by user: {}", order.getId(), username);
             throw new ResourceNotFoundException("Order", "ID", order.getId());
