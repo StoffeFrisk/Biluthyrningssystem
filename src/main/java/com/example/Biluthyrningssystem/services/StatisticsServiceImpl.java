@@ -101,14 +101,12 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         logger.info("Endpoint /admin/statistics/mostrentedbrand was used with startDate {} and endDate {}", startDate, endDate);
 
-        return brandCounts.entrySet().stream()
+        LinkedHashMap<String, Long> result = new LinkedHashMap<>();
+        brandCounts.entrySet().stream()
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
-                .collect(Collectors.toMap(
-                        Map.Entry::getKey,
-                        Map.Entry::getValue,
-                        (e1, e2) -> e1,
-                        LinkedHashMap::new
-                ));
+                .forEachOrdered(entry -> result.put(entry.getKey(), entry.getValue()));
+
+        return result;
     }
 
 
@@ -127,7 +125,7 @@ public class StatisticsServiceImpl implements StatisticsService {
         List<Orders> allOrders = orderService.getAllOrders();
         if (allOrders.isEmpty()) {
             logger.warn("/carrentalcount/{} getAllOrders returned empty list.", carId);
-            throw new DataNotFoundException("/carrentalcount", carId.toString(), "No orders were found");
+            throw new DataNotFoundException("/carrentalcount", carId.toString(), "No orders with valid data were found");
         }
         long count = allOrders.stream()
                 .filter(order -> order.getCar() != null && !order.isOrderCancelled() && order.getCar().getId().equals(carId))
@@ -166,15 +164,18 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         if (result.isEmpty()) {
             logger.warn("/rentaldurations Result returned empty because no valid data was found.");
-            throw new DataNotFoundException("/rentaldurations", "", "No orders with valid data found");
+            throw new DataNotFoundException("/rentaldurations", "", "No orders with valid data were found");
         }
 
         logger.info("Endpoint /rentaldurations was used and returned {} durations.", result.size());
 
-            return result.entrySet().stream()
-                    .map(entry -> new RentalDurationDTO(entry.getKey(), entry.getValue()))
-                    .sorted(Comparator.comparingInt(RentalDurationDTO::getDays))
-                    .collect(Collectors.toList());
+        List<RentalDurationDTO> durations = new ArrayList<>();
+        for (Map.Entry<Integer, Long> entry : result.entrySet()) {
+            durations.add(new RentalDurationDTO(entry.getKey(), entry.getValue()));
+        }
+        durations.sort(Comparator.comparingInt(RentalDurationDTO::getDays));
+
+        return durations;
     }
 
 
@@ -367,5 +368,4 @@ public class StatisticsServiceImpl implements StatisticsService {
                     "Please use the correct date format.");
         }
     }
-
 }
