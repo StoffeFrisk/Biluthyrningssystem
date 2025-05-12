@@ -1,3 +1,5 @@
+// Niklas Einarsson
+
 package com.example.Biluthyrningssystem.services;
 
 import com.example.Biluthyrningssystem.dto.CarRevenueDTO;
@@ -17,8 +19,6 @@ import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.sql.Date;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -51,7 +51,6 @@ class StatisticsServiceImplTest {
         Orders orders4 = new Orders();
         Orders orders5 = new Orders();
         Orders orders6 = new Orders();
-        Orders orders7 = new Orders();
 
         Car car1 = new Car();
         car1.setId(1L);
