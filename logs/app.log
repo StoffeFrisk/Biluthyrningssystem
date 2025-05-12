@@ -2496,3 +2496,652 @@
 [] 2025-05-12 18:53:00,727 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
 [] 2025-05-12 18:53:00,727 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /averagecostperorder getAllOrders returned empty list with no orders.
 [] 2025-05-12 18:53:00,745 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /revenue No orders were found for startDate 2025-05-01 and endDate 2025-05-20 
+[] 2025-05-12 18:57:18,754 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.repositories.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 18:57:19,120 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.repositories.OrderRepositoryTest
+[] 2025-05-12 18:57:21,851 [main]  INFO com.example.Biluthyrningssystem.repositories.OrderRepositoryTest - Starting OrderRepositoryTest using Java 17.0.13 with PID 18316 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-12 18:57:21,851 [main]  INFO com.example.Biluthyrningssystem.repositories.OrderRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-12 18:57:22,512 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-12 18:57:22,656 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 121 ms. Found 4 JPA repository interfaces.
+[] 2025-05-12 18:57:22,747 [main]  INFO org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+[] 2025-05-12 18:57:22,952 [main]  INFO org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:7e6423c3-b365-42ce-af3d-5ce340c5f4f9;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+[] 2025-05-12 18:57:23,844 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-12 18:57:23,948 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-12 18:57:24,013 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-12 18:57:24,222 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-12 18:57:24,400 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@1a78eb94']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-12 18:57:25,649 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-12 18:57:25,714 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 18:57:26,219 [main]  INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[] 2025-05-12 18:57:27,071 [main]  INFO com.example.Biluthyrningssystem.repositories.OrderRepositoryTest - Started OrderRepositoryTest in 5.895 seconds (process running for 11.589)
+[] 2025-05-12 18:57:27,434 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.services.OrderServiceImplTest]: OrderServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 18:57:27,452 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.services.OrderServiceImplTest
+[] 2025-05-12 18:57:27,485 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImplTest - Starting OrderServiceImplTest using Java 17.0.13 with PID 18316 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-12 18:57:27,485 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImplTest - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-12 18:57:27,886 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-12 18:57:27,894 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 4 JPA repository interfaces.
+[] 2025-05-12 18:57:28,653 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+[] 2025-05-12 18:57:28,690 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-1"]
+[] 2025-05-12 18:57:28,694 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[] 2025-05-12 18:57:28,694 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+[] 2025-05-12 18:57:28,811 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[] 2025-05-12 18:57:28,811 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1326 ms
+[] 2025-05-12 18:57:28,994 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-12 18:57:29,002 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn7: url=jdbc:h2:mem:7741ed06-7ae3-485f-8bab-f1042e406fae user=SA
+[] 2025-05-12 18:57:29,019 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-12 18:57:29,040 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-12 18:57:29,042 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-12 18:57:29,049 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-12 18:57:29,049 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-12 18:57:29,129 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-12 18:57:29,145 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 18:57:29,272 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-12 18:57:29,353 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-12 18:57:30,447 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-1"]
+[] 2025-05-12 18:57:30,465 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 56257 (http) with context path '/'
+[] 2025-05-12 18:57:30,465 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImplTest - Started OrderServiceImplTest in 3.005 seconds (process running for 14.992)
+[] 2025-05-12 18:57:30,510 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders registered to user: 19950505-7890 in database. Request made by user: 19950505-7890
+[] 2025-05-12 18:57:30,622 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 5 order(s) found.
+[] 2025-05-12 18:57:30,654 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 18:57:30,654 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 18:57:30,677 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 18:57:30,677 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 18:57:30,677 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 9. Order placed by customer: 19850101-1234
+[] 2025-05-12 18:57:30,733 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 18:57:30,733 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 18:57:30,733 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 18:57:30,754 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 18:57:30,754 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 18:57:30,754 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 18:57:30,754 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 10. Order placed by customer: 19850101-1234
+[] 2025-05-12 18:57:30,804 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 18:57:30,804 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 18:57:30,804 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 18:57:30,804 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 11. Order placed by customer: 19850101-1234
+[] 2025-05-12 18:57:30,804 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID 11 cancelled. Request made by user: 19850101-1234
+[] 2025-05-12 18:57:30,829 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[] 2025-05-12 18:57:30,845 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 8 order(s) found.
+[] 2025-05-12 18:57:30,853 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 18:57:30,853 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 18:57:30,853 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 18:57:30,861 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 12. Order placed by customer: 19850101-1234
+[] 2025-05-12 18:57:30,861 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 12 deleted. Request made by admin
+[] 2025-05-12 18:57:30,877 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all active orders in database. Request made by admin
+[] 2025-05-12 18:57:30,888 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 4 active order(s) found.
+[] 2025-05-12 18:57:30,900 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all active orders registered to user: 19850101-1234 in database. Request made by user: 19850101-1234
+[] 2025-05-12 18:57:30,900 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 1 active order(s) found.
+[] 2025-05-12 18:57:30,918 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 18:57:30,932 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 18:57:30,932 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 18:57:30,964 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 18:57:30,979 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 18:57:30,979 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 18:57:30,979 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 18:57:30,979 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 13. Order placed by customer: 19850101-1234
+[] 2025-05-12 18:57:30,995 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 18:57:30,995 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 18:57:30,995 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 18:57:30,995 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 14. Order placed by customer: 19850101-1234
+[] 2025-05-12 18:57:31,027 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 18:57:31,027 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 18:57:31,043 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Orders placed before 2025-06-01 have been requested for deletion. Request made by admin
+[] 2025-05-12 18:57:31,043 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 1 deleted. Request made by admin
+[] 2025-05-12 18:57:31,043 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 3 deleted. Request made by admin
+[] 2025-05-12 18:57:31,043 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 2 order(s) deleted
+[] 2025-05-12 18:57:31,058 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 18:57:31,058 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 18:57:31,058 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 18:57:31,058 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 15. Order placed by customer: 19850101-1234
+[] 2025-05-12 18:57:31,074 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 18:57:31,074 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 18:57:31,107 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 18:57:31,107 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 18:57:31,107 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 18:57:31,107 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 16. Order placed by customer: 19850101-1234
+[] 2025-05-12 18:57:31,122 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 18:57:31,126 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 18:57:31,138 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.repositories.CarRepositoryTest]: CarRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 18:57:31,154 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.repositories.CarRepositoryTest
+[] 2025-05-12 18:57:31,233 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.repositories.CustomerRepositoryTest]: CustomerRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 18:57:31,249 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.repositories.CustomerRepositoryTest
+[] 2025-05-12 18:57:31,296 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to update car with id 5
+[] 2025-05-12 18:57:31,319 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Getting available cars from database.
+[] 2025-05-12 18:57:31,319 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - A total of 1 cars available
+[] 2025-05-12 18:57:31,323 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to get car with id: 99
+[] 2025-05-12 18:57:31,327 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to update car with id 1
+[] 2025-05-12 18:57:31,327 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Car with id 1 successfully updated: Car{id=1, brand='Audi', model='A4', registrationNumber='AUD123', pricePerDay=599.0, booked=true, inService=true}
+[] 2025-05-12 18:57:31,347 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Getting all cars from database.
+[] 2025-05-12 18:57:31,347 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - A total of 2 cars shown
+[] 2025-05-12 18:57:31,347 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to delete car with id: 7
+[] 2025-05-12 18:57:31,347 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to delete car with id: 1
+[] 2025-05-12 18:57:31,347 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Car with id 1 deleted
+[] 2025-05-12 18:57:31,347 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Adding new car: Volvo V70
+[] 2025-05-12 18:57:31,347 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - New car saved with id 1
+[] 2025-05-12 18:57:31,359 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to get car with id: 1
+[] 2025-05-12 18:57:31,359 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Car found: Car{id=1, brand='Volvo', model='V70', registrationNumber='ABC123', pricePerDay=499.0, booked=false, inService=false}
+[] 2025-05-12 18:57:31,566 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/cancelledorders was used with startDate 2025-05-01 endDate 2025-05-20 and returned 1 cancelled orders with revenue lost 1000.0 
+[] 2025-05-12 18:57:31,582 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/mostrentedbrand was used with startDate 2025-01-01 and endDate 2025-12-31
+[] 2025-05-12 18:57:31,589 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /carrentalcount Could not find car with id 9000.
+[] 2025-05-12 18:57:31,597 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/carrentalcount was used with carId 1 and returned count 2.
+[] 2025-05-12 18:57:31,609 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /revenuepercar getAllOrders returned empty list with no orders.
+[] 2025-05-12 18:57:31,620 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /carrentalcount/1 getAllOrders returned empty list.
+[] 2025-05-12 18:57:31,639 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics was used
+[] 2025-05-12 18:57:31,644 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /rentaldurations was used and returned 1 durations.
+[] 2025-05-12 18:57:31,664 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/revenue was used with startDate 2025-05-10 and endDate 2025-05-20 and returned 6000.0
+[] 2025-05-12 18:57:31,664 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /mostrentedbrands Could not return any data because no brands were found during the given period 2025-01-01 - 2025-12-31
+[] 2025-05-12 18:57:31,679 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/revenuepercar returned revenue for 5 cars.
+[] 2025-05-12 18:57:31,679 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/averageordercost was used and returned average of 2000.0
+[] 2025-05-12 18:57:31,690 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/cancelledorders was used with startDate 2025-05-01 endDate 2025-05-20 and returned 0 cancelled orders with revenue lost 0.0 
+[] 2025-05-12 18:57:31,696 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 6
+[] 2025-05-12 18:57:31,696 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-05-01 endDate 2025-05-20 and returned order count 6.
+[] 2025-05-12 18:57:31,705 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /rentaldurations Result returned empty because no valid data was found.
+[] 2025-05-12 18:57:31,705 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[] 2025-05-12 18:57:31,705 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[] 2025-05-12 18:57:31,716 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /averagecostperorder getAllOrders returned empty list with no orders.
+[] 2025-05-12 18:57:31,723 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /revenue No orders were found for startDate 2025-05-01 and endDate 2025-05-20 
+[] 2025-05-12 18:57:31,723 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.BiluthyrningssystemApplicationTests]: BiluthyrningssystemApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 18:57:31,737 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.BiluthyrningssystemApplicationTests
+[] 2025-05-12 18:57:31,838 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplicationTests - Starting BiluthyrningssystemApplicationTests using Java 17.0.13 with PID 18316 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-12 18:57:31,838 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplicationTests - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-12 18:57:32,086 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-12 18:57:32,103 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 4 JPA repository interfaces.
+[] 2025-05-12 18:57:32,216 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+[] 2025-05-12 18:57:32,231 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection conn22: url=jdbc:h2:mem:35e577ee-cb5f-4949-a820-1630fa2b1138 user=SA
+[] 2025-05-12 18:57:32,231 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+[] 2025-05-12 18:57:32,231 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-12 18:57:32,238 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-12 18:57:32,245 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-12 18:57:32,250 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-12 18:57:32,361 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-12 18:57:32,379 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 18:57:32,490 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-12 18:57:32,503 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-12 18:57:32,738 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplicationTests - Started BiluthyrningssystemApplicationTests in 0.942 seconds (process running for 17.265)
+[] 2025-05-12 18:57:32,930 [main]  INFO com.example.Biluthyrningssystem.services.CustomerServiceImpl - Created user login for personnummer: 19800731-6357
+[] 2025-05-12 18:57:32,930 [main]  INFO com.example.Biluthyrningssystem.services.CustomerServiceImpl - New customer added to database with Personnummer: 19800731-6357
+[] 2025-05-12 18:57:33,035 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 18:57:33,050 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[] 2025-05-12 18:57:33,288 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[] 2025-05-12 18:57:33,295 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 18:57:33,299 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-12 18:57:33,299 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-12 18:57:33,306 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 18:57:33,319 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+[] 2025-05-12 18:57:33,319 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+[] 2025-05-12 19:32:21,080 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest]: StatisticsControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 19:32:21,292 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest
+[] 2025-05-12 19:32:21,697 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Starting StatisticsControllerIntegrationTest using Java 17.0.13 with PID 17312 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-12 19:32:21,714 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-12 19:32:22,514 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-12 19:32:22,596 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 4 JPA repository interfaces.
+[] 2025-05-12 19:32:23,148 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-12 19:32:23,440 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:3a427762-8b5f-43a5-bc8a-7d9664fb3779 user=SA
+[] 2025-05-12 19:32:23,444 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-12 19:32:23,510 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-12 19:32:23,592 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-12 19:32:23,639 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-12 19:32:24,007 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-12 19:32:24,078 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-12 19:32:24,888 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-12 19:32:24,937 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 19:32:25,424 [main]  INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[] 2025-05-12 19:32:25,881 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-12 19:32:25,943 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-12 19:32:26,744 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Started StatisticsControllerIntegrationTest in 5.302 seconds (process running for 7.016)
+[] 2025-05-12 19:32:27,517 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/cancelledorders was used with startDate 2025-05-01 endDate 2025-05-31 and returned 1 cancelled orders with revenue lost 4000.0 
+[] 2025-05-12 19:32:27,561 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 19:32:27,567 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-12 19:32:27,569 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-12 19:35:43,125 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest]: StatisticsControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 19:35:43,279 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest
+[] 2025-05-12 19:35:43,640 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Starting StatisticsControllerIntegrationTest using Java 17.0.13 with PID 16064 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-12 19:35:43,650 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-12 19:35:44,423 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-12 19:35:44,519 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 80 ms. Found 4 JPA repository interfaces.
+[] 2025-05-12 19:35:45,027 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-12 19:35:45,210 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:c3cb0d67-bd76-4964-850b-ee365f357286 user=SA
+[] 2025-05-12 19:35:45,212 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-12 19:35:45,276 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-12 19:35:45,364 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-12 19:35:45,420 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-12 19:35:45,797 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-12 19:35:45,888 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-12 19:35:46,681 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-12 19:35:46,734 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 19:35:47,216 [main]  INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[] 2025-05-12 19:35:47,718 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-12 19:35:47,768 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-12 19:35:48,749 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Started StatisticsControllerIntegrationTest in 5.336 seconds (process running for 7.05)
+[] 2025-05-12 19:35:49,439 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/revenue was used with startDate 2025-05-01 and endDate 2025-05-31 and returned 3000.0
+[] 2025-05-12 19:35:49,487 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 19:35:49,492 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-12 19:35:49,495 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-12 19:36:26,232 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest]: StatisticsControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 19:36:26,361 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest
+[] 2025-05-12 19:36:26,721 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Starting StatisticsControllerIntegrationTest using Java 17.0.13 with PID 21332 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-12 19:36:26,727 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-12 19:36:27,531 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-12 19:36:27,626 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 79 ms. Found 4 JPA repository interfaces.
+[] 2025-05-12 19:36:28,155 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-12 19:36:28,396 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:e9727717-23d3-4f67-91f2-ecc10979c757 user=SA
+[] 2025-05-12 19:36:28,407 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-12 19:36:28,463 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-12 19:36:28,540 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-12 19:36:28,591 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-12 19:36:28,934 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-12 19:36:29,017 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-12 19:36:29,842 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-12 19:36:29,893 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 19:36:30,365 [main]  INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[] 2025-05-12 19:36:30,879 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-12 19:36:30,928 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-12 19:36:31,700 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Started StatisticsControllerIntegrationTest in 5.19 seconds (process running for 6.88)
+[] 2025-05-12 19:36:32,318 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/revenue was used with startDate 2025-05-01 and endDate 2025-05-31 and returned 3000.0
+[] 2025-05-12 19:36:32,341 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 19:36:32,344 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-12 19:36:32,346 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-12 19:40:43,800 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest]: StatisticsControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 19:40:43,918 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest
+[] 2025-05-12 19:40:44,257 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Starting StatisticsControllerIntegrationTest using Java 17.0.13 with PID 12392 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-12 19:40:44,263 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-12 19:40:45,001 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-12 19:40:45,091 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77 ms. Found 4 JPA repository interfaces.
+[] 2025-05-12 19:40:45,598 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-12 19:40:45,780 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:e4424f9a-c521-4152-946a-f837062fa0a8 user=SA
+[] 2025-05-12 19:40:45,782 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-12 19:40:45,851 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-12 19:40:45,937 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-12 19:40:46,000 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-12 19:40:46,394 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-12 19:40:46,475 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-12 19:40:47,260 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-12 19:40:47,304 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 19:40:47,791 [main]  INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[] 2025-05-12 19:40:48,343 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-12 19:40:48,385 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-12 19:40:49,181 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Started StatisticsControllerIntegrationTest in 5.132 seconds (process running for 6.777)
+[] 2025-05-12 19:40:49,831 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 2
+[] 2025-05-12 19:40:49,831 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-05-01 endDate 2025-05-31 and returned order count 1.
+[] 2025-05-12 19:40:49,867 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 19:40:49,873 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-12 19:40:49,875 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-12 19:41:43,656 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest]: StatisticsControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 19:41:43,793 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest
+[] 2025-05-12 19:41:44,167 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Starting StatisticsControllerIntegrationTest using Java 17.0.13 with PID 12536 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-12 19:41:44,177 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-12 19:41:44,974 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-12 19:41:45,056 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 71 ms. Found 4 JPA repository interfaces.
+[] 2025-05-12 19:41:45,582 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-12 19:41:45,860 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:04ceb26f-b23f-410e-a5d3-cf90d8178ce5 user=SA
+[] 2025-05-12 19:41:45,863 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-12 19:41:45,919 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-12 19:41:46,004 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-12 19:41:46,060 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-12 19:41:46,482 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-12 19:41:46,575 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-12 19:41:47,389 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-12 19:41:47,437 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 19:41:47,885 [main]  INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[] 2025-05-12 19:41:48,394 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-12 19:41:48,442 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-12 19:41:49,243 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Started StatisticsControllerIntegrationTest in 5.333 seconds (process running for 6.985)
+[] 2025-05-12 19:41:49,836 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 2
+[] 2025-05-12 19:41:49,837 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-05-01 endDate 2025-05-31 and returned order count 1.
+[] 2025-05-12 19:41:49,871 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 19:41:49,876 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-12 19:41:49,878 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-12 19:42:06,601 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest]: StatisticsControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 19:42:06,735 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest
+[] 2025-05-12 19:42:07,089 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Starting StatisticsControllerIntegrationTest using Java 17.0.13 with PID 21364 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-12 19:42:07,095 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-12 19:42:07,857 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-12 19:42:07,942 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 4 JPA repository interfaces.
+[] 2025-05-12 19:42:08,450 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-12 19:42:08,728 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:71b16a15-d5ab-4a15-ba32-34fa397fc4af user=SA
+[] 2025-05-12 19:42:08,741 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-12 19:42:08,797 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-12 19:42:08,880 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-12 19:42:08,925 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-12 19:42:09,232 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-12 19:42:09,308 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-12 19:42:10,104 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-12 19:42:10,156 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 19:42:10,621 [main]  INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[] 2025-05-12 19:42:11,075 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-12 19:42:11,135 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-12 19:42:11,961 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Started StatisticsControllerIntegrationTest in 5.103 seconds (process running for 6.705)
+[] 2025-05-12 19:42:12,695 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 2
+[] 2025-05-12 19:42:12,696 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-05-01 endDate 2025-05-31 and returned order count 1.
+[] 2025-05-12 19:42:12,734 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 19:42:12,741 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-12 19:42:12,743 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-12 19:51:46,643 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest]: StatisticsControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 19:51:46,797 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest
+[] 2025-05-12 19:51:47,128 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Starting StatisticsControllerIntegrationTest using Java 17.0.13 with PID 25400 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-12 19:51:47,132 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-12 19:51:47,860 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-12 19:51:47,945 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 73 ms. Found 4 JPA repository interfaces.
+[] 2025-05-12 19:51:48,463 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-12 19:51:48,634 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:be442371-7fa1-4680-90c9-046c94fa0a29 user=SA
+[] 2025-05-12 19:51:48,636 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-12 19:51:48,694 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-12 19:51:48,773 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-12 19:51:48,828 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-12 19:51:49,160 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-12 19:51:49,228 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-12 19:51:50,009 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-12 19:51:50,052 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 19:51:50,492 [main]  INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[] 2025-05-12 19:51:50,970 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-12 19:51:51,031 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-12 19:51:51,935 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Started StatisticsControllerIntegrationTest in 5.004 seconds (process running for 6.634)
+[] 2025-05-12 19:51:52,557 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[] 2025-05-12 19:51:52,558 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[] 2025-05-12 19:51:52,580 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 19:51:52,586 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-12 19:51:52,589 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-12 19:58:46,965 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest]: StatisticsControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 19:58:47,109 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest
+[] 2025-05-12 19:58:47,547 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Starting StatisticsControllerIntegrationTest using Java 17.0.13 with PID 21436 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-12 19:58:47,553 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-12 19:58:48,504 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-12 19:58:48,615 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 99 ms. Found 4 JPA repository interfaces.
+[] 2025-05-12 19:58:49,327 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-12 19:58:49,501 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:b283fa9a-815c-4d81-8dfa-17c1a3d4869f user=SA
+[] 2025-05-12 19:58:49,504 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-12 19:58:49,570 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-12 19:58:49,677 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-12 19:58:49,747 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-12 19:58:50,223 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-12 19:58:50,303 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-12 19:58:51,140 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-12 19:58:51,191 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 19:58:51,666 [main]  INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[] 2025-05-12 19:58:52,307 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-12 19:58:52,358 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-12 19:58:53,236 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Started StatisticsControllerIntegrationTest in 5.959 seconds (process running for 7.563)
+[] 2025-05-12 19:58:53,939 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[] 2025-05-12 19:58:53,940 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[] 2025-05-12 19:58:53,960 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 2
+[] 2025-05-12 19:58:53,960 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-05-01 endDate 2025-05-31 and returned order count 1.
+[] 2025-05-12 19:58:53,993 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/revenue was used with startDate 2025-05-01 and endDate 2025-05-31 and returned 3000.0
+[] 2025-05-12 19:58:54,012 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/cancelledorders was used with startDate 2025-05-01 endDate 2025-05-31 and returned 1 cancelled orders with revenue lost 4000.0 
+[] 2025-05-12 19:58:54,050 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 19:58:54,061 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-12 19:58:54,065 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-12 20:04:56,581 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.repositories.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 20:04:56,922 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.repositories.OrderRepositoryTest
+[] 2025-05-12 20:04:59,430 [main]  INFO com.example.Biluthyrningssystem.repositories.OrderRepositoryTest - Starting OrderRepositoryTest using Java 17.0.13 with PID 2364 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-12 20:04:59,439 [main]  INFO com.example.Biluthyrningssystem.repositories.OrderRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-12 20:05:00,152 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-12 20:05:00,286 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 106 ms. Found 4 JPA repository interfaces.
+[] 2025-05-12 20:05:00,350 [main]  INFO org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+[] 2025-05-12 20:05:00,524 [main]  INFO org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:2d43b9ed-05a8-40f7-8b9f-30c72a847c34;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+[] 2025-05-12 20:05:01,315 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-12 20:05:01,426 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-12 20:05:01,482 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-12 20:05:01,709 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-12 20:05:01,870 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@62dfa475']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-12 20:05:03,166 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-12 20:05:03,238 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 20:05:03,679 [main]  INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[] 2025-05-12 20:05:04,480 [main]  INFO com.example.Biluthyrningssystem.repositories.OrderRepositoryTest - Started OrderRepositoryTest in 5.693 seconds (process running for 11.002)
+[] 2025-05-12 20:05:04,813 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.services.OrderServiceImplTest]: OrderServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 20:05:04,832 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.services.OrderServiceImplTest
+[] 2025-05-12 20:05:04,884 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImplTest - Starting OrderServiceImplTest using Java 17.0.13 with PID 2364 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-12 20:05:04,886 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImplTest - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-12 20:05:05,317 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-12 20:05:05,343 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 4 JPA repository interfaces.
+[] 2025-05-12 20:05:06,069 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+[] 2025-05-12 20:05:06,102 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-1"]
+[] 2025-05-12 20:05:06,106 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[] 2025-05-12 20:05:06,107 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+[] 2025-05-12 20:05:06,210 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[] 2025-05-12 20:05:06,212 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1323 ms
+[] 2025-05-12 20:05:06,420 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-12 20:05:06,437 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn7: url=jdbc:h2:mem:4ccfcb0c-31b9-4ff0-b2b6-0c7e90d63707 user=SA
+[] 2025-05-12 20:05:06,442 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-12 20:05:06,454 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-12 20:05:06,456 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-12 20:05:06,468 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-12 20:05:06,469 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-12 20:05:06,549 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-12 20:05:06,559 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 20:05:06,692 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-12 20:05:06,755 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-12 20:05:07,654 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-1"]
+[] 2025-05-12 20:05:07,674 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 58882 (http) with context path '/'
+[] 2025-05-12 20:05:07,682 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImplTest - Started OrderServiceImplTest in 2.835 seconds (process running for 14.204)
+[] 2025-05-12 20:05:07,734 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders registered to user: 19950505-7890 in database. Request made by user: 19950505-7890
+[] 2025-05-12 20:05:07,844 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 5 order(s) found.
+[] 2025-05-12 20:05:07,884 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 20:05:07,885 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 20:05:07,902 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 20:05:07,903 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 20:05:07,907 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 9. Order placed by customer: 19850101-1234
+[] 2025-05-12 20:05:07,950 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 20:05:07,951 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 20:05:07,951 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 20:05:07,966 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 20:05:07,967 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 20:05:07,967 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 20:05:07,968 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 10. Order placed by customer: 19850101-1234
+[] 2025-05-12 20:05:08,014 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 20:05:08,014 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 20:05:08,015 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 20:05:08,016 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 11. Order placed by customer: 19850101-1234
+[] 2025-05-12 20:05:08,019 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID 11 cancelled. Request made by user: 19850101-1234
+[] 2025-05-12 20:05:08,057 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[] 2025-05-12 20:05:08,064 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 8 order(s) found.
+[] 2025-05-12 20:05:08,077 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 20:05:08,077 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 20:05:08,077 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 20:05:08,078 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 12. Order placed by customer: 19850101-1234
+[] 2025-05-12 20:05:08,080 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 12 deleted. Request made by admin
+[] 2025-05-12 20:05:08,101 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all active orders in database. Request made by admin
+[] 2025-05-12 20:05:08,109 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 4 active order(s) found.
+[] 2025-05-12 20:05:08,118 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all active orders registered to user: 19850101-1234 in database. Request made by user: 19850101-1234
+[] 2025-05-12 20:05:08,123 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 1 active order(s) found.
+[] 2025-05-12 20:05:08,138 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 20:05:08,153 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 20:05:08,153 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 20:05:08,186 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 20:05:08,204 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 20:05:08,204 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 20:05:08,204 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 20:05:08,206 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 13. Order placed by customer: 19850101-1234
+[] 2025-05-12 20:05:08,222 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 20:05:08,222 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 20:05:08,222 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 20:05:08,224 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 14. Order placed by customer: 19850101-1234
+[] 2025-05-12 20:05:08,240 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 20:05:08,241 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 20:05:08,251 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Orders placed before 2025-06-01 have been requested for deletion. Request made by admin
+[] 2025-05-12 20:05:08,257 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 1 deleted. Request made by admin
+[] 2025-05-12 20:05:08,259 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 3 deleted. Request made by admin
+[] 2025-05-12 20:05:08,259 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 2 order(s) deleted
+[] 2025-05-12 20:05:08,275 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 20:05:08,275 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 20:05:08,275 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 20:05:08,277 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 15. Order placed by customer: 19850101-1234
+[] 2025-05-12 20:05:08,291 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 20:05:08,291 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 20:05:08,315 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 20:05:08,315 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 20:05:08,315 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-12 20:05:08,316 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 16. Order placed by customer: 19850101-1234
+[] 2025-05-12 20:05:08,331 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-12 20:05:08,331 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-12 20:05:08,356 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest]: StatisticsControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 20:05:08,364 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest
+[] 2025-05-12 20:05:08,392 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Starting StatisticsControllerIntegrationTest using Java 17.0.13 with PID 2364 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-12 20:05:08,393 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-12 20:05:08,513 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-12 20:05:08,526 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 4 JPA repository interfaces.
+[] 2025-05-12 20:05:08,578 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+[] 2025-05-12 20:05:08,581 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection conn17: url=jdbc:h2:mem:70f69b8a-1e7d-4658-918e-758a6afdb954 user=SA
+[] 2025-05-12 20:05:08,581 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+[] 2025-05-12 20:05:08,582 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-12 20:05:08,584 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-12 20:05:08,590 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-12 20:05:08,591 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-12 20:05:08,665 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-12 20:05:08,673 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 20:05:08,729 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-12 20:05:08,734 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-12 20:05:08,838 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Started StatisticsControllerIntegrationTest in 0.461 seconds (process running for 15.36)
+[] 2025-05-12 20:05:08,941 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[] 2025-05-12 20:05:08,942 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[] 2025-05-12 20:05:08,953 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 2
+[] 2025-05-12 20:05:08,954 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-05-01 endDate 2025-05-31 and returned order count 1.
+[] 2025-05-12 20:05:08,977 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/revenue was used with startDate 2025-05-01 and endDate 2025-05-31 and returned 3000.0
+[] 2025-05-12 20:05:08,988 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/cancelledorders was used with startDate 2025-05-01 endDate 2025-05-31 and returned 1 cancelled orders with revenue lost 4000.0 
+[] 2025-05-12 20:05:09,003 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.repositories.CarRepositoryTest]: CarRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 20:05:09,013 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.repositories.CarRepositoryTest
+[] 2025-05-12 20:05:09,080 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.repositories.CustomerRepositoryTest]: CustomerRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 20:05:09,086 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.repositories.CustomerRepositoryTest
+[] 2025-05-12 20:05:09,138 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to update car with id 5
+[] 2025-05-12 20:05:09,153 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Getting available cars from database.
+[] 2025-05-12 20:05:09,154 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - A total of 1 cars available
+[] 2025-05-12 20:05:09,158 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to get car with id: 99
+[] 2025-05-12 20:05:09,162 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to update car with id 1
+[] 2025-05-12 20:05:09,163 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Car with id 1 successfully updated: Car{id=1, brand='Audi', model='A4', registrationNumber='AUD123', pricePerDay=599.0, booked=true, inService=true}
+[] 2025-05-12 20:05:09,202 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Getting all cars from database.
+[] 2025-05-12 20:05:09,203 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - A total of 2 cars shown
+[] 2025-05-12 20:05:09,208 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to delete car with id: 7
+[] 2025-05-12 20:05:09,213 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to delete car with id: 1
+[] 2025-05-12 20:05:09,213 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Car with id 1 deleted
+[] 2025-05-12 20:05:09,217 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Adding new car: Volvo V70
+[] 2025-05-12 20:05:09,219 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - New car saved with id 1
+[] 2025-05-12 20:05:09,221 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to get car with id: 1
+[] 2025-05-12 20:05:09,222 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Car found: Car{id=1, brand='Volvo', model='V70', registrationNumber='ABC123', pricePerDay=499.0, booked=false, inService=false}
+[] 2025-05-12 20:05:09,429 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/cancelledorders was used with startDate 2025-05-01 endDate 2025-05-20 and returned 1 cancelled orders with revenue lost 1000.0 
+[] 2025-05-12 20:05:09,446 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/mostrentedbrand was used with startDate 2025-01-01 and endDate 2025-12-31
+[] 2025-05-12 20:05:09,454 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /carrentalcount Could not find car with id 9000.
+[] 2025-05-12 20:05:09,467 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/carrentalcount was used with carId 1 and returned count 2.
+[] 2025-05-12 20:05:09,474 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /revenuepercar getAllOrders returned empty list with no orders.
+[] 2025-05-12 20:05:09,482 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /carrentalcount/1 getAllOrders returned empty list.
+[] 2025-05-12 20:05:09,490 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics was used
+[] 2025-05-12 20:05:09,499 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /rentaldurations was used and returned 1 durations.
+[] 2025-05-12 20:05:09,513 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/revenue was used with startDate 2025-05-10 and endDate 2025-05-20 and returned 6000.0
+[] 2025-05-12 20:05:09,520 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /mostrentedbrands Could not return any data because no brands were found during the given period 2025-01-01 - 2025-12-31
+[] 2025-05-12 20:05:09,533 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/revenuepercar returned revenue for 5 cars.
+[] 2025-05-12 20:05:09,542 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/averageordercost was used and returned average of 2000.0
+[] 2025-05-12 20:05:09,546 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /admin/statistics/cancelledorders was used with startDate 2025-05-01 endDate 2025-05-20 and returned 0 cancelled orders with revenue lost 0.0 
+[] 2025-05-12 20:05:09,551 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 6
+[] 2025-05-12 20:05:09,552 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint admin/statistics/orders was used with startDate 2025-05-01 endDate 2025-05-20 and returned order count 6.
+[] 2025-05-12 20:05:09,561 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /rentaldurations Result returned empty because no valid data was found.
+[] 2025-05-12 20:05:09,568 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - 0
+[] 2025-05-12 20:05:09,568 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /statistics/orders activeOrders returned empty list with no orders.
+[] 2025-05-12 20:05:09,575 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /averagecostperorder getAllOrders returned empty list with no orders.
+[] 2025-05-12 20:05:09,580 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /revenue No orders were found for startDate 2025-05-01 and endDate 2025-05-20 
+[] 2025-05-12 20:05:09,586 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.BiluthyrningssystemApplicationTests]: BiluthyrningssystemApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-12 20:05:09,599 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.BiluthyrningssystemApplicationTests
+[] 2025-05-12 20:05:09,764 [main]  INFO com.example.Biluthyrningssystem.services.CustomerServiceImpl - Created user login for personnummer: 19800731-6357
+[] 2025-05-12 20:05:09,764 [main]  INFO com.example.Biluthyrningssystem.services.CustomerServiceImpl - New customer added to database with Personnummer: 19800731-6357
+[] 2025-05-12 20:05:09,819 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 20:05:09,835 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[] 2025-05-12 20:05:10,073 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[] 2025-05-12 20:05:10,081 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 20:05:10,084 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-12 20:05:10,089 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-12 20:05:10,100 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-12 20:05:10,103 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+[] 2025-05-12 20:05:10,105 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.

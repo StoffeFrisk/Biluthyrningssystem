@@ -130,11 +130,9 @@ class StatisticsServiceImplTest {
     }
 
 
-
-
     @Test
     void getMostRentedBrandForPeriodShouldReturnCorrectOrderCounts() {
-        when(orderService.getOrdersOverlappingPeriod(any(),any())).thenReturn(mockOrders);
+        when(orderService.getOrdersOverlappingPeriod(any(), any())).thenReturn(mockOrders);
 
         Map<String, Long> result = statisticsService.getMostRentedBrandForPeriod("2025-01-01", "2025-12-31");
 
@@ -146,8 +144,8 @@ class StatisticsServiceImplTest {
 
     @Test
     void getMostRentedBrandsForPeriodShouldThrowExceptionWhenNoOrdersFound() {
-        when(orderService.getOrdersOverlappingPeriod(any(),any())).thenReturn(Collections.emptyList());
-        DataNotFoundException exception = assertThrows(DataNotFoundException.class, () ->  statisticsService.getMostRentedBrandForPeriod("2025-01-01", "2025-12-31"));
+        when(orderService.getOrdersOverlappingPeriod(any(), any())).thenReturn(Collections.emptyList());
+        DataNotFoundException exception = assertThrows(DataNotFoundException.class, () -> statisticsService.getMostRentedBrandForPeriod("2025-01-01", "2025-12-31"));
         assertTrue(exception.getMessage().contains("No brands were found during given period"));
     }
 
@@ -175,10 +173,6 @@ class StatisticsServiceImplTest {
         assertEquals(2L, result.get("Toyota"));
         assertEquals(1L, result.get("Saab"));
     }
-
-
-
-
 
 
     @Test
@@ -240,9 +234,8 @@ class StatisticsServiceImplTest {
 
         List<RentalDurationDTO> result = statisticsService.getRentalDurationsByDays();
         assertFalse(result.isEmpty());
-        assertEquals(10,result.get(0).getDays());
+        assertEquals(10, result.get(0).getDays());
     }
-
 
 
     @Test
@@ -286,7 +279,7 @@ class StatisticsServiceImplTest {
     @Test
     void getTotalRevenueForPeriodShouldCorrectlyCalculateTotalRevenue6000() {
 
-        when(orderService.getOrdersOverlappingPeriod(any(),any())).thenReturn(mockOrders);
+        when(orderService.getOrdersOverlappingPeriod(any(), any())).thenReturn(mockOrders);
 
         Map<String, Double> result = statisticsService.getTotalRevenueForPeriod("2025-05-10", "2025-05-20");
         assertEquals(6000.0, result.get("TotalRevenueForPeriod"));
@@ -323,9 +316,9 @@ class StatisticsServiceImplTest {
 
         assertEquals(1L, result.get("cancelledOrders"), "1 order should be cancelled");
         assertEquals(7L, result.get("totalOrderCount"), "totalOrderCount should be 7");
-        assertEquals(14.29, result.get("cancelledPercentage"),"cancelledPercentage should be 14.29%");
+        assertEquals(14.29, result.get("cancelledPercentage"), "cancelledPercentage should be 14.29%");
         assertEquals(1000.0, result.get("lostRevenue"), "lostRevenue should be 1000");
-}
+    }
 
     @Test
     void getCanceledOrderCountByPeriodShouldReturnNoCancelledOrders() {
