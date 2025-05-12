@@ -67,8 +67,6 @@ public class StatisticsController {
         response.put("durations", durations);
 
         return ResponseEntity.ok(response);
-
-
     }
 
     @GetMapping("/statistics/averageorderprice")
@@ -78,14 +76,15 @@ public class StatisticsController {
     }
 
     @GetMapping("/statistics/revenuepercar")
-    public ResponseEntity<List<CarRevenueDTO>> getRevenuePerCar() {
+    public ResponseEntity<Map<String, Object>> getRevenuePerCar() {
         List<CarRevenueDTO> result = statisticsService.getTotalRevenuePerCar();
-        return ResponseEntity.ok(result);
+
+        Map<String, Object> response = new LinkedHashMap<>();
+        response.put("message", "All cars and their total revenue");
+        response.put("revenuePerCar", result);
+
+        return ResponseEntity.ok(response);
     }
-//    public ResponseEntity<Map<String, Object>> getRevenuePerCar() {
-//        Map<String, Object> result = statisticsService.getTotalRevenuePerCar();
-//        return ResponseEntity.ok(result);
-//    }
 
     @GetMapping("/statistics/revenue/period/{startDate}/{endDate}")
     public ResponseEntity<Map<String, Double>> getRevenueForPeriod(@PathVariable String startDate, @PathVariable String endDate) {
