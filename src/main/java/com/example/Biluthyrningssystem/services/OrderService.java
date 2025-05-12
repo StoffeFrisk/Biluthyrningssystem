@@ -3,6 +3,7 @@ package com.example.Biluthyrningssystem.services;
 import com.example.Biluthyrningssystem.entities.Orders;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 //BP
@@ -17,4 +18,7 @@ public interface OrderService {
     List<Orders> getAllOrders();
     void deleteOrderById(Long Id);
     List<Long> deleteOrdersBeforeDate(Date date);
+
+    // Niklas
+    List<Orders> getOrdersOverlappingPeriod(LocalDate start, LocalDate end);
 }

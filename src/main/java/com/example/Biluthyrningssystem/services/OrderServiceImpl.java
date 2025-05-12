@@ -204,4 +204,10 @@ public class OrderServiceImpl implements OrderService {
             order.setOrderCancelled(false);
         }
     }
+
+    // Niklas
+    @Override
+    public List<Orders> getOrdersOverlappingPeriod(LocalDate start, LocalDate end) {
+        return orderRepository.findOrdersOverlappingPeriod(start, end);
+    }
 }
