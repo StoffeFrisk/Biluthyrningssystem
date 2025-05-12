@@ -3,10 +3,7 @@ package com.example.Biluthyrningssystem.services;
 import com.example.Biluthyrningssystem.entities.Car;
 import com.example.Biluthyrningssystem.entities.Customer;
 import com.example.Biluthyrningssystem.entities.Orders;
-import com.example.Biluthyrningssystem.exceptions.IncorrectCalculationException;
-import com.example.Biluthyrningssystem.exceptions.IncorrectInputException;
-import com.example.Biluthyrningssystem.exceptions.ResourceNotFoundException;
-import com.example.Biluthyrningssystem.exceptions.UnauthorisedRequestException;
+import com.example.Biluthyrningssystem.exceptions.*;
 import com.example.Biluthyrningssystem.repositories.CarRepository;
 import com.example.Biluthyrningssystem.repositories.CustomerRepository;
 import com.example.Biluthyrningssystem.repositories.OrderRepository;
@@ -154,6 +151,19 @@ class OrderServiceImplTest {
         //Then
         assertEquals("Order with ID '12' not found",response.getMessage());
     }
+
+    @Test
+    void cancelOrderShouldThrowRepeatRequestException() {
+        //Given
+        Orders orderToBeCancelled = orderService.addOrder(order, username);
+        assertEquals(orderToBeCancelled, orderRepository.findById(orderToBeCancelled.getId()).get());
+        //When
+        Orders cancelledOrder = orderService.cancelOrder(orderToBeCancelled, username);
+        RepeatRequestException response = assertThrows(RepeatRequestException.class, () -> orderService.cancelOrder(orderToBeCancelled, username));
+        //Then
+        assertEquals("Order with ID '"+cancelledOrder.getId()+"' : Order has already been cancelled.", response.getMessage());
+    }
+
 
     @Test
     void getAllCustomerOrdersShouldEqual5() {
