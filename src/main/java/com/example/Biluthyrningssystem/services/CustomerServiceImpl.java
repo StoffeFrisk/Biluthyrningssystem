@@ -74,34 +74,15 @@ public class CustomerServiceImpl implements CustomerService { //Lynsey Fox
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "User already exists with given personnummer");
         }
 
-        validateStringField(newCustomer.getFirstName(), "first name");
-        validateStringField(newCustomer.getLastName(), "last name");
-        validateStringField(newCustomer.getPersonnummer(), "personnummer");
-        validateStringField(newCustomer.getEmail(), "email address");
-        validateStringField(newCustomer.getPhone(), "phone number");
-
-        if (!isValidEmail(newCustomer.getEmail())) {
-            logger.error("Invalid email format: {}", newCustomer.getEmail());
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid email format");
+        if(!isValidPersonnummer(newCustomer.getPersonnummer())){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid personnummer: format should be xxxxxxxx-xxxx");
         }
 
-        if (!isValidPhone(newCustomer.getPhone())) {
-            logger.error("Invalid phone number format: {}", newCustomer.getPhone());
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid phone number format");
-        }
-
-        if (newCustomer.getAddress() == null || newCustomer.getAddress().getId() == null) {
-            logger.error("Missing or invalid address for customer");
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Customer must have an address with a valid ID");
-        }
+        validateDetails(newCustomer);
 
         Long addressId = newCustomer.getAddress().getId();
 
-        Address existingAddress = addressRepository.findById(addressId)
-                .orElseThrow(() -> {
-                    logger.error("Address not found with ID: {}", addressId);
-                    return new ResourceNotFoundException("Address", "id", addressId);
-                });
+        Address existingAddress = findAddressById(addressId);
 
         newCustomer.setAddress(existingAddress);
 
@@ -132,8 +113,13 @@ public class CustomerServiceImpl implements CustomerService { //Lynsey Fox
         }
     }
 
+    private boolean isValidPersonnummer(String personnummer) {
+        String personnummerRegex = "^[0-9]{8}-[0-9]{4}";
+        return Pattern.matches(personnummerRegex, personnummer);
+    }
+
     private boolean isValidEmail(String email) {
-        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
         return Pattern.matches(emailRegex, email);
     }
 
@@ -142,16 +128,49 @@ public class CustomerServiceImpl implements CustomerService { //Lynsey Fox
         return Pattern.matches(phoneRegex, phone);
     }
 
+    private void validateDetails(Customer customerToCheck){
+        validateStringField(customerToCheck.getFirstName(), "first name");
+        validateStringField(customerToCheck.getLastName(), "last name");
+        validateStringField(customerToCheck.getPersonnummer(), "personnummer");
+        validateStringField(customerToCheck.getEmail(), "email address");
+        validateStringField(customerToCheck.getPhone(), "phone number");
+
+        if (!isValidEmail(customerToCheck.getEmail())) {
+            logger.error("Invalid email format: {}", customerToCheck.getEmail());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid email format");
+        }
+
+        if (!isValidPhone(customerToCheck.getPhone())) {
+            logger.error("Invalid phone number format: {}", customerToCheck.getPhone());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid phone number format");
+        }
+
+        if (customerToCheck.getAddress() == null || customerToCheck.getAddress().getId() == null) {
+            logger.error("Missing or invalid address for customer");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Customer must have an address with a valid ID");
+        }
+
+    }
+
+    private Address findAddressById(Long addressId) {
+        return addressRepository.findById(addressId)
+                .orElseThrow(() -> {
+                    logger.error("Address not found with ID: {}", addressId);
+                    return new ResourceNotFoundException("Address", "id", addressId);
+                });
+    }
     @Override
     public Customer updateCustomer(Customer customerToUpdate) {
         Customer existing = getCustomerByPersonnummer(customerToUpdate.getPersonnummer());
 
         authentication = SecurityContextHolder.getContext().getAuthentication();
 
-        if (existing.getPersonnummer() != authentication.getPrincipal()) {
-            logger.error("You attempted to update another user's details");
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "You can only update your own details");
+        if (!existing.getPersonnummer().equals(authentication.getName())) {
+            logger.error("Attempted to update another user's details");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "A user can only update their own details");
         }
+
+        validateDetails(customerToUpdate);
 
         existing.setFirstName(customerToUpdate.getFirstName());
         existing.setLastName(customerToUpdate.getLastName());
@@ -159,11 +178,7 @@ public class CustomerServiceImpl implements CustomerService { //Lynsey Fox
         existing.setPhone(customerToUpdate.getPhone());
 
         Long addressId = customerToUpdate.getAddress().getId();
-        Address existingAddress = addressRepository.findById(addressId)
-                .orElseThrow(() -> {
-                    logger.error("Address not found with ID: {}", addressId);
-                    return new ResourceNotFoundException("Address", "id", addressId);
-                });
+        Address existingAddress = findAddressById(addressId);
 
         existing.setAddress(existingAddress);
 
@@ -184,7 +199,7 @@ public class CustomerServiceImpl implements CustomerService { //Lynsey Fox
 
         } else {
             logger.error("Customer not found with personnummer: {}", personnummer);
-            throw new ResourceNotFoundException("Customer", "personnumer", personnummer);
+            throw new ResourceNotFoundException("Customer", "personnummer", personnummer);
         }
 
     }

@@ -7,6 +7,8 @@ import com.example.Biluthyrningssystem.repositories.AddressRepository;
 import com.example.Biluthyrningssystem.repositories.CustomerRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -57,6 +59,9 @@ class CustomerServiceImplTest { //Lynsey Fox
     void addCustomerShouldThrowExceptionInvalidEmail() {
         customer.setEmail("harry.potter@hotmailcom");
 
+        when(addressRepository.findById(1L)).thenReturn(Optional.of(address));
+        when(customerRepository.save(customer)).thenReturn(customer);
+
         assertThatThrownBy(() -> customerService.addCustomer(customer))
                 .isInstanceOf(ResponseStatusException.class)
                 .hasMessageContaining("Invalid email");
@@ -64,7 +69,33 @@ class CustomerServiceImplTest { //Lynsey Fox
     }
 
     @Test
-    void updateCustomer() {
+    void updateCustomerShouldSucceedWhenValid() {
+        UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken("19800731-6357", null);
+        SecurityContextHolder.getContext().setAuthentication(auth);
+
+        when(customerRepository.findById("19800731-6357")).thenReturn(Optional.of(customer));
+        when(addressRepository.findById(1L)).thenReturn(Optional.of(address));
+        when(customerRepository.save(customer)).thenReturn(customer);
+
+        Customer result = customerService.updateCustomer(customer);
+
+        assertThat(result).isNotNull();
+        verify(customerRepository).save(customer);
+        verify(addressRepository).findById(1L);
+    }
+    @Test
+    void updateCustomerShouldThrowExceptionNeedsLastName() {
+        UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken("19800731-6357", null);
+        SecurityContextHolder.getContext().setAuthentication(auth);
+
+        customer.setLastName("");
+
+        when(customerRepository.findById("19800731-6357")).thenReturn(Optional.of(customer));
+        when(addressRepository.findById(1L)).thenReturn(Optional.of(address));
+
+        assertThatThrownBy(() -> customerService.updateCustomer(customer))
+                .isInstanceOf(ResponseStatusException.class)
+                .hasMessageContaining("Customer must have a last name");
     }
 
     @Test
