@@ -3,6 +3,7 @@
 package com.example.Biluthyrningssystem.controllers;
 
 import com.example.Biluthyrningssystem.dto.CarRevenueDTO;
+import com.example.Biluthyrningssystem.dto.CustomerRevenueDTO;
 import com.example.Biluthyrningssystem.dto.RentalDurationDTO;
 import com.example.Biluthyrningssystem.services.StatisticsService;
 import org.springframework.http.ResponseEntity;
@@ -98,6 +99,12 @@ public class StatisticsController {
     @GetMapping("/statistics/orders/period/{startDate}/{endDate}")
     public ResponseEntity<Map<String, Object>> getOrderCount(@PathVariable String startDate, @PathVariable String endDate) {
         Map<String, Object> result = statisticsService.getOrderCountForPeriod(startDate, endDate);
+        return ResponseEntity.ok(result);
+    }
+
+    @GetMapping("/statistics/customersbyrevenue")
+    public ResponseEntity<List<CustomerRevenueDTO>> getCustomersByRevenue() {
+        List<CustomerRevenueDTO> result = statisticsService.getTopCustomersByRevenue();
         return ResponseEntity.ok(result);
     }
 
