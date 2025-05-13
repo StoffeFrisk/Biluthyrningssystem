@@ -32,10 +32,7 @@ public class StatisticsController {
 
     @GetMapping("/statistics/mostrentedbrands/period/{startDate}/{endDate}")
     public ResponseEntity<Map<String, Object>> getMostRentedBrandForPeriod(@PathVariable String startDate, @PathVariable String endDate) {
-
-
         Map<String, Long> sortedBrands = statisticsService.getMostRentedBrandForPeriod(startDate, endDate);
-
         Map<String, Object> response = new LinkedHashMap<>();
         response.put("message", "All car brands sorted by order count during period");
         response.put("brandCounts", sortedBrands);

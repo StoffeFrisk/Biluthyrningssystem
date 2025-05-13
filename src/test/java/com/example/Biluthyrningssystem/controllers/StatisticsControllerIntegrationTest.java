@@ -4,6 +4,7 @@ package com.example.Biluthyrningssystem.controllers;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 import com.example.Biluthyrningssystem.entities.Orders;
 import com.example.Biluthyrningssystem.exceptions.DataNotFoundException;
 import com.example.Biluthyrningssystem.repositories.OrderRepository;
@@ -30,26 +31,12 @@ class StatisticsControllerIntegrationTest {
         @Autowired
         private OrderRepository orderRepository;
 
-
     @BeforeEach
     void setUp() {
         orderRepository.deleteAll();
 
-        Orders order1 = new Orders();
-        Orders order2 = new Orders();
-
-        order1.setHireStartDate(Date.valueOf("2025-05-1"));
-        order1.setHireEndDate(Date.valueOf("2025-05-10"));
-
-        order2.setHireStartDate(Date.valueOf("2025-05-8"));
-        order2.setHireEndDate(Date.valueOf("2025-05-20"));
-
-
-        order1.setTotalPrice(3000.0);
-        order2.setTotalPrice(4000.0);
-
-        order1.setOrderCancelled(false);
-        order2.setOrderCancelled(true);
+        Orders order1 = new Orders(null, null, Date.valueOf("2025-05-01"), Date.valueOf("2025-05-10"), 3000, false);
+        Orders order2 = new Orders(null, null, Date.valueOf("2025-05-08"), Date.valueOf("2025-05-20"), 4000, true);
 
         orderRepository.save(order1);
         orderRepository.save(order2);
@@ -65,6 +52,8 @@ class StatisticsControllerIntegrationTest {
 
     @Test
     void getRentalCountByCar() {
+
+
     }
 
     @Test
@@ -72,7 +61,13 @@ class StatisticsControllerIntegrationTest {
     }
 
     @Test
-    void getAverageCost() {
+    void getAverageCostShouldReturnCorrectAverageCostOf3000() {
+
+        ResponseEntity<Map<String, Double>> response = statisticsController.getAverageCost();
+        assertTrue(response.getStatusCode().is2xxSuccessful(), "Response code should be 200");
+        Double averageCost = Objects.requireNonNull(response.getBody(), "Response body should not be null").get("averageOrderPrice");
+        assertNotNull(averageCost, "average cost should not be null");
+        assertEquals(3000.0, averageCost, "average cost should be 3000");
     }
 
     @Test
@@ -80,17 +75,17 @@ class StatisticsControllerIntegrationTest {
     }
 
     @Test
-    void getRevenueForPeriodShouldReturnTotalRevenueOf3000() {
+    void getRevenueForPeriodShouldReturnCorrectTotalRevenueOf3000() {
         ResponseEntity<Map<String, Double>> response = statisticsController.getRevenueForPeriod("2025-05-01","2025-05-31");
         assertTrue(response.getStatusCode().is2xxSuccessful(), "Response code should be 200");
         assertEquals(3000, Objects.requireNonNull(response.getBody(), "Response body should not be null").get("TotalRevenueForPeriod"), "Total revenue should be 3000");
     }
 
     @Test
-    void getCancelledOrdersShouldReturnOneCancelledOrder() {
+    void getCancelledOrdersShouldReturnCorrectCountOfOneCancelledOrder() {
         ResponseEntity<Map<String, Object>> response = statisticsController.getCancelledOrders("2025-05-01","2025-05-31");
         assertTrue(response.getStatusCode().is2xxSuccessful(), "Response code should be 200");
-        assertEquals(1L, Objects.requireNonNull(response.getBody(), "Resone body should not be null").get("cancelledOrders"), "Should have 1 cancelled orders");
+        assertEquals(1L, Objects.requireNonNull(response.getBody(), "Response body should not be null").get("cancelledOrders"), "Should have 1 cancelled orders");
     }
 
     @Test
@@ -103,8 +98,6 @@ class StatisticsControllerIntegrationTest {
     @Test
     void getOrderCountShouldCastExceptionWhenNoOrdersFound() {
         orderRepository.deleteAll();
-
         assertThrows(DataNotFoundException.class, () -> statisticsController.getOrderCount("2025-05-01", "2025-05-31"), "DataNotFoundException should be thrown");
-
     }
 }

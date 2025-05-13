@@ -57,7 +57,7 @@ public class StatisticsServiceImpl implements StatisticsService {
         statistics.put("Lost revenue from cancelled orders 2025", cancelledOrders.get("lostRevenue"));
 
         Map<String, Double> revenuePerOrder = getAverageCostPerOrder();
-        statistics.put("Average revenue of orders (All time)", revenuePerOrder.get("AverageOrderPrice"));
+        statistics.put("Average revenue of orders (All time)", revenuePerOrder.get("averageOrderPrice"));
         Map<String, Object> endpoints = new LinkedHashMap<>();
 
         endpoints.put("Available endpoints", List.of(
@@ -207,7 +207,7 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         logger.info("Endpoint /statistics/averageorderprice was called and returned average of {}", average);
 
-        return Map.of("AverageOrderPrice", average);
+        return Map.of("averageOrderPrice", average);
     }
 
     @Override

@@ -41,56 +41,20 @@ class StatisticsServiceImplTest {
 
     @BeforeEach
     void setUp() {
-        Orders orders1 = new Orders();
-        Orders orders2 = new Orders();
-        Orders orders3 = new Orders();
-        Orders orders4 = new Orders();
-        Orders orders5 = new Orders();
-        Orders orders6 = new Orders();
+        Car car1 = new Car(1L, "Volvo", null, null, 0.0, false, false);
+        Car car2 = new Car(2L, "Saab", null, null, 0.0, false, false);
+        Car car3 = new Car(3L, "Toyota", null, null, 0.0, false, false);
+        Car car4 = new Car(4L, "Toyota", null, null, 0.0, false, false);
+        Car car5 = new Car(5L, "Toyota", null, null, 0.0, false, false);
 
-        Car car1 = new Car();
-        car1.setId(1L);
-        car1.setBrand("Volvo");
         testCar = car1;
-        Car car2 = new Car();
-        car2.setId(2L);
-        car2.setBrand("Saab");
-        Car car3 = new Car();
-        car3.setId(3L);
-        car3.setBrand("Toyota");
-        Car car4 = new Car();
-        car4.setId(4L);
-        car4.setBrand("Toyota");
-        Car car5 = new Car();
-        car5.setId(5L);
-        car5.setBrand("Toyota");
 
-        orders1.setCar(car1);
-        orders1.setTotalPrice(1000.0);
-        orders2.setCar(car2);
-        orders2.setTotalPrice(2000.0);
-        orders3.setCar(car3);
-        orders3.setTotalPrice(3000.0);
-        orders4.setCar(car4);
-        orders4.setTotalPrice(0.0);
-        orders5.setCar(car5);
-        orders5.setTotalPrice(0.0);
-        orders6.setCar(car1);
-        orders6.setTotalPrice(0.0);
-
-        orders1.setOrderCancelled(false);
-        orders2.setOrderCancelled(false);
-        orders3.setOrderCancelled(false);
-        orders4.setOrderCancelled(false);
-        orders5.setOrderCancelled(false);
-        orders6.setOrderCancelled(false);
-
-        orders1.setHireStartDate(Date.valueOf("2025-05-10"));
-        orders1.setHireEndDate(Date.valueOf("2025-05-20"));
-        orders2.setHireStartDate(Date.valueOf("2025-05-10"));
-        orders2.setHireEndDate(Date.valueOf("2025-05-20"));
-        orders3.setHireStartDate(Date.valueOf("2025-05-10"));
-        orders3.setHireEndDate(Date.valueOf("2025-05-20"));
+        Orders orders1 = new Orders(null, car1, Date.valueOf("2025-05-10"), Date.valueOf("2025-05-20"), 1000.0, false);
+        Orders orders2 = new Orders(null, car2, Date.valueOf("2025-05-10"), Date.valueOf("2025-05-20"), 2000.0, false);
+        Orders orders3 = new Orders(null, car3, Date.valueOf("2025-05-10"), Date.valueOf("2025-05-20"), 3000.0, false);
+        Orders orders4 = new Orders(null, car4, null, null, 0.0, false);
+        Orders orders5 = new Orders(null, car5, null, null, 0.0, false);
+        Orders orders6 = new Orders(null, car1, null, null, 0.0, false);
 
         mockOrders = List.of(orders1, orders2, orders3, orders4, orders5, orders6);
 
@@ -111,7 +75,7 @@ class StatisticsServiceImplTest {
         );
         doReturn(cancelledOrders).when(statisticsService).getCanceledOrderCountByPeriod("2025-01-01", "2025-12-31");
 
-        Map<String, Double> revenuePerOrder = Map.of("AverageOrderPrice", 2000.0);
+        Map<String, Double> revenuePerOrder = Map.of("averageOrderPrice", 2000.0);
         doReturn(revenuePerOrder).when(statisticsService).getAverageCostPerOrder();
 
         Map<String, Object> result = statisticsService.getStatistics();
@@ -216,7 +180,7 @@ class StatisticsServiceImplTest {
 
         Map<String, Double> result = statisticsService.getAverageCostPerOrder();
 
-        assertEquals(2000.0, result.get("AverageOrderPrice"), "AverageOrderPrice should be 2000");
+        assertEquals(2000.0, result.get("averageOrderPrice"), "averageOrderPrice should be 2000");
     }
 
 
