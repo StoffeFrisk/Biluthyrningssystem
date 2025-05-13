@@ -1500,3 +1500,271 @@
 [] 2025-05-13 13:52:21,553 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 [] 2025-05-13 13:52:21,555 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
 [] 2025-05-13 13:52:21,556 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+[] 2025-05-13 14:04:56,620 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.repositories.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-13 14:04:56,726 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.repositories.OrderRepositoryTest
+[] 2025-05-13 14:04:57,924 [main]  INFO com.example.Biluthyrningssystem.repositories.OrderRepositoryTest - Starting OrderRepositoryTest using Java 17.0.13 with PID 2956 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-13 14:04:57,934 [main]  INFO com.example.Biluthyrningssystem.repositories.OrderRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-13 14:04:58,307 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-13 14:04:58,387 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 4 JPA repository interfaces.
+[] 2025-05-13 14:04:58,431 [main]  INFO org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+[] 2025-05-13 14:04:58,533 [main]  INFO org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:aecde740-52fc-4ccc-8efc-9d0a79664273;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+[] 2025-05-13 14:04:58,859 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-13 14:04:58,908 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-13 14:04:58,942 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-13 14:04:59,060 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-13 14:04:59,152 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@e1a150c']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-13 14:04:59,843 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-13 14:04:59,889 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-13 14:05:00,345 [main]  INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[] 2025-05-13 14:05:00,769 [main]  INFO com.example.Biluthyrningssystem.repositories.OrderRepositoryTest - Started OrderRepositoryTest in 3.158 seconds (process running for 5.713)
+[] 2025-05-13 14:05:00,963 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.services.OrderServiceImplTest]: OrderServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-13 14:05:00,976 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.services.OrderServiceImplTest
+[] 2025-05-13 14:05:01,019 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImplTest - Starting OrderServiceImplTest using Java 17.0.13 with PID 2956 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-13 14:05:01,021 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImplTest - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-13 14:05:01,343 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-13 14:05:01,357 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 4 JPA repository interfaces.
+[] 2025-05-13 14:05:01,903 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+[] 2025-05-13 14:05:01,920 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-1"]
+[] 2025-05-13 14:05:01,923 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[] 2025-05-13 14:05:01,924 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+[] 2025-05-13 14:05:01,979 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[] 2025-05-13 14:05:01,979 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 957 ms
+[] 2025-05-13 14:05:02,093 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-13 14:05:02,109 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn7: url=jdbc:h2:mem:ce0012d2-a6f2-47f0-ae0e-fd32830ef14c user=SA
+[] 2025-05-13 14:05:02,113 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-13 14:05:02,126 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-13 14:05:02,132 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-13 14:05:02,144 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-13 14:05:02,147 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-13 14:05:02,219 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-13 14:05:02,230 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-13 14:05:02,335 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-13 14:05:02,393 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-13 14:05:03,212 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-1"]
+[] 2025-05-13 14:05:03,228 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 58374 (http) with context path '/'
+[] 2025-05-13 14:05:03,237 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImplTest - Started OrderServiceImplTest in 2.246 seconds (process running for 8.18)
+[] 2025-05-13 14:05:03,287 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders registered to user: 19950505-7890 in database. Request made by user: 19950505-7890
+[] 2025-05-13 14:05:03,380 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 5 order(s) found.
+[] 2025-05-13 14:05:03,407 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-13 14:05:03,408 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-13 14:05:03,408 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-13 14:05:03,411 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 9. Order placed by customer: 19850101-1234
+[] 2025-05-13 14:05:03,434 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID 9 cancelled. Request made by user: 19850101-1234
+[] 2025-05-13 14:05:03,457 [main]  WARN com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 9 has already been cancelled. Request made by user: 19850101-1234
+[] 2025-05-13 14:05:03,473 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-13 14:05:03,473 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-13 14:05:03,488 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-13 14:05:03,488 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-13 14:05:03,489 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 10. Order placed by customer: 19850101-1234
+[] 2025-05-13 14:05:03,508 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-13 14:05:03,508 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-13 14:05:03,508 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-13 14:05:03,524 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-13 14:05:03,524 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-13 14:05:03,524 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-13 14:05:03,525 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 11. Order placed by customer: 19850101-1234
+[] 2025-05-13 14:05:03,556 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-13 14:05:03,556 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-13 14:05:03,556 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-13 14:05:03,557 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 12. Order placed by customer: 19850101-1234
+[] 2025-05-13 14:05:03,559 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID 12 cancelled. Request made by user: 19850101-1234
+[] 2025-05-13 14:05:03,572 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[] 2025-05-13 14:05:03,576 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 8 order(s) found.
+[] 2025-05-13 14:05:03,587 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-13 14:05:03,587 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-13 14:05:03,588 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-13 14:05:03,589 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 13. Order placed by customer: 19850101-1234
+[] 2025-05-13 14:05:03,591 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 13 deleted. Request made by admin
+[] 2025-05-13 14:05:03,605 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all active orders in database. Request made by admin
+[] 2025-05-13 14:05:03,611 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 4 active order(s) found.
+[] 2025-05-13 14:05:03,621 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all active orders registered to user: 19850101-1234 in database. Request made by user: 19850101-1234
+[] 2025-05-13 14:05:03,625 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 1 active order(s) found.
+[] 2025-05-13 14:05:03,638 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-13 14:05:03,650 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-13 14:05:03,650 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-13 14:05:03,674 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-13 14:05:03,686 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-13 14:05:03,686 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-13 14:05:03,686 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-13 14:05:03,687 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 14. Order placed by customer: 19850101-1234
+[] 2025-05-13 14:05:03,699 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-13 14:05:03,700 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-13 14:05:03,700 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-13 14:05:03,701 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 15. Order placed by customer: 19850101-1234
+[] 2025-05-13 14:05:03,713 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-13 14:05:03,714 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-13 14:05:03,722 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Orders placed before 2025-06-01 have been requested for deletion. Request made by admin
+[] 2025-05-13 14:05:03,726 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 1 deleted. Request made by admin
+[] 2025-05-13 14:05:03,727 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 3 deleted. Request made by admin
+[] 2025-05-13 14:05:03,727 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 2 order(s) deleted
+[] 2025-05-13 14:05:03,741 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-13 14:05:03,741 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-13 14:05:03,741 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-13 14:05:03,743 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 16. Order placed by customer: 19850101-1234
+[] 2025-05-13 14:05:03,757 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-13 14:05:03,757 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-13 14:05:03,778 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-13 14:05:03,779 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-13 14:05:03,779 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Total price calculated to 998.0. Price added to order.
+[] 2025-05-13 14:05:03,780 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Order no: 17. Order placed by customer: 19850101-1234
+[] 2025-05-13 14:05:03,790 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID: 19850101-1234 added to order.
+[] 2025-05-13 14:05:03,790 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID 1 added to order.
+[] 2025-05-13 14:05:03,807 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest]: StatisticsControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-13 14:05:03,815 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest
+[] 2025-05-13 14:05:03,837 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Starting StatisticsControllerIntegrationTest using Java 17.0.13 with PID 2956 (started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-13 14:05:03,837 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-13 14:05:03,992 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-13 14:05:04,006 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 4 JPA repository interfaces.
+[] 2025-05-13 14:05:04,063 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+[] 2025-05-13 14:05:04,066 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection conn17: url=jdbc:h2:mem:9375deea-fb3e-4907-ac8e-c150b3d38b7d user=SA
+[] 2025-05-13 14:05:04,066 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+[] 2025-05-13 14:05:04,067 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-13 14:05:04,069 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-13 14:05:04,076 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-13 14:05:04,077 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-13 14:05:04,144 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-13 14:05:04,151 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-13 14:05:04,199 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-13 14:05:04,202 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-13 14:05:04,330 [main]  INFO com.example.Biluthyrningssystem.controllers.StatisticsControllerIntegrationTest - Started StatisticsControllerIntegrationTest in 0.506 seconds (process running for 9.273)
+[] 2025-05-13 14:05:04,351 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[] 2025-05-13 14:05:04,354 [main]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 2 order(s) found.
+[] 2025-05-13 14:05:04,358 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/averageorderprice was called and returned average of 3000.0
+[] 2025-05-13 14:05:04,414 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/revenue was called with startDate 2025-05-01 and endDate 2025-05-31 and returned 3000.0
+[] 2025-05-13 14:05:04,432 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/orders allOrders returned empty list with no orders
+[] 2025-05-13 14:05:04,443 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/orders was called with startDate 2025-05-01 endDate 2025-05-31 and returned order count 1
+[] 2025-05-13 14:05:04,454 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/cancelledorders was called with startDate 2025-05-01 endDate 2025-05-31 and returned 1 cancelled orders with revenue lost 4000.0 
+[] 2025-05-13 14:05:04,460 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.repositories.CarRepositoryTest]: CarRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-13 14:05:04,471 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.repositories.CarRepositoryTest
+[] 2025-05-13 14:05:04,520 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.repositories.CustomerRepositoryTest]: CustomerRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-13 14:05:04,526 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.repositories.CustomerRepositoryTest
+[] 2025-05-13 14:05:04,585 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to update car with id 5
+[] 2025-05-13 14:05:04,593 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Getting available cars from database.
+[] 2025-05-13 14:05:04,594 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - A total of 1 cars available
+[] 2025-05-13 14:05:04,600 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to get car with id: 99
+[] 2025-05-13 14:05:04,603 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to update car with id 1
+[] 2025-05-13 14:05:04,604 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Car with id 1 successfully updated: Car{id=1, brand='Audi', model='A4', registrationNumber='AUD123', pricePerDay=599.0, booked=true, inService=true}
+[] 2025-05-13 14:05:04,641 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Getting all cars from database.
+[] 2025-05-13 14:05:04,642 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - A total of 2 cars shown
+[] 2025-05-13 14:05:04,646 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to delete car with id: 7
+[] 2025-05-13 14:05:04,650 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to delete car with id: 1
+[] 2025-05-13 14:05:04,650 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Car with id 1 deleted
+[] 2025-05-13 14:05:04,654 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Adding new car: Volvo V70
+[] 2025-05-13 14:05:04,654 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - New car saved with id 1
+[] 2025-05-13 14:05:04,657 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Attempting to get car with id: 1
+[] 2025-05-13 14:05:04,657 [main]  INFO com.example.Biluthyrningssystem.services.CarServiceImpl - Car found: Car{id=1, brand='Volvo', model='V70', registrationNumber='ABC123', pricePerDay=499.0, booked=false, inService=false}
+[] 2025-05-13 14:05:04,796 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/cancelledorders was called with startDate 2025-05-01 endDate 2025-05-20 and returned 1 cancelled orders with revenue lost 1000.0 
+[] 2025-05-13 14:05:04,811 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/mostrentedbrand was called with startDate 2025-01-01 and endDate 2025-12-31
+[] 2025-05-13 14:05:04,818 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /carrentalcount Could not find car with id 9000
+[] 2025-05-13 14:05:04,828 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/carrentalcount was called with carId 1 and returned count 2
+[] 2025-05-13 14:05:04,832 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /revenuepercar getAllOrders returned empty list with no orders
+[] 2025-05-13 14:05:04,838 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /carrentalcount/1 getAllOrders returned empty list with no orders
+[] 2025-05-13 14:05:04,846 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics was called
+[] 2025-05-13 14:05:04,852 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /rentaldurations was called and returned 1 durations
+[] 2025-05-13 14:05:04,858 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/revenue was called with startDate 2025-05-10 and endDate 2025-05-20 and returned 6000.0
+[] 2025-05-13 14:05:04,864 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /mostrentedbrands Could not return any data because no brands were found during the given period 2025-01-01 - 2025-12-31
+[] 2025-05-13 14:05:04,872 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/revenuepercar was called and returned revenue for 5 cars
+[] 2025-05-13 14:05:04,878 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/averageorderprice was called and returned average of 2000.0
+[] 2025-05-13 14:05:04,885 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/cancelledorders was called with startDate 2025-05-01 endDate 2025-05-20 and returned 0 cancelled orders with revenue lost 0.0 
+[] 2025-05-13 14:05:04,891 [main]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/orders was called with startDate 2025-05-01 endDate 2025-05-20 and returned order count 6
+[] 2025-05-13 14:05:04,896 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /rentaldurations Result returned empty because no valid data was found
+[] 2025-05-13 14:05:04,900 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/orders allOrders returned empty list with no orders
+[] 2025-05-13 14:05:04,906 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /averageorderprice getAllOrders returned empty list with no orders
+[] 2025-05-13 14:05:04,912 [main]  WARN com.example.Biluthyrningssystem.services.StatisticsServiceImpl - /revenue No orders were found for startDate 2025-05-01 and endDate 2025-05-20 
+[] 2025-05-13 14:05:04,916 [main]  INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Biluthyrningssystem.BiluthyrningssystemApplicationTests]: BiluthyrningssystemApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[] 2025-05-13 14:05:04,926 [main]  INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Biluthyrningssystem.BiluthyrningssystemApplication for test class com.example.Biluthyrningssystem.BiluthyrningssystemApplicationTests
+[] 2025-05-13 14:05:05,069 [main]  INFO com.example.Biluthyrningssystem.services.CustomerServiceImpl - Created user login for personnummer: 19800731-6357
+[] 2025-05-13 14:05:05,069 [main]  INFO com.example.Biluthyrningssystem.services.CustomerServiceImpl - New customer added to database with Personnummer: 19800731-6357
+[] 2025-05-13 14:05:05,077 [main]  INFO com.example.Biluthyrningssystem.services.CustomerServiceImpl - Customer with Personnummer: 19800731-6357 details accessed
+[] 2025-05-13 14:05:05,084 [main]  INFO com.example.Biluthyrningssystem.services.CustomerServiceImpl - Customer with Personnummer: 19800731-6357 details accessed
+[] 2025-05-13 14:05:05,084 [main]  INFO com.example.Biluthyrningssystem.services.CustomerServiceImpl - Customer details updated in database for customer with Personnummer: 19800731-6357
+[] 2025-05-13 14:05:05,099 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-13 14:05:05,111 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[] 2025-05-13 14:05:05,244 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[] 2025-05-13 14:05:05,250 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-13 14:05:05,252 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[] 2025-05-13 14:05:05,256 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[] 2025-05-13 14:05:05,268 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-13 14:05:05,270 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+[] 2025-05-13 14:05:05,271 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+[] 2025-05-13 14:05:25,902 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 11556 (C:\Users\neina\IdeaProjects\Biluthyrningssystem\target\classes started by neina in C:\Users\neina\IdeaProjects\Biluthyrningssystem)
+[] 2025-05-13 14:05:25,910 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - No active profile set, falling back to 1 default profile: "default"
+[] 2025-05-13 14:05:26,445 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[] 2025-05-13 14:05:26,497 [main]  INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 4 JPA repository interfaces.
+[] 2025-05-13 14:05:26,862 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+[] 2025-05-13 14:05:26,872 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[] 2025-05-13 14:05:26,874 [main]  INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[] 2025-05-13 14:05:26,874 [main]  INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+[] 2025-05-13 14:05:26,915 [main]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[] 2025-05-13 14:05:26,916 [main]  INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 970 ms
+[] 2025-05-13 14:05:27,033 [main]  INFO org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[] 2025-05-13 14:05:27,071 [main]  INFO org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+[] 2025-05-13 14:05:27,097 [main]  INFO org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[] 2025-05-13 14:05:27,302 [main]  INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[] 2025-05-13 14:05:27,322 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[] 2025-05-13 14:05:27,450 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bilhyrdb user=SA
+[] 2025-05-13 14:05:27,452 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[] 2025-05-13 14:05:27,494 [main]  INFO org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[] 2025-05-13 14:05:28,130 [main]  INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[] 2025-05-13 14:05:28,175 [main]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[] 2025-05-13 14:05:28,399 [main]  INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[] 2025-05-13 14:05:28,668 [main]  WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[] 2025-05-13 14:05:28,691 [main]  INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+[] 2025-05-13 14:05:28,972 [main]  INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bilhyrdb'
+[] 2025-05-13 14:05:29,032 [main]  INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[] 2025-05-13 14:05:29,045 [main]  INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[] 2025-05-13 14:05:29,052 [main]  INFO com.example.Biluthyrningssystem.BiluthyrningssystemApplication - Started BiluthyrningssystemApplication in 3.411 seconds (process running for 4.179)
+[] 2025-05-13 14:05:45,433 [http-nio-9090-exec-8]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[] 2025-05-13 14:05:45,433 [http-nio-9090-exec-8]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[] 2025-05-13 14:05:45,434 [http-nio-9090-exec-8]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[admin] 2025-05-13 14:05:45,694 [http-nio-9090-exec-8]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/orders was called with startDate 2025-01-01 endDate 2025-12-31 and returned order count 4
+[admin] 2025-05-13 14:05:45,697 [http-nio-9090-exec-8]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/revenue was called with startDate 2025-01-01 and endDate 2025-12-31 and returned 955.0
+[admin] 2025-05-13 14:05:45,698 [http-nio-9090-exec-8]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/cancelledorders was called with startDate 2025-01-01 endDate 2025-12-31 and returned 2 cancelled orders with revenue lost 170.0 
+[admin] 2025-05-13 14:05:45,699 [http-nio-9090-exec-8]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[admin] 2025-05-13 14:05:45,714 [http-nio-9090-exec-8]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
+[admin] 2025-05-13 14:05:45,715 [http-nio-9090-exec-8]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/averageorderprice was called and returned average of 238.75
+[admin] 2025-05-13 14:05:45,715 [http-nio-9090-exec-8]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics was called
+[admin] 2025-05-13 14:05:49,711 [http-nio-9090-exec-2]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/mostrentedbrand was called with startDate 2020-12-01 and endDate 2025-12-31
+[admin] 2025-05-13 14:05:52,257 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[admin] 2025-05-13 14:05:52,276 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
+[admin] 2025-05-13 14:05:52,278 [http-nio-9090-exec-4]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/carrentalcount was called with carId 1 and returned count 2
+[admin] 2025-05-13 14:05:54,632 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[admin] 2025-05-13 14:05:54,640 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
+[admin] 2025-05-13 14:05:54,646 [http-nio-9090-exec-5]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /rentaldurations was called and returned 5 durations
+[admin] 2025-05-13 14:05:58,965 [http-nio-9090-exec-6]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[admin] 2025-05-13 14:05:58,976 [http-nio-9090-exec-6]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
+[admin] 2025-05-13 14:05:58,977 [http-nio-9090-exec-6]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/averageorderprice was called and returned average of 238.75
+[admin] 2025-05-13 14:06:02,222 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - Locating all orders in database. Request made by admin
+[admin] 2025-05-13 14:06:02,240 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.OrderServiceImpl - 7 order(s) found.
+[admin] 2025-05-13 14:06:02,241 [http-nio-9090-exec-7]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/revenuepercar was called and returned revenue for 3 cars
+[admin] 2025-05-13 14:06:05,981 [http-nio-9090-exec-3]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/revenue was called with startDate 2022-01-01 and endDate 2025-12-31 and returned 955.0
+[admin] 2025-05-13 14:06:08,906 [http-nio-9090-exec-9]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/cancelledorders was called with startDate 2022-04-25 endDate 2026-04-26 and returned 3 cancelled orders with revenue lost 7170.0 
+[admin] 2025-05-13 14:06:14,919 [http-nio-9090-exec-10]  INFO com.example.Biluthyrningssystem.services.StatisticsServiceImpl - Endpoint /statistics/orders was called with startDate 2020-04-01 endDate 2026-12-30 and returned order count 4

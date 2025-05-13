@@ -19,16 +19,19 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-
 
 @Service
 public class StatisticsServiceImpl implements StatisticsService {
 
     private static final Logger logger = LoggerFactory.getLogger(StatisticsServiceImpl.class);
-
 
     private final OrderService orderService;
     private final CarRepository carRepository;
@@ -39,7 +42,6 @@ public class StatisticsServiceImpl implements StatisticsService {
         this.carRepository = carRepository;
     }
 
-    // TODO Lägga till mer data för overview
     @Override
     public Map<String, Object> getStatistics() {
 
@@ -49,7 +51,6 @@ public class StatisticsServiceImpl implements StatisticsService {
         statistics.put("Orders 2025", orderCount2025.get("orders"));
         Map<String, Double> totalRevenue2025 = getTotalRevenueForPeriod("2025-01-01", "2025-12-31");
         statistics.put("Revenue 2025", totalRevenue2025.get("TotalRevenueForPeriod"));
-
 
         Map<String, Object> cancelledOrders = getCanceledOrderCountByPeriod("2025-01-01", "2025-12-31");
         statistics.put("Cancelled orders 2025", cancelledOrders.get("cancelledOrders"));
@@ -77,7 +78,6 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         return statistics;
     }
-
 
     @Override
     public Map<String, Long> getMostRentedBrandForPeriod(String startDate, String endDate) {
@@ -108,7 +108,6 @@ public class StatisticsServiceImpl implements StatisticsService {
         return result;
     }
 
-
     @Override
     public Map<String, Object> getRentalCountByCar(Long carId) {
 
@@ -116,7 +115,6 @@ public class StatisticsServiceImpl implements StatisticsService {
         if (optionalCar.isEmpty()) {
             logger.warn("/carrentalcount Could not find car with id {}", carId);
             throw new ResourceNotFoundException("Car", "id", carId);
-
         }
 
         Car car = optionalCar.get();
@@ -176,7 +174,6 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         return durations;
     }
-
 
     @Override
     public Map<String, Double> getAverageCostPerOrder() {
@@ -280,7 +277,6 @@ public class StatisticsServiceImpl implements StatisticsService {
         return Map.of("TotalRevenueForPeriod", totalRevenue);
 
     }
-
 
     @Override
     public Map<String, Object> getCanceledOrderCountByPeriod(String startDate, String endDate) {
