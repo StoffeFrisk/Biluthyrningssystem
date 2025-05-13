@@ -9,7 +9,6 @@ import com.example.Biluthyrningssystem.entities.Orders;
 import com.example.Biluthyrningssystem.exceptions.DataNotFoundException;
 import com.example.Biluthyrningssystem.exceptions.ResourceNotFoundException;
 import com.example.Biluthyrningssystem.repositories.CarRepository;
-import com.example.Biluthyrningssystem.repositories.OrderRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,7 +19,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.sql.Date;
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -29,8 +27,6 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class StatisticsServiceImplTest {
 
-    @Mock
-    private OrderRepository orderRepository;
     @Mock
     private OrderService orderService;
     @Mock
@@ -136,42 +132,17 @@ class StatisticsServiceImplTest {
 
         Map<String, Long> result = statisticsService.getMostRentedBrandForPeriod("2025-01-01", "2025-12-31");
 
-        assertEquals(3, result.size());
-        assertEquals(2, result.get("Volvo"));
-        assertEquals(1, result.get("Saab"));
-        assertEquals(3, result.get("Toyota"));
+        assertEquals(3, result.size(), "Ordercount should be 3");
+        assertEquals(2, result.get("Volvo"), "Volvo should be 2");
+        assertEquals(1, result.get("Saab"), "Saab should be 1");
+        assertEquals(3, result.get("Toyota"), "Toyota should be 3");
     }
 
     @Test
     void getMostRentedBrandsForPeriodShouldThrowExceptionWhenNoOrdersFound() {
         when(orderService.getOrdersOverlappingPeriod(any(), any())).thenReturn(Collections.emptyList());
         DataNotFoundException exception = assertThrows(DataNotFoundException.class, () -> statisticsService.getMostRentedBrandForPeriod("2025-01-01", "2025-12-31"));
-        assertTrue(exception.getMessage().contains("No brands were found during given period"));
-    }
-
-    @Test
-    void testMergeFunctionInToMap() {
-
-        List<Map.Entry<String, Long>> entries = List.of(
-                new AbstractMap.SimpleEntry<>("Volvo", 2L),
-                new AbstractMap.SimpleEntry<>("Toyota", 2L),
-                new AbstractMap.SimpleEntry<>("Volvo", 1L),
-                new AbstractMap.SimpleEntry<>("Saab", 1L)
-        );
-
-        Map<String, Long> result = entries.stream()
-                .collect(Collectors.toMap(
-                        Map.Entry::getKey,
-                        Map.Entry::getValue,
-                        (e1, e2) -> e1,
-                        LinkedHashMap::new
-                ));
-
-
-        assertEquals(3, result.size());
-        assertEquals(2L, result.get("Volvo"));
-        assertEquals(2L, result.get("Toyota"));
-        assertEquals(1L, result.get("Saab"));
+        assertTrue(exception.getMessage().contains("No brands were found during given period"), "Exception message should contain 'No brands were found during given period'");
     }
 
 
@@ -182,8 +153,8 @@ class StatisticsServiceImplTest {
 
         Map<String, Object> result = statisticsService.getRentalCountByCar(testCar.getId());
 
-        assertEquals(testCar.getId(), result.get("carId"));
-        assertEquals(2L, result.get("orderCount"));
+        assertEquals(testCar.getId(), result.get("carId"), "Car id should be the same");
+        assertEquals(2L, result.get("orderCount"), "Ordercount should be 2");
     }
 
     @Test
@@ -193,7 +164,7 @@ class StatisticsServiceImplTest {
 
         ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () -> statisticsService.getRentalCountByCar(carId));
 
-        assertTrue(exception.getMessage().contains("not found"));
+        assertTrue(exception.getMessage().contains("not found"), "Exception message should contain 'not found'");
     }
 
     @Test
@@ -204,7 +175,7 @@ class StatisticsServiceImplTest {
 
         DataNotFoundException exception = assertThrows(DataNotFoundException.class, () -> statisticsService.getRentalCountByCar(carId));
 
-        assertTrue(exception.getMessage().contains("No orders with valid data were found"));
+        assertTrue(exception.getMessage().contains("No orders with valid data were found"), "Exception message should contain 'No orders with valid data were found'");
     }
 
     @Test
@@ -221,7 +192,7 @@ class StatisticsServiceImplTest {
         when(orderService.getAllOrders()).thenReturn(orders);
 
         DataNotFoundException exception = assertThrows(DataNotFoundException.class, () -> statisticsService.getRentalDurationsByDays());
-        assertTrue(exception.getMessage().contains("No orders with valid data were found"));
+        assertTrue(exception.getMessage().contains("No orders with valid data were found"), "Exception message should contain 'No orders with valid data were found'");
 
     }
 
@@ -234,7 +205,7 @@ class StatisticsServiceImplTest {
 
         List<RentalDurationDTO> result = statisticsService.getRentalDurationsByDays();
         assertFalse(result.isEmpty());
-        assertEquals(10, result.get(0).getDays());
+        assertEquals(10, result.get(0).getDays(), "Days should be 10");
     }
 
 
@@ -245,7 +216,7 @@ class StatisticsServiceImplTest {
 
         Map<String, Double> result = statisticsService.getAverageCostPerOrder();
 
-        assertEquals(2000.0, result.get("AverageOrderPrice"));
+        assertEquals(2000.0, result.get("AverageOrderPrice"), "AverageOrderPrice should be 2000");
     }
 
 
@@ -253,7 +224,15 @@ class StatisticsServiceImplTest {
     void getAverageCostPerOrderShouldThrowExceptionWhenNoOrdersFound() {
         when(orderService.getAllOrders()).thenReturn(List.of());
 
-        assertThrows(DataNotFoundException.class, () -> statisticsService.getAverageCostPerOrder());
+        DataNotFoundException exception = assertThrows(
+                DataNotFoundException.class,
+                () -> statisticsService.getAverageCostPerOrder()
+        );
+
+        assertTrue(
+                exception.getMessage().contains("No orders were found"),
+                "Exception message should contain 'No orders were found'"
+        );
     }
 
 
@@ -282,7 +261,7 @@ class StatisticsServiceImplTest {
         when(orderService.getOrdersOverlappingPeriod(any(), any())).thenReturn(mockOrders);
 
         Map<String, Double> result = statisticsService.getTotalRevenueForPeriod("2025-05-10", "2025-05-20");
-        assertEquals(6000.0, result.get("TotalRevenueForPeriod"));
+        assertEquals(6000.0, result.get("TotalRevenueForPeriod"), "TotalRevenueForPeriod should be 6000");
     }
 
     @Test
@@ -295,7 +274,7 @@ class StatisticsServiceImplTest {
 
         when(orderService.getOrdersOverlappingPeriod(any(), any())).thenReturn(List.of(cancelledOrder));
 
-        assertThrows(DataNotFoundException.class, () -> statisticsService.getTotalRevenueForPeriod("2025-05-01", "2025-05-20"));
+        assertThrows(DataNotFoundException.class, () -> statisticsService.getTotalRevenueForPeriod("2025-05-01", "2025-05-20"), "Should throw DataNotFoundException");
     }
 
     @Test
@@ -345,6 +324,6 @@ class StatisticsServiceImplTest {
     void getOrderCountForPeriodShouldThrowExceptionWhenNoOrdersFound() {
         when(orderService.getOrdersOverlappingPeriod(any(), any())).thenReturn(List.of());
 
-        assertThrows(DataNotFoundException.class, () -> statisticsService.getOrderCountForPeriod("2025-05-01", "2025-05-20"));
+        assertThrows(DataNotFoundException.class, () -> statisticsService.getOrderCountForPeriod("2025-05-01", "2025-05-20"), "DataNotFoundException should be thrown");
     }
 }

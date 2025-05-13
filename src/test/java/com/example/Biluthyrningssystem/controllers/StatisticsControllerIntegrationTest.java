@@ -1,12 +1,12 @@
+// Niklas Einarsson
+
 package com.example.Biluthyrningssystem.controllers;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.example.Biluthyrningssystem.entities.Orders;
 import com.example.Biluthyrningssystem.exceptions.DataNotFoundException;
-import com.example.Biluthyrningssystem.repositories.CustomerRepository;
 import com.example.Biluthyrningssystem.repositories.OrderRepository;
-import com.example.Biluthyrningssystem.services.OrderService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
 import java.util.Map;
+import java.util.Objects;
 
 @SpringBootTest
 @Transactional
@@ -25,9 +26,6 @@ class StatisticsControllerIntegrationTest {
 
         @Autowired
         private StatisticsController statisticsController;
-
-        @Autowired
-        private OrderService orderService;
 
         @Autowired
         private OrderRepository orderRepository;
@@ -82,31 +80,31 @@ class StatisticsControllerIntegrationTest {
     }
 
     @Test
-    void getRevenueForPeriod() {
+    void getRevenueForPeriodShouldReturnTotalRevenueOf3000() {
         ResponseEntity<Map<String, Double>> response = statisticsController.getRevenueForPeriod("2025-05-01","2025-05-31");
         assertTrue(response.getStatusCode().is2xxSuccessful(), "Response code should be 200");
-        assertEquals(3000, response.getBody().get("TotalRevenueForPeriod"), "Total revenue should be 3000");
+        assertEquals(3000, Objects.requireNonNull(response.getBody(), "Response body should not be null").get("TotalRevenueForPeriod"), "Total revenue should be 3000");
     }
 
     @Test
-    void getCancelledOrders() {
+    void getCancelledOrdersShouldReturnOneCancelledOrder() {
         ResponseEntity<Map<String, Object>> response = statisticsController.getCancelledOrders("2025-05-01","2025-05-31");
         assertTrue(response.getStatusCode().is2xxSuccessful(), "Response code should be 200");
-        assertEquals(1L, response.getBody().get("cancelledOrders"), "Should have 1 cancelled orders");
+        assertEquals(1L, Objects.requireNonNull(response.getBody(), "Resone body should not be null").get("cancelledOrders"), "Should have 1 cancelled orders");
     }
 
     @Test
-    void getOrderCount() {
+    void getOrderCountShouldReturnOneOrder() {
         ResponseEntity<Map<String, Object>> response = statisticsController.getOrderCount("2025-05-01","2025-05-31");
         assertTrue(response.getStatusCode().is2xxSuccessful(), "Response code should be 200");
-        assertEquals(1, response.getBody().get("orders"), "Should have 1 orders");
+        assertEquals(1, Objects.requireNonNull(response.getBody(), "Response body should not be null").get("orders"), "Should have 1 orders");
     }
 
     @Test
     void getOrderCountShouldCastExceptionWhenNoOrdersFound() {
         orderRepository.deleteAll();
 
-        assertThrows(DataNotFoundException.class, () -> statisticsController.getOrderCount("2025-05-01", "2025-05-31"));
+        assertThrows(DataNotFoundException.class, () -> statisticsController.getOrderCount("2025-05-01", "2025-05-31"), "DataNotFoundException should be thrown");
 
     }
 }
