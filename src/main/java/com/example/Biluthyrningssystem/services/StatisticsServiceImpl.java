@@ -3,13 +3,16 @@
 package com.example.Biluthyrningssystem.services;
 
 import com.example.Biluthyrningssystem.dto.CarRevenueDTO;
+import com.example.Biluthyrningssystem.dto.CustomerRevenueDTO;
 import com.example.Biluthyrningssystem.dto.RentalDurationDTO;
 import com.example.Biluthyrningssystem.entities.Car;
+import com.example.Biluthyrningssystem.entities.Customer;
 import com.example.Biluthyrningssystem.entities.Orders;
 import com.example.Biluthyrningssystem.exceptions.DataNotFoundException;
 import com.example.Biluthyrningssystem.exceptions.IncorrectInputException;
 import com.example.Biluthyrningssystem.exceptions.ResourceNotFoundException;
 import com.example.Biluthyrningssystem.repositories.CarRepository;
+import com.example.Biluthyrningssystem.repositories.CustomerRepository;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,11 +38,13 @@ public class StatisticsServiceImpl implements StatisticsService {
 
     private final OrderService orderService;
     private final CarRepository carRepository;
+    private final CustomerRepository customerRepository;
 
     @Autowired
-    public StatisticsServiceImpl(OrderService orderService, CarRepository carRepository) {
+    public StatisticsServiceImpl(OrderService orderService, CarRepository carRepository, CustomerRepository customerRepository) {
         this.orderService = orderService;
         this.carRepository = carRepository;
+        this.customerRepository = customerRepository;
     }
 
     @Override
@@ -70,7 +75,8 @@ public class StatisticsServiceImpl implements StatisticsService {
                 "/statistics/revenuepercar",
                 "/statistics/revenue/period/{startDate}/{endDate}",
                 "/statistics/cancelledorders/period/{startDate}/{endDate}",
-                "/statistics/orders/period/{startDate}/{endDate}"
+                "/statistics/orders/period/{startDate}/{endDate}",
+                "/statistics/customersbyrevenue"
         ));
         statistics.putAll(endpoints);
 
@@ -345,6 +351,44 @@ public class StatisticsServiceImpl implements StatisticsService {
         logger.info("Endpoint /statistics/orders was called with startDate {} endDate {} and returned order count {}", startDate, endDate, activeOrders.size());
         return result;
     }
+
+    public List<CustomerRevenueDTO> getTopCustomersByRevenue() {
+        List<Orders> allOrders = orderService.getAllOrders();
+
+        if (allOrders.isEmpty()) {
+            logger.warn("Endpoint /statistics/topcustomers allOrders returned empty list with no orders");
+            throw new DataNotFoundException("/topcustomers", "", "No orders were found");
+        }
+
+        Map<String, Double> customersRevenueMap = new LinkedHashMap<>();
+
+        for(Orders order : allOrders) {
+            if(order.getCustomer() != null && !order.isOrderCancelled()) {
+                String customerId = order.getCustomer().getPersonnummer();
+                double revenue = order.getTotalPrice();
+
+                customersRevenueMap.put(customerId, customersRevenueMap.getOrDefault(customerId,0.0) + revenue);
+            }
+        }
+
+        if (customersRevenueMap.isEmpty()) {
+            logger.warn("Endpoint /statistics/topcustomers returned empty map with no valid revenue data");
+            throw new DataNotFoundException("/topcustomers", "", "No valid revenue data");
+        }
+
+        List<CustomerRevenueDTO> customerRevenueList = customersRevenueMap.entrySet().stream()
+                .map(entry -> {
+                    Customer customer = customerRepository.findById(entry.getKey())
+                            .orElseThrow(() -> new ResourceNotFoundException("Customer", "personnummer", entry.getKey()));
+                    String name = customer.getFirstName() + " " + customer.getLastName();
+                    return new CustomerRevenueDTO(customer.getPersonnummer(), name, entry.getValue());
+                })
+                .sorted(Comparator.comparingDouble(CustomerRevenueDTO::getCustomerRevenue).reversed())
+                .collect(Collectors.toList());
+
+            return customerRevenueList;
+    }
+
 
     private LocalDate[] parseAndValidateDates(String startDateString, String endDateString, String endpointName) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");

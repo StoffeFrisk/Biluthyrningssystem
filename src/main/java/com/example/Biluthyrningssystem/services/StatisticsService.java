@@ -3,6 +3,7 @@
 package com.example.Biluthyrningssystem.services;
 
 import com.example.Biluthyrningssystem.dto.CarRevenueDTO;
+import com.example.Biluthyrningssystem.dto.CustomerRevenueDTO;
 import com.example.Biluthyrningssystem.dto.RentalDurationDTO;
 
 import java.util.List;
@@ -20,4 +21,5 @@ public interface StatisticsService {
     Map<String, Double> getTotalRevenueForPeriod(String startDate, String endDate);
     Map<String, Object> getCanceledOrderCountByPeriod(String startDate, String endDate);
     Map<String, Object> getOrderCountForPeriod(String startDate, String endDate);
+    List<CustomerRevenueDTO> getTopCustomersByRevenue();
 }
