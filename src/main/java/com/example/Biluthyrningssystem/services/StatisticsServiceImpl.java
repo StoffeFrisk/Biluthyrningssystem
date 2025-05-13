@@ -19,16 +19,19 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-
 
 @Service
 public class StatisticsServiceImpl implements StatisticsService {
 
     private static final Logger logger = LoggerFactory.getLogger(StatisticsServiceImpl.class);
-
 
     private final OrderService orderService;
     private final CarRepository carRepository;
@@ -39,7 +42,6 @@ public class StatisticsServiceImpl implements StatisticsService {
         this.carRepository = carRepository;
     }
 
-    // TODO Lägga till mer data för overview
     @Override
     public Map<String, Object> getStatistics() {
 
@@ -50,14 +52,13 @@ public class StatisticsServiceImpl implements StatisticsService {
         Map<String, Double> totalRevenue2025 = getTotalRevenueForPeriod("2025-01-01", "2025-12-31");
         statistics.put("Revenue 2025", totalRevenue2025.get("TotalRevenueForPeriod"));
 
-
         Map<String, Object> cancelledOrders = getCanceledOrderCountByPeriod("2025-01-01", "2025-12-31");
         statistics.put("Cancelled orders 2025", cancelledOrders.get("cancelledOrders"));
         statistics.put("Cancelled order percentage 2025", cancelledOrders.get("cancelledPercentage"));
         statistics.put("Lost revenue from cancelled orders 2025", cancelledOrders.get("lostRevenue"));
 
         Map<String, Double> revenuePerOrder = getAverageCostPerOrder();
-        statistics.put("Average revenue of orders (All time)", revenuePerOrder.get("AverageOrderPrice"));
+        statistics.put("Average revenue of orders (All time)", revenuePerOrder.get("averageOrderPrice"));
         Map<String, Object> endpoints = new LinkedHashMap<>();
 
         endpoints.put("Available endpoints", List.of(
@@ -77,7 +78,6 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         return statistics;
     }
-
 
     @Override
     public Map<String, Long> getMostRentedBrandForPeriod(String startDate, String endDate) {
@@ -108,7 +108,6 @@ public class StatisticsServiceImpl implements StatisticsService {
         return result;
     }
 
-
     @Override
     public Map<String, Object> getRentalCountByCar(Long carId) {
 
@@ -116,7 +115,6 @@ public class StatisticsServiceImpl implements StatisticsService {
         if (optionalCar.isEmpty()) {
             logger.warn("/carrentalcount Could not find car with id {}", carId);
             throw new ResourceNotFoundException("Car", "id", carId);
-
         }
 
         Car car = optionalCar.get();
@@ -177,7 +175,6 @@ public class StatisticsServiceImpl implements StatisticsService {
         return durations;
     }
 
-
     @Override
     public Map<String, Double> getAverageCostPerOrder() {
 
@@ -207,7 +204,7 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         logger.info("Endpoint /statistics/averageorderprice was called and returned average of {}", average);
 
-        return Map.of("AverageOrderPrice", average);
+        return Map.of("averageOrderPrice", average);
     }
 
     @Override
@@ -280,7 +277,6 @@ public class StatisticsServiceImpl implements StatisticsService {
         return Map.of("TotalRevenueForPeriod", totalRevenue);
 
     }
-
 
     @Override
     public Map<String, Object> getCanceledOrderCountByPeriod(String startDate, String endDate) {
