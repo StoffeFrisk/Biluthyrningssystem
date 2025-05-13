@@ -22,7 +22,6 @@ import java.util.Objects;
 @SpringBootTest
 @Transactional
 
-
 class StatisticsControllerIntegrationTest {
 
         @Autowired
