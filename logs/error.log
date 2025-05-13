@@ -447,3 +447,123 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.5.jar:6.2.5]
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.5.jar:6.2.5]
 	... 21 more
+[] 2025-05-12 11:25:11,922 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date format for hireEndDate. Correct format is 'YYYY-MM-DD'. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 11:25:11,974 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid input of orderCancelled. Order cannot be created already cancelled. Order status input by 19850101-1234 during order creation.
+[] 2025-05-12 11:25:12,002 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Unauthorized request by user: 19950505-7890. Attempted to cancel order 10 registered to customer with ID: 19850101-1234
+[] 2025-05-12 11:25:12,017 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 12 not found. Request made by admin
+[] 2025-05-12 11:25:12,132 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID: null not found. Request made by 19850101-1234 during order creation
+[] 2025-05-12 11:25:12,153 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid input for hireStartDate. Start date must be set from today onwards. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 11:25:12,176 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Unauthorized request by user: 19850101-1234. Attempted to create order for customer with ID: 19950505-7890
+[] 2025-05-12 11:25:12,195 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID: 12 not found. Request made by 19850101-1234 during order creation
+[] 2025-05-12 11:25:12,255 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date(s) input. hireEndDate must come after hireStartDate. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 11:25:12,311 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Incorrect calculation of totalPrice by user. Calculated price: 998.0. User input price: 103.0. Price input by 19850101-1234 during order creation.
+[] 2025-05-12 11:25:12,325 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID : 10 not found. Request made by user: 19850101-1234
+[] 2025-05-12 11:25:12,354 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date format for hireStartDate. Correct format is 'YYYY-MM-DD'. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 11:25:12,365 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 12 not found. Request made by user: 19850101-1234
+[] 2025-05-12 11:25:12,543 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Car not found for update, id=5
+[] 2025-05-12 11:25:12,559 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Car not found, id 99: Car with id '99' not found
+[] 2025-05-12 11:25:12,586 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Failed deletion for id 7: Car with id '7' not found
+[] 2025-05-12 11:25:13,325 [main] ERROR com.example.Biluthyrningssystem.services.CustomerServiceImpl - Address not found with ID: 1
+[] 2025-05-12 11:27:39,894 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date format for hireEndDate. Correct format is 'YYYY-MM-DD'. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 11:27:39,955 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid input of orderCancelled. Order cannot be created already cancelled. Order status input by 19850101-1234 during order creation.
+[] 2025-05-12 11:27:39,991 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Unauthorized request by user: 19950505-7890. Attempted to cancel order 10 registered to customer with ID: 19850101-1234
+[] 2025-05-12 11:27:40,009 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 12 not found. Request made by admin
+[] 2025-05-12 11:27:40,135 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID: null not found. Request made by 19850101-1234 during order creation
+[] 2025-05-12 11:27:40,151 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid input for hireStartDate. Start date must be set from today onwards. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 11:27:40,167 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Unauthorized request by user: 19850101-1234. Attempted to create order for customer with ID: 19950505-7890
+[] 2025-05-12 11:27:40,167 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID: 12 not found. Request made by 19850101-1234 during order creation
+[] 2025-05-12 11:27:40,232 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date(s) input. hireEndDate must come after hireStartDate. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 11:27:40,294 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Incorrect calculation of totalPrice by user. Calculated price: 998.0. User input price: 103.0. Price input by 19850101-1234 during order creation.
+[] 2025-05-12 11:27:40,304 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID : 10 not found. Request made by user: 19850101-1234
+[] 2025-05-12 11:27:40,332 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date format for hireStartDate. Correct format is 'YYYY-MM-DD'. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 11:27:40,335 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 12 not found. Request made by user: 19850101-1234
+[] 2025-05-12 11:27:40,514 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Car not found for update, id=5
+[] 2025-05-12 11:27:40,526 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Car not found, id 99: Car with id '99' not found
+[] 2025-05-12 11:27:40,542 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Failed deletion for id 7: Car with id '7' not found
+[] 2025-05-12 11:27:41,265 [main] ERROR com.example.Biluthyrningssystem.services.CustomerServiceImpl - Address not found with ID: 1
+[] 2025-05-12 15:52:36,624 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date format for hireEndDate. Correct format is 'YYYY-MM-DD'. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 15:52:36,720 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid input of orderCancelled. Order cannot be created already cancelled. Order status input by 19850101-1234 during order creation.
+[] 2025-05-12 15:52:36,736 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Unauthorized request by user: 19950505-7890. Attempted to cancel order 10 registered to customer with ID: 19850101-1234
+[] 2025-05-12 15:52:36,752 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 12 not found. Request made by admin
+[] 2025-05-12 15:52:36,922 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID: null not found. Request made by 19850101-1234 during order creation
+[] 2025-05-12 15:52:36,938 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid input for hireStartDate. Start date must be set from today onwards. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 15:52:36,940 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Unauthorized request by user: 19850101-1234. Attempted to create order for customer with ID: 19950505-7890
+[] 2025-05-12 15:52:36,956 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID: 12 not found. Request made by 19850101-1234 during order creation
+[] 2025-05-12 15:52:37,007 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date(s) input. hireEndDate must come after hireStartDate. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 15:52:37,051 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Incorrect calculation of totalPrice by user. Calculated price: 998.0. User input price: 103.0. Price input by 19850101-1234 during order creation.
+[] 2025-05-12 15:52:37,066 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID : 10 not found. Request made by user: 19850101-1234
+[] 2025-05-12 15:52:37,082 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date format for hireStartDate. Correct format is 'YYYY-MM-DD'. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 15:52:37,098 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 12 not found. Request made by user: 19850101-1234
+[] 2025-05-12 15:52:37,254 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Car not found for update, id=5
+[] 2025-05-12 15:52:37,270 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Car not found, id 99: Car with id '99' not found
+[] 2025-05-12 15:52:37,285 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Failed deletion for id 7: Car with id '7' not found
+[] 2025-05-12 15:52:38,727 [main] ERROR com.example.Biluthyrningssystem.services.CustomerServiceImpl - Address not found with ID: 1
+[] 2025-05-12 16:51:58,604 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date format for hireEndDate. Correct format is 'YYYY-MM-DD'. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 16:51:58,669 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid input of orderCancelled. Order cannot be created already cancelled. Order status input by 19850101-1234 during order creation.
+[] 2025-05-12 16:51:58,691 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Unauthorized request by user: 19950505-7890. Attempted to cancel order 10 registered to customer with ID: 19850101-1234
+[] 2025-05-12 16:51:58,713 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 12 not found. Request made by admin
+[] 2025-05-12 16:51:58,851 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID: null not found. Request made by 19850101-1234 during order creation
+[] 2025-05-12 16:51:58,868 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid input for hireStartDate. Start date must be set from today onwards. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 16:51:58,885 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Unauthorized request by user: 19850101-1234. Attempted to create order for customer with ID: 19950505-7890
+[] 2025-05-12 16:51:58,899 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID: 12 not found. Request made by 19850101-1234 during order creation
+[] 2025-05-12 16:51:58,951 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date(s) input. hireEndDate must come after hireStartDate. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 16:51:59,000 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Incorrect calculation of totalPrice by user. Calculated price: 998.0. User input price: 103.0. Price input by 19850101-1234 during order creation.
+[] 2025-05-12 16:51:59,011 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID : 10 not found. Request made by user: 19850101-1234
+[] 2025-05-12 16:51:59,039 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date format for hireStartDate. Correct format is 'YYYY-MM-DD'. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 16:51:59,050 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 12 not found. Request made by user: 19850101-1234
+[] 2025-05-12 16:51:59,211 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Car not found for update, id=5
+[] 2025-05-12 16:51:59,279 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Car not found, id 99: Car with id '99' not found
+[] 2025-05-12 16:51:59,301 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Failed deletion for id 7: Car with id '7' not found
+[] 2025-05-12 16:52:00,840 [main] ERROR com.example.Biluthyrningssystem.services.CustomerServiceImpl - Address not found with ID: 1
+[] 2025-05-12 18:57:30,654 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date format for hireEndDate. Correct format is 'YYYY-MM-DD'. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 18:57:30,733 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid input of orderCancelled. Order cannot be created already cancelled. Order status input by 19850101-1234 during order creation.
+[] 2025-05-12 18:57:30,754 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Unauthorized request by user: 19950505-7890. Attempted to cancel order 10 registered to customer with ID: 19850101-1234
+[] 2025-05-12 18:57:30,788 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 12 not found. Request made by admin
+[] 2025-05-12 18:57:30,918 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID: null not found. Request made by 19850101-1234 during order creation
+[] 2025-05-12 18:57:30,932 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid input for hireStartDate. Start date must be set from today onwards. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 18:57:30,952 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Unauthorized request by user: 19850101-1234. Attempted to create order for customer with ID: 19950505-7890
+[] 2025-05-12 18:57:30,964 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID: 12 not found. Request made by 19850101-1234 during order creation
+[] 2025-05-12 18:57:31,027 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date(s) input. hireEndDate must come after hireStartDate. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 18:57:31,074 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Incorrect calculation of totalPrice by user. Calculated price: 998.0. User input price: 103.0. Price input by 19850101-1234 during order creation.
+[] 2025-05-12 18:57:31,090 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID : 10 not found. Request made by user: 19850101-1234
+[] 2025-05-12 18:57:31,126 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date format for hireStartDate. Correct format is 'YYYY-MM-DD'. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 18:57:31,126 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 12 not found. Request made by user: 19850101-1234
+[] 2025-05-12 18:57:31,296 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Car not found for update, id=5
+[] 2025-05-12 18:57:31,323 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Car not found, id 99: Car with id '99' not found
+[] 2025-05-12 18:57:31,347 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Failed deletion for id 7: Car with id '7' not found
+[] 2025-05-12 18:57:32,940 [main] ERROR com.example.Biluthyrningssystem.services.CustomerServiceImpl - Address not found with ID: 1
+[] 2025-05-12 20:05:07,885 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date format for hireEndDate. Correct format is 'YYYY-MM-DD'. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 20:05:07,951 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid input of orderCancelled. Order cannot be created already cancelled. Order status input by 19850101-1234 during order creation.
+[] 2025-05-12 20:05:07,973 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Unauthorized request by user: 19950505-7890. Attempted to cancel order 10 registered to customer with ID: 19850101-1234
+[] 2025-05-12 20:05:07,993 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 12 not found. Request made by admin
+[] 2025-05-12 20:05:08,138 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID: null not found. Request made by 19850101-1234 during order creation
+[] 2025-05-12 20:05:08,154 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid input for hireStartDate. Start date must be set from today onwards. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 20:05:08,171 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Unauthorized request by user: 19850101-1234. Attempted to create order for customer with ID: 19950505-7890
+[] 2025-05-12 20:05:08,188 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID: 12 not found. Request made by 19850101-1234 during order creation
+[] 2025-05-12 20:05:08,241 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date(s) input. hireEndDate must come after hireStartDate. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 20:05:08,291 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Incorrect calculation of totalPrice by user. Calculated price: 998.0. User input price: 103.0. Price input by 19850101-1234 during order creation.
+[] 2025-05-12 20:05:08,304 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID : 10 not found. Request made by user: 19850101-1234
+[] 2025-05-12 20:05:08,332 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date format for hireStartDate. Correct format is 'YYYY-MM-DD'. Date input by 19850101-1234 during order creation.
+[] 2025-05-12 20:05:08,344 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 12 not found. Request made by user: 19850101-1234
+[] 2025-05-12 20:05:09,142 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Car not found for update, id=5
+[] 2025-05-12 20:05:09,159 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Car not found, id 99: Car with id '99' not found
+[] 2025-05-12 20:05:09,209 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Failed deletion for id 7: Car with id '7' not found
+[] 2025-05-12 20:05:09,772 [main] ERROR com.example.Biluthyrningssystem.services.CustomerServiceImpl - Address not found with ID: 1
+[] 2025-05-13 12:24:58,163 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date format for hireEndDate. Correct format is 'YYYY-MM-DD'. Date input by 19850101-1234 during order creation.
+[] 2025-05-13 12:24:58,206 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid input of orderCancelled. Order cannot be created already cancelled. Order status input by 19850101-1234 during order creation.
+[] 2025-05-13 12:24:58,226 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Unauthorized request by user: 19950505-7890. Attempted to cancel order 11 registered to customer with ID: 19850101-1234
+[] 2025-05-13 12:24:58,241 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 12 not found. Request made by admin
+[] 2025-05-13 12:24:58,356 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID: null not found. Request made by 19850101-1234 during order creation
+[] 2025-05-13 12:24:58,369 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid input for hireStartDate. Start date must be set from today onwards. Date input by 19850101-1234 during order creation.
+[] 2025-05-13 12:24:58,381 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Unauthorized request by user: 19850101-1234. Attempted to create order for customer with ID: 19950505-7890
+[] 2025-05-13 12:24:58,393 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Car with ID: 12 not found. Request made by 19850101-1234 during order creation
+[] 2025-05-13 12:24:58,435 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date(s) input. hireEndDate must come after hireStartDate. Date input by 19850101-1234 during order creation.
+[] 2025-05-13 12:24:58,477 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Incorrect calculation of totalPrice by user. Calculated price: 998.0. User input price: 103.0. Price input by 19850101-1234 during order creation.
+[] 2025-05-13 12:24:58,488 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Customer with ID : 10 not found. Request made by user: 19850101-1234
+[] 2025-05-13 12:24:58,516 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Invalid date format for hireStartDate. Correct format is 'YYYY-MM-DD'. Date input by 19850101-1234 during order creation.
+[] 2025-05-13 12:24:58,526 [main] ERROR com.example.Biluthyrningssystem.services.OrderServiceImpl - Order with ID: 12 not found. Request made by user: 19850101-1234
+[] 2025-05-13 12:24:59,300 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Car not found for update, id=5
+[] 2025-05-13 12:24:59,315 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Car not found, id 99: Car with id '99' not found
+[] 2025-05-13 12:24:59,340 [main] ERROR com.example.Biluthyrningssystem.services.CarServiceImpl - Failed deletion for id 7: Car with id '7' not found
+[] 2025-05-13 12:24:59,882 [main] ERROR com.example.Biluthyrningssystem.services.CustomerServiceImpl - Missing field: last name
+[] 2025-05-13 12:24:59,892 [main] ERROR com.example.Biluthyrningssystem.services.CustomerServiceImpl - Invalid email format: harry.potter@hotmailcom
